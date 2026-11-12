@@ -1,0 +1,43 @@
+---
+title: "MCP: jak AI łączy się z twoimi narzędziami"
+description: "Czym jest MCP w prostych słowach, jak połączyć Claude z systemami, których już używasz, i na co uważać."
+publishedAt: 2026-10-20
+translationKey: "mcp-connect-ai-to-your-tools"
+draft: false
+---
+
+AI, które widzi tylko to, co wkleisz do czatu, nie zajdzie daleko. Naprawdę przydaje się w firmie dopiero wtedy, gdy może przeczytać kalendarz, znaleźć dokument na Drive i utworzyć zadanie w narzędziu do projektów. To właśnie umożliwia MCP.
+
+## Czym jest MCP?
+
+MCP (Model Context Protocol) to otwarty standard łączenia aplikacji AI z innymi systemami. Jego twórcy porównują go do USB-C: jedno złącze, które pasuje wszędzie, zamiast osobnego kabla do każdego urządzenia. System, który udostępnia serwer MCP, może połączyć się z Claude i z każdą inną aplikacją obsługującą ten standard.
+
+W Claude takie połączenia nazywają się _connectors_. W katalogu są setki gotowych connectorów, na przykład Google Drive, Gmail, Google Calendar, Microsoft 365, Slack, Notion, Asana, monday.com i HubSpot.
+
+## Jak się połączyć?
+
+1. Otwórz **Customize > Connectors** w Claude.
+2. Kliknij **+**, znajdź system i wybierz **Connect**.
+3. Zaloguj się do systemu i zatwierdź dostęp.
+4. W każdym czacie wybierasz, które connectory są aktywne, w menu **+ > Connectors**.
+
+Claude dostaje te same uprawnienia, które masz ty w danym systemie, ani mniej, ani więcej. Jeśli nie widzisz pliku z płacami, Claude też go nie zobaczy.
+
+## Na co uważać
+
+- **Zacznij od odczytu.** Pozwól Claude najpierw czytać i wyszukiwać, a dostęp do zapisu dodaj, gdy zaufasz wynikom.
+- **Ustaw zatwierdzanie.** W planach Team i Enterprise administrator może ustawić każdą akcję na _Always allow_, _Needs approval_ lub _Blocked_. Wszystko, co wysyła, płaci lub usuwa, ustaw na _Needs approval_.
+- **Nie za dużo naraz.** Włączaj tylko te connectory, których wymaga zadanie. To daje lepsze odpowiedzi i mniejsze ryzyko.
+
+Jeśli twojego systemu nie ma w katalogu, możesz dodać własny serwer MCP przez adres URL (custom connector) albo zlecić jego zbudowanie.
+
+## Co nowego?
+
+Latem pojawiła się piąta wersja standardu MCP, 2026-07-28. Upraszcza połączenia i poprawia logowanie, tak by pasowało do systemów, z których firmy już korzystają, jak Entra i Okta. Administrator może też zatwierdzić connector raz dla całej firmy. Dla użytkownika oznacza to więcej systemów do połączenia i mniej problemów z logowaniem.
+
+## Źródła
+
+- [What is the Model Context Protocol?](https://modelcontextprotocol.io/docs/getting-started/intro): definicja i porównanie do USB-C
+- [Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities): konfiguracja connectorów i uprawnień
+- [Bringing MCP 2026-07-28 to Claude](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude): najnowsza wersja standardu
+- [Connectors directory](https://claude.com/connectors): katalog gotowych connectorów

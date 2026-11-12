@@ -1,0 +1,52 @@
+---
+title: "Skills: naucz AI, jak pracuje twoja firma"
+description: "Przestań tłumaczyć to samo w kółko. Dzięki skills Claude raz poznaje sposób pracy twojej firmy i stosuje go za każdym razem."
+publishedAt: 2026-10-23
+translationKey: "agent-skills"
+draft: false
+---
+
+Jeśli ciągle tłumaczysz AI to samo, na przykład jak mają wyglądać oferty albo jak księgować wydatki, czas na _skills_ (umiejętności).
+
+## Czym jest skill?
+
+Skill to folder z instrukcjami, a czasem szablonami i skryptami, który Claude wczytuje, gdy pasuje do zadania. Claude najpierw czyta tylko krótki opis każdej umiejętności, a resztę ładuje dopiero wtedy, gdy jest potrzebna. Możesz więc mieć wiele umiejętności, które sobie nie przeszkadzają.
+
+Claude ma wbudowane umiejętności do Worda, Excela, PowerPointa i PDF. Możesz też tworzyć własne, a w planach Team i Enterprise administrator może udostępnić je wszystkim pracownikom.
+
+## Przykłady z firmy
+
+- **Oferty:** wasz szablon, cennik i ton, żeby każda oferta wyglądała tak samo.
+- **Księgowanie kosztów:** które konta pasują do których dostawców i co przekazać księgowej.
+- **Rekrutacja:** jak wygląda ogłoszenie i jakie pytania zadaje się na rozmowie.
+- **Raport miesięczny:** jakie liczby, w jakiej kolejności i w jakim formacie.
+
+## Jak stworzyć skill?
+
+Najprostszy skill to jeden plik Markdown, `SKILL.md`, z nazwą i opisem na górze:
+
+```markdown
+---
+name: oferta
+description: Tworzy oferty w formacie firmy. Używaj, gdy ktoś prosi o ofertę lub wycenę.
+---
+
+1. Zacznij od krótkiego podsumowania zlecenia.
+2. Użyj cennika z pliku cennik.md.
+3. Pisz przyjaźnie i jasno, bez żargonu.
+```
+
+Najważniejszy jest opis, bo to on mówi Claude, kiedy użyć danej umiejętności. Umieść plik w folderze, spakuj folder do ZIP i wgraj go w **Customize > Skills**. W ustawieniach musi być włączone wykonywanie kodu (code execution).
+
+Jeszcze prościej: poproś Claude, żeby stworzył skill za ciebie. Opisz sposób pracy, a Claude napisze plik i spakuje folder.
+
+## Wiadomość tygodnia: otwarty standard
+
+Wczoraj, 22 października, Anthropic przekazał standard Agent Skills fundacji Agentic AI Foundation, która działa w ramach Linux Foundation i jest też domem MCP. Ponad 70 platform już go obsługuje, w tym ChatGPT, Cursor, GitHub Copilot i VS Code. Skill napisany raz nie jest więc przywiązany do jednego dostawcy.
+
+## Źródła
+
+- [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills): czym są skills i w jakich planach są dostępne
+- [How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills): format pliku i sposób wgrywania
+- [Donating Agent Skills to the Agentic AI Foundation](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation): ogłoszenie o otwartym standardzie
+- [Agent Skills](https://agentskills.io): sam standard

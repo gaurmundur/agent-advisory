@@ -1,0 +1,79 @@
+---
+// Article list: "/blog/" for Icelandic, "/en/blog/" and so on. Only built for languages
+// that have at least one published article, so no language gets an empty page.
+import { getEntry } from "astro:content";
+
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import { type Locale, localeParam, localePath, locales } from "@/i18n/locales";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articlePath, getArticlesFor, getBlogLocales } from "@/lib/articles";
+
+export async function getStaticPaths() {
+  const paths = await Promise.all(
+    locales.map(async (locale) => {
+      const articles = await getArticlesFor(locale);
+      return articles.length > 0
+        ? [{ params: { locale: localeParam(locale) }, props: { locale, articles } }]
+        : [];
+    }),
+  );
+  return paths.flat();
+}
+
+interface Props {
+  locale: Locale;
+  articles: Awaited<ReturnType<typeof getArticlesFor>>;
+}
+
+const { locale, articles } = Astro.props;
+// Every language with articles has its own list; the others' switch links go to their home page.
+const blogLocales = await getBlogLocales();
+const alternates = blogLocales.map((other) => ({
+  locale: other,
+  href: localePath(other, "/blog/"),
+}));
+const languageLinks = Object.fromEntries(alternates.map(({ locale, href }) => [locale, href]));
+const entry = await getEntry("home", locale);
+if (!entry) throw new Error(`Missing src/content/home/${locale}.yaml`);
+const { meta, nav, articleNav } = entry.data;
+const formatDate = new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format;
+---
+
+<BaseLayout
+  locale={locale}
+  title={`${nav.blog} · ${meta.title}`}
+  description={meta.description}
+  alternates={alternates}
+>
+  <SiteHeader locale={locale} languageLabel={nav.languageLabel} languageLinks={languageLinks} />
+  <main class="mx-auto flex w-full max-w-[42em] flex-col gap-10">
+    <div class="flex flex-col gap-3">
+      <a
+        href={localePath(locale)}
+        class="self-start text-[15px] font-medium text-muted no-underline hover:text-heading"
+      >
+        ← {articleNav.home}
+      </a>
+      <h1 class="heading-2">{nav.blog}</h1>
+    </div>
+    <ul class="flex flex-col gap-8">
+      {articles.map((article) => (
+        <li class="flex flex-col gap-2">
+          <p class="eyebrow">
+            <time datetime={article.data.publishedAt.toISOString()}>
+              {formatDate(article.data.publishedAt)}
+            </time>
+          </p>
+          <h2 class="text-[22px] leading-tight font-extrabold">
+            <a href={articlePath(article)} class="text-heading">
+              {article.data.title}
+            </a>
+          </h2>
+          <p class="text-muted">{article.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  </main>
+  <SiteFooter />
+</BaseLayout>

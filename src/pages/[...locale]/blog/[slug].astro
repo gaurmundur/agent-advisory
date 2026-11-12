@@ -1,0 +1,36 @@
+---
+// One article page: "/blog/<slug>/" for Icelandic, "/en/blog/<slug>/" for English, and so on.
+// Articles live in src/content/articles/<locale>/<slug>.mdx. Drafts are only built in dev.
+import { render } from "astro:content";
+
+import Table from "@/components/article/Table.astro";
+import { type Locale, localeParam } from "@/i18n/locales";
+import ArticleLayout from "@/layouts/ArticleLayout.astro";
+import { type Article, articleLocale, articleSlug, getVisibleArticles } from "@/lib/articles";
+
+export async function getStaticPaths() {
+  const articles = await getVisibleArticles();
+  return articles.flatMap((article) => {
+    const locale = articleLocale(article);
+    if (!locale) return [];
+    return [
+      {
+        params: { locale: localeParam(locale), slug: articleSlug(article) },
+        props: { article, locale },
+      },
+    ];
+  });
+}
+
+interface Props {
+  article: Article;
+  locale: Locale;
+}
+
+const { article, locale } = Astro.props;
+const { Content } = await render(article);
+---
+
+<ArticleLayout locale={locale} entry={article}>
+  <Content components={{ table: Table }} />
+</ArticleLayout>

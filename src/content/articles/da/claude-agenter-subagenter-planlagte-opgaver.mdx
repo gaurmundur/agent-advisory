@@ -1,0 +1,51 @@
+---
+title: "Agenter, subagenter og planlagte opgaver i Claude"
+description: "Hvordan Claude arbejder som agent, hvornår det betaler sig at give en opgave til en subagent, og hvordan du får Claude til at arbejde automatisk på faste tidspunkter."
+publishedAt: 2026-10-12
+translationKey: "claude-agents-subagents-scheduled-tasks"
+draft: false
+---
+
+De fleste begynder med at bruge Claude som en chat: spørgsmål ind, svar ud. I Claude Code bliver Claude derimod en _agent_, der selv udfører arbejdet. Her er tre begreber, der er værd at kende.
+
+## 1. Agenten: en løkke, der gør arbejdet færdigt
+
+En agent får en opgave og arbejder sig igennem den i en løkke: den indsamler kontekst, handler og kontrollerer resultatet og gentager, indtil opgaven er løst. Det er værktøjerne, der gør den til en agent. Den kan læse filer, rette kode, køre kommandoer og søge på nettet, og du kan til enhver tid gribe ind og ændre retning.
+
+Tip: beskriv målet og konteksten, som hvis du gav opgaven til en kollega, i stedet for at opremse hvert skridt.
+
+## 2. Subagenter: uddelegering med en ren tavle
+
+En subagent er en specialiseret assistent, som hovedagenten giver en afgrænset opgave. Hver subagent arbejder i sit eget kontekstvindue med egne instruktioner, værktøjer og tilladelser og sender kun et resumé tilbage. Din hovedsamtale bliver altså ikke fyldt op med søgeresultater og mellemtrin.
+
+Claude Code har indbyggede subagenter, for eksempel **Explore**, der søger i kode uden at ændre noget. Du kan også lave dine egne som en Markdown-fil i `.claude/agents/` til ét projekt eller `~/.claude/agents/` til alle dine projekter:
+
+```markdown
+---
+name: korrekturlaeser
+description: Gennemgår kodeændringer og peger på fejl
+tools: Read, Glob, Grep
+---
+
+Du er korrekturlæser. Gennemgå ændringerne og giv klar, brugbar feedback.
+```
+
+Subagenter egner sig godt til søgning i en stor kodebase, kodegennemgang og opgaver, der kan køre parallelt.
+
+## 3. Planlagte opgaver: Claude arbejder, mens du laver noget andet
+
+Der er tre måder at få Claude til at arbejde på faste tidspunkter:
+
+- **`/loop`** gentager en instruktion, så længe sessionen er åben, for eksempel `/loop 5m tjek om udrulningen er færdig`. Gentagne opgaver udløber automatisk efter syv dage.
+- **Planlagte opgaver i Claude Desktop** kører på din computer, for eksempel dagligt eller ugentligt, med adgang til dine filer. Computeren skal være vågen og appen åben.
+- **Routines** kører i skyen, også når din computer er slukket, efter en tidsplan, ved et API-kald eller ved hændelser på GitHub. Du opretter dem på claude.ai/code/routines eller med `/schedule`.
+
+Tommelfingerregel: `/loop` til at holde øje med noget lige nu, Desktop når opgaven skal bruge dine filer, og routines når den skal køre af sig selv.
+
+## Kilder
+
+- [How Claude Code works](https://code.claude.com/docs/en/how-claude-code-works): agentens løkke og værktøjerne
+- [Subagents](https://code.claude.com/docs/en/sub-agents): subagenter og filformatet
+- [Run prompts on a schedule](https://code.claude.com/docs/en/scheduled-tasks): `/loop` og en sammenligning af mulighederne
+- [Desktop scheduled tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks): planlagte opgaver på din egen computer
+- [Routines](https://code.claude.com/docs/en/routines): automatisk arbejde i skyen

@@ -1,0 +1,51 @@
+---
+title: "Agenci, subagenci i zaplanowane zadania w Claude"
+description: "Jak Claude działa jako agent, kiedy warto przekazać pracę subagentowi i jak sprawić, by Claude wykonywał zadania automatycznie o ustalonej porze."
+publishedAt: 2026-10-12
+translationKey: "claude-agents-subagents-scheduled-tasks"
+draft: false
+---
+
+Większość osób zaczyna od używania Claude jak czatu: pytanie na wejściu, odpowiedź na wyjściu. W Claude Code Claude staje się jednak _agentem_, który sam wykonuje pracę. Oto trzy pojęcia, które warto znać.
+
+## 1. Agent: pętla, która doprowadza zadanie do końca
+
+Agent dostaje zadanie i realizuje je w pętli: zbiera kontekst, działa i sprawdza wynik, powtarzając to aż do ukończenia pracy. Agentem czynią go narzędzia. Potrafi czytać pliki, edytować kod, uruchamiać polecenia i szukać w internecie, a ty w każdej chwili możesz się wtrącić i zmienić kierunek.
+
+Wskazówka: opisz cel i kontekst tak, jakbyś zlecał zadanie współpracownikowi, zamiast wymieniać każdy krok.
+
+## 2. Subagenci: delegowanie z czystą kartą
+
+Subagent to wyspecjalizowany asystent, któremu główny agent przekazuje wyodrębnione zadanie. Każdy subagent działa we własnym oknie kontekstu, z własnymi instrukcjami, narzędziami i uprawnieniami, i zwraca tylko podsumowanie. Dzięki temu główna rozmowa nie zapełnia się wynikami wyszukiwania i krokami pośrednimi.
+
+Claude Code ma wbudowanych subagentów, na przykład **Explore**, który przeszukuje kod, niczego nie zmieniając. Możesz też tworzyć własnych jako plik Markdown w `.claude/agents/` dla jednego projektu lub w `~/.claude/agents/` dla wszystkich projektów:
+
+```markdown
+---
+name: recenzent
+description: Przegląda zmiany w kodzie i wskazuje błędy
+tools: Read, Glob, Grep
+---
+
+Jesteś recenzentem. Przejrzyj zmiany i przekaż jasne, praktyczne uwagi.
+```
+
+Subagenci sprawdzają się przy przeszukiwaniu dużej bazy kodu, przeglądach kodu i zadaniach, które mogą działać równolegle.
+
+## 3. Zaplanowane zadania: Claude pracuje, gdy ty robisz coś innego
+
+Są trzy sposoby, by Claude pracował według harmonogramu:
+
+- **`/loop`** powtarza polecenie, dopóki sesja jest otwarta, na przykład `/loop 5m sprawdź, czy wdrożenie się zakończyło`. Zadania cykliczne wygasają automatycznie po siedmiu dniach.
+- **Zaplanowane zadania w Claude Desktop** działają na twoim komputerze, na przykład codziennie lub co tydzień, z dostępem do twoich plików. Komputer musi być wybudzony, a aplikacja otwarta.
+- **Routines** działają w chmurze, także gdy komputer jest wyłączony: według harmonogramu, po wywołaniu API lub po zdarzeniach na GitHubie. Tworzysz je na claude.ai/code/routines albo poleceniem `/schedule`.
+
+Zasada praktyczna: `/loop`, by pilnować czegoś teraz, Desktop, gdy zadanie potrzebuje twoich plików, a routines, gdy ma działać samodzielnie.
+
+## Źródła
+
+- [How Claude Code works](https://code.claude.com/docs/en/how-claude-code-works): pętla agenta i narzędzia
+- [Subagents](https://code.claude.com/docs/en/sub-agents): subagenci i format pliku
+- [Run prompts on a schedule](https://code.claude.com/docs/en/scheduled-tasks): `/loop` i porównanie opcji planowania
+- [Desktop scheduled tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks): zaplanowane zadania na własnym komputerze
+- [Routines](https://code.claude.com/docs/en/routines): automatyczna praca w chmurze

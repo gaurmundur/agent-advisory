@@ -1,0 +1,143 @@
+/*
+ * Global styles: Tailwind and the design tokens. Fonts are set up in astro.config.ts.
+ * Components style themselves with Tailwind classes; only true site-wide rules live here.
+ */
+@import "tailwindcss";
+
+/* Raw colour values. Light theme by default, swapped for dark below. */
+:root {
+  --navy: #0e2a47;
+  --green: #1a7f55;
+  --green-hover: #146644;
+  --gold: #f4b740;
+  --mint-fixed: #e3f2ea;
+  --bg: #ffffff;
+  --surface: #f5f8f6;
+  --panel: #e3f2ea;
+  --ink: #0b1b2b;
+  --heading: #0e2a47;
+  --muted: #4a5a6a;
+  --line: #d5ded9;
+  --accent-text: #146644;
+  --node: #0e2a47;
+  --node-text: #ffffff;
+  --on-dark: #ffffff;
+  --on-dark-muted: #c9d6e0;
+  --switch-active-bg: var(--navy);
+  --switch-active-text: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #081a2c;
+    --surface: #0e2a47;
+    --panel: #12365a;
+    --ink: #e6eef2;
+    --heading: #ffffff;
+    --muted: #a9b8c4;
+    --line: #24445f;
+    --accent-text: #7dd6a8;
+    --node: #e3f2ea;
+    --node-text: #0e2a47;
+    --switch-active-bg: var(--mint-fixed);
+    --switch-active-text: var(--navy);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #081a2c;
+  --surface: #0e2a47;
+  --panel: #12365a;
+  --ink: #e6eef2;
+  --heading: #ffffff;
+  --muted: #a9b8c4;
+  --line: #24445f;
+  --accent-text: #7dd6a8;
+  --node: #e3f2ea;
+  --node-text: #0e2a47;
+  --switch-active-bg: var(--mint-fixed);
+  --switch-active-text: var(--navy);
+  color-scheme: dark;
+}
+
+/*
+ * Tailwind theme: exposes the tokens above as classes (bg-navy, text-muted, border-line ...).
+ * "inline" makes the classes follow the variables, so dark mode needs no dark: prefixes.
+ */
+@theme inline {
+  --color-navy: var(--navy);
+  --color-green: var(--green);
+  --color-green-hover: var(--green-hover);
+  --color-gold: var(--gold);
+  --color-mint: var(--mint-fixed);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent-text);
+  --color-node: var(--node);
+  --color-node-text: var(--node-text);
+  --color-on-dark: var(--on-dark);
+  --color-on-dark-muted: var(--on-dark-muted);
+  --color-switch-active-bg: var(--switch-active-bg);
+  --color-switch-active-text: var(--switch-active-text);
+  /* Colours used only on the dark code panel */
+  --color-code-comment: #8fa6bc;
+  --color-code-name: #7dd6a8;
+
+  /* Font variables come from the Astro Fonts API (astro.config.ts) */
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-jetbrains);
+}
+
+@theme {
+  /* The design has two breakpoints: phone (up to 480px) and tablet (up to 820px). */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 821px;
+}
+
+@layer base {
+  body {
+    @apply bg-bg px-4 font-sans text-base/[1.6] text-ink;
+  }
+
+  a {
+    @apply text-accent;
+  }
+
+  :focus-visible {
+    @apply rounded-sm outline-3 outline-offset-3 outline-green;
+  }
+}
+
+/* Text styles reused across sections. Use them as classes: class="eyebrow", class="heading-2". */
+@utility eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+@utility heading-2 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--heading);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+@utility heading-3 {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--heading);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}

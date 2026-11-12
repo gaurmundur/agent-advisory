@@ -1,0 +1,51 @@
+---
+title: "Agents, subagents and scheduled tasks in Claude"
+description: "How Claude works as an agent, when it pays to hand work to a subagent, and how to have Claude run work automatically on a schedule."
+publishedAt: 2026-10-12
+translationKey: "claude-agents-subagents-scheduled-tasks"
+draft: false
+---
+
+Most people start out using Claude like a chat app: question in, answer out. In Claude Code, though, Claude becomes an _agent_ that does the work itself. Here are three concepts worth knowing.
+
+## 1. The agent: a loop that gets the job done
+
+An agent takes a task and works through it in a loop: it gathers context, takes action and verifies the result, repeating until the job is done. Tools are what make it an agent. It can read files, edit code, run commands and search the web, and you can step in and change direction at any time.
+
+Tip: describe the goal and the context as if you were handing the task to a colleague, rather than listing every step.
+
+## 2. Subagents: delegation with a clean slate
+
+A subagent is a specialised assistant the main agent hands a well-defined piece of work. Each subagent runs in its own context window, with its own instructions, tools and permissions, and returns only a summary. Your main conversation doesn't fill up with search results and intermediate steps.
+
+Claude Code ships with built-in subagents, such as **Explore**, which searches code without changing anything. You can also create your own as a Markdown file in `.claude/agents/` for one project, or `~/.claude/agents/` for all your projects:
+
+```markdown
+---
+name: reviewer
+description: Reviews code changes and points out bugs
+tools: Read, Glob, Grep
+---
+
+You are a code reviewer. Go through the changes and give clear, actionable feedback.
+```
+
+Subagents work well for searching a large codebase, code review, and tasks that can run in parallel.
+
+## 3. Scheduled tasks: Claude works while you do something else
+
+There are three ways to have Claude work on a schedule:
+
+- **`/loop`** repeats a prompt while the session is open, for example `/loop 5m check whether the deploy finished`. Recurring tasks expire automatically after seven days.
+- **Scheduled tasks in Claude Desktop** run on your computer, for example daily or weekly, with access to your files. The computer has to be awake and the app open.
+- **Routines** run in the cloud, even when your computer is off, on a schedule, on an API call or on GitHub events. You create them at claude.ai/code/routines or with `/schedule`.
+
+Rule of thumb: `/loop` to keep an eye on something right now, Desktop when the task needs your files, and routines when it should run on its own.
+
+## References
+
+- [How Claude Code works](https://code.claude.com/docs/en/how-claude-code-works): the agentic loop and tools
+- [Subagents](https://code.claude.com/docs/en/sub-agents): subagents and the file format
+- [Run prompts on a schedule](https://code.claude.com/docs/en/scheduled-tasks): `/loop` and a comparison of scheduling options
+- [Desktop scheduled tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks): scheduled tasks on your own computer
+- [Routines](https://code.claude.com/docs/en/routines): automated work in the cloud

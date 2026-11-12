@@ -1,0 +1,69 @@
+# Tech page content (/pl/tekni/), locale: pl. The home page stays in plain language;
+# this page explains the technical side for visitors who want the details.
+meta:
+  title: "Technologia · Hjalti Unnar Ágústsson"
+  description: "Jak wdrażam AI: agenci i subagenci, wybór modelu, skills, połączenia (MCP) i prompty."
+eyebrow: "Dla osób technicznych"
+heading: "Co jest pod maską"
+intro: "Strona główna mówi o tym, co AI daje firmie. Tutaj opisuję, jak to jest zbudowane, dla tych, którzy chcą wiedzieć więcej."
+agents:
+  kicker: "// agenci"
+  heading: "Agenci i subagenci"
+  body: "Jedna rozmowa z AI nie wystarczy, gdy zadanie jest duże. Buduję agentów AI, którzy pracują bezpośrednio z Waszymi narzędziami i systemami. Przyjmują zadanie, dzielą je na części i przekazują każdą z nich subagentowi wyspecjalizowanemu właśnie w tym."
+  points:
+    - "Każdy subagent dostaje tylko ten kontekst i te narzędzia, których potrzebuje"
+    - "Główny agent zbiera wszystko i zwraca jeden wynik"
+    - "Widzisz, co zrobiła każda część, i możesz ją poprawić osobno"
+  tree:
+    comment: "# raport tygodniowy"
+    root: "główny agent"
+    steps:
+      - { name: "pobierz-dane", note: "czyta systemy" }
+      - { name: "analizuj", note: "znajduje zmiany" }
+      - { name: "napisz", note: "pierwsza wersja" }
+      - { name: "sprawdź", note: "kontroluje liczby i ton" }
+    result: "→ jeden raport, gotowy w poniedziałek"
+models:
+  kicker: "// modele i skills"
+  heading: "Właściwy model i właściwe skills"
+  body: "Modele różnią się możliwościami, szybkością i ceną. Większe modele najlepiej radzą sobie ze złożoną analizą, ale są wolniejsze i droższe. Mniejsze modele są szybkie i tanie i dobrze sprawdzają się w powtarzalnych zadaniach. Dobieram model do każdej części zadania i konfiguruję skills oraz połączenia, żeby AI pracowała według Waszych zasad."
+  matches:
+    - {
+        task: "Złożona analiza i decyzje",
+        kind: "Model",
+        fit: "Większy model, który dostaje czas na przemyślenie",
+      }
+    - { task: "Wiele drobnych, powtarzalnych zadań", kind: "Model", fit: "Szybki i tani model" }
+    - {
+        task: "Praca według Waszych zasad",
+        kind: "Skills",
+        fit: "Instrukcje, szablony i skrypty, po które AI sięga, gdy zadanie tego wymaga",
+      }
+    - {
+        task: "Dostęp do Waszych systemów",
+        kind: "Połączenia (MCP)",
+        fit: "Bezpośrednie połączenia z Waszymi danymi, z dostępem, który kontrolujecie",
+      }
+  caption: "Przykłady dopasowania zadań do konfiguracji."
+glossary:
+  eyebrow: "Słowniczek"
+  heading: "Pojęcia prostym językiem"
+  items:
+    - term: "Agent"
+      text: "AI, która dostaje cel i narzędzia i sama wykonuje wiele kroków, zamiast odpowiadać na jedno pytanie."
+    - term: "Subagent"
+      text: "Agent, który dostaje wydzieloną część większego zadania. Otrzymuje tylko potrzebny kontekst i raportuje do głównego agenta."
+    - term: "Model"
+      text: "Sama AI, na przykład GPT, Gemini czy Claude. Każdy występuje w większych i mniejszych wersjach w różnych cenach."
+    - term: "Skills"
+      text: "Instrukcje, szablony i skrypty o Waszym sposobie pracy, po które AI sięga, gdy zadanie tego wymaga."
+    - term: "Połączenia (MCP)"
+      text: "Model Context Protocol to otwarty standard, który pozwala AI komunikować się z innymi systemami, na przykład z księgowością, pocztą czy narzędziami do projektów."
+    - term: "Prompt"
+      text: "Tekst, który dostaje AI. Rola, kontekst i jasne ramy dają dużo lepsze odpowiedzi niż jedno krótkie zdanie."
+    - term: "Zadania zaplanowane"
+      text: "Zadania, które agent sam uruchamia o stałej porze, na przykład podsumowanie w każdy poniedziałek rano."
+more:
+  text: "Regularnie piszę o tym w artykułach, na przykład o kosztach, wyborze modelu i połączeniach."
+  articles: "Przeczytaj artykuły"
+  book: "Umów bezpłatną rozmowę"

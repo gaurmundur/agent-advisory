@@ -1,0 +1,43 @@
+---
+title: "MCP: hvernig gervigreindin tengist tólunum þínum"
+description: "Hvað MCP er á mannamáli, hvernig þú tengir Claude við kerfin sem þú notar nú þegar og hvað ber að varast."
+publishedAt: 2026-10-20
+translationKey: "mcp-connect-ai-to-your-tools"
+draft: false
+---
+
+Gervigreind sem sér bara það sem þú límir inn í spjallið nær stutt. Hún verður fyrst gagnleg í rekstri þegar hún getur lesið dagatalið, fundið skjalið í Drive og stofnað verkið í verkefnakerfinu. Það er það sem MCP gerir mögulegt.
+
+## Hvað er MCP?
+
+MCP (Model Context Protocol) er opinn staðall til að tengja gervigreindarforrit við önnur kerfi. Höfundarnir líkja því við USB-C: eitt tengi sem passar alls staðar, í stað sérsmíðaðrar snúru fyrir hvert tæki. Kerfi sem býður upp á MCP-þjón getur tengst Claude og öllum öðrum forritum sem styðja staðalinn.
+
+Í Claude heita þessar tengingar _connectors_. Í skránni eru mörg hundruð tilbúnar tengingar, til dæmis Google Drive, Gmail, Google Calendar, Microsoft 365, Slack, Notion, Asana, monday.com og HubSpot.
+
+## Hvernig tengirðu?
+
+1. Opnaðu **Customize > Connectors** í Claude.
+2. Smelltu á **+**, finndu kerfið og veldu **Connect**.
+3. Skráðu þig inn í kerfið og samþykktu aðganginn.
+4. Í hverju spjalli velurðu hvaða tengingar eru virkar undir **+ > Connectors**.
+
+Claude fær sömu réttindi og þú hefur í kerfinu, hvorki meira né minna. Ef þú sérð ekki launaskrána sér Claude hana ekki heldur.
+
+## Hvað ber að varast
+
+- **Byrjaðu á lestri.** Leyfðu Claude fyrst að lesa og leita, og bættu við skrifaðgangi þegar þú treystir niðurstöðunum.
+- **Stilltu samþykki.** Í Team og Enterprise getur stjórnandi stillt hverja aðgerð á _Always allow_, _Needs approval_ eða _Blocked_. Settu allt sem sendir, greiðir eða eyðir á _Needs approval_.
+- **Ekki of margar í einu.** Kveiktu bara á þeim tengingum sem verkið þarf. Það gefur betri svör og minni áhættu.
+
+Ef kerfið þitt er ekki í skránni er hægt að bæta við eigin MCP-þjóni með slóð (e. custom connector), eða láta smíða einn.
+
+## Hvað er nýtt?
+
+Í sumar kom fimmta útgáfa MCP-staðalsins, 2026-07-28. Hún einfaldar tengingarnar og bætir innskráningu, svo hún passar við kerfi sem fyrirtæki nota nú þegar eins og Entra og Okta. Stjórnandi getur líka heimilað tengingu einu sinni fyrir allt fyrirtækið. Fyrir notandann þýðir það fleiri kerfi sem tengjast og færri innskráningarvandamál.
+
+## Heimildir
+
+- [What is the Model Context Protocol?](https://modelcontextprotocol.io/docs/getting-started/intro): skilgreiningin og USB-C líkingin
+- [Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities): hvernig tengingar eru settar upp og heimildir stilltar
+- [Bringing MCP 2026-07-28 to Claude](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude): nýjasta útgáfa staðalsins
+- [Connectors directory](https://claude.com/connectors): skráin yfir tilbúnar tengingar

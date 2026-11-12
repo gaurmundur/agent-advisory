@@ -1,0 +1,57 @@
+// Site-wide facts that are the same in every language. Change them here, nowhere else.
+
+export const site = {
+  /** Production URL, no trailing slash. Change it when the real domain is ready. Used for canonical links, hreflang, sitemap and robots.txt. */
+  url: "https://hjaltiunnar.ams.scw.site",
+  name: "Hjalti Unnar Ágústsson",
+  shortName: "Hjalti Unnar",
+  initials: "HU",
+  city: "Reykjavík",
+  countryCode: "IS",
+  country: "Iceland",
+  email: "hjaltiunnar@gmail.com",
+  bookingUrl: "https://calendar.app.google/7uH8M9xerqFRaGh66",
+  jobTitle: "Software engineer and AI consultant",
+  /** Languages Hjalti works in (for structured data), not the languages the site is translated into. */
+  workingLanguages: ["is", "en", "da"],
+  /** Search keywords in all four languages. Google ignores this tag; the visible text is what ranks. */
+  keywords: [
+    "gervigreind",
+    "gervigreindarráðgjöf",
+    "ráðgjöf um gervigreind",
+    "innleiðing gervigreindar",
+    "gervigreindarerindrekar",
+    "gervigreind í rekstri",
+    "kennsla á gervigreind",
+    "gagnagreining",
+    "vefkerfi",
+    "hagræðing í rekstri",
+    "AI consulting Iceland",
+    "AI agents",
+    "AI implementation",
+    "data analysis",
+    "web systems",
+    "AI-rådgivning",
+    "kunstig intelligens",
+    "dataanalyse",
+    "doradztwo AI",
+    "sztuczna inteligencja",
+    "analiza danych",
+  ],
+  personKnowsAbout: [
+    "Artificial intelligence",
+    "AI agents",
+    "Prompt engineering",
+    "Data analysis",
+    "Web development",
+    "Business process improvement",
+  ],
+  serviceKnowsAbout: [
+    "Artificial intelligence",
+    "AI agents",
+    "AI consulting",
+    "Data analysis",
+    "Web systems",
+    "Business process improvement",
+  ],
+} as const;

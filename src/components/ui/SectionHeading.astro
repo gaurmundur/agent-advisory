@@ -1,0 +1,17 @@
+---
+// Small uppercase label + big heading (+ optional intro) at the top of a section.
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro?: string | undefined;
+  class?: string;
+}
+
+const { eyebrow, heading, intro, class: className } = Astro.props;
+---
+
+<div class:list={["mb-12 flex max-w-[40em] flex-col gap-3", className]}>
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 class="heading-2">{heading}</h2>
+  {intro && <p class="text-[18px] text-muted">{intro}</p>}
+</div>

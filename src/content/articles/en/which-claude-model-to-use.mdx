@@ -1,0 +1,47 @@
+---
+title: "Fable 5.2 is out: which model should you use for what?"
+description: "Anthropic released Claude Fable 5.2 yesterday. Here's a simple guide to which Claude model fits which job, and what it costs."
+publishedAt: 2026-11-10
+translationKey: "which-claude-model"
+draft: false
+---
+
+Yesterday, 9 November, Anthropic released Claude Fable 5.2, its most capable model yet. That makes four models to choose from, and it isn't obvious which one to pick. Here's a simple guide.
+
+## The four models
+
+| Model      | Best for                                                     | Price per million tokens (in / out) |
+| ---------- | ------------------------------------------------------------ | ----------------------------------- |
+| Haiku 5.5  | High volumes of simple work: classification, summaries, extraction | $0.10 / $0.50                 |
+| Sonnet 5.5 | Everyday work where speed matters                            | $2 / $10                            |
+| Opus 5.5   | Most tasks: analysis, longer projects and agents             | $4 / $20                            |
+| Fable 5.2  | The hardest work: deep analysis, finance, long automated tasks | $8 / $40                          |
+
+Anthropic's own advice: if you're unsure, start with Opus 5.5.
+
+## On a subscription, price matters less
+
+If you use Claude on Pro, Max or Team, you pay a fixed price and pick the model in the chat. According to Anthropic, Fable 5.2 is included on Pro and standard Team seats for up to half of your weekly usage. Use Opus or Sonnet for everyday work and save Fable for the big jobs.
+
+## In automation, price is everything
+
+When AI works automatically and you pay for usage, Haiku is 40 times cheaper than Opus per input token. Anthropic suggests two approaches:
+
+- **Start cheap:** try Haiku first and move up only if the results aren't good enough.
+- **Start strong:** begin with Opus and move to Fable if Opus can't handle the task.
+
+A common setup is a stronger model running the job as the main agent, handing the simple parts to subagents running on Haiku. You get quality where it counts and a low price on the rest.
+
+## What about Mythos 5.2?
+
+Mythos is the same model as Fable, but with fewer safeguards in cybersecurity and biology. It's only available to organisations verified by Anthropic, and doesn't matter for most businesses.
+
+## Rule of thumb
+
+Start with Opus. If the task is simple and repetitive, try Haiku. If Opus can't handle it, try Fable. And always test with your own data, not just examples.
+
+## References
+
+- [Introducing Claude Fable 5.2 and Claude Mythos 5.2](https://www.anthropic.com/claude-fable-and-mythos-5-2): the new model, pricing and availability
+- [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview): all models and prices
+- [Choosing a model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model): Anthropic's guidance on choosing a model

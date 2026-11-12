@@ -1,0 +1,20 @@
+---
+// Page not found. Cloudflare serves this for any unknown URL (see wrangler.jsonc).
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout locale="is" title="Síða fannst ekki · Page not found" description="404" noindex>
+  <SiteHeader locale="is" languageLabel="Tungumál / Language" />
+  <main class="flex flex-col items-start gap-6 py-12">
+    <p class="eyebrow">404</p>
+    <h1 class="heading-2">Þessi síða fannst ekki.</h1>
+    <p class="text-[18px] text-muted" lang="en">
+      This page could not be found.
+    </p>
+    <ButtonLink href="/">Forsíða / Home</ButtonLink>
+  </main>
+  <SiteFooter />
+</BaseLayout>

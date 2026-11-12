@@ -1,0 +1,43 @@
+---
+title: "MCP: sådan forbinder AI sig til dine værktøjer"
+description: "Hvad MCP er på almindeligt dansk, hvordan du forbinder Claude med de systemer, du allerede bruger, og hvad du skal være opmærksom på."
+publishedAt: 2026-10-20
+translationKey: "mcp-connect-ai-to-your-tools"
+draft: false
+---
+
+AI, der kun ser det, du indsætter i chatten, rækker ikke langt. Den bliver for alvor nyttig i en virksomhed, når den kan læse kalenderen, finde dokumentet i Drive og oprette opgaven i projektværktøjet. Det er det, MCP gør muligt.
+
+## Hvad er MCP?
+
+MCP (Model Context Protocol) er en åben standard til at forbinde AI-programmer med andre systemer. Skaberne sammenligner det med USB-C: ét stik, der passer overalt, i stedet for et særligt kabel til hver enhed. Et system, der tilbyder en MCP-server, kan forbindes til Claude og til alle andre programmer, der understøtter standarden.
+
+I Claude hedder forbindelserne _connectors_. Kataloget har flere hundrede færdige connectors, for eksempel Google Drive, Gmail, Google Calendar, Microsoft 365, Slack, Notion, Asana, monday.com og HubSpot.
+
+## Hvordan forbinder du?
+
+1. Åbn **Customize > Connectors** i Claude.
+2. Klik på **+**, find systemet og vælg **Connect**.
+3. Log ind i systemet og godkend adgangen.
+4. I hver chat vælger du, hvilke connectors der er aktive under **+ > Connectors**.
+
+Claude får de samme rettigheder, som du har i systemet, hverken mere eller mindre. Kan du ikke se lønfilen, kan Claude heller ikke.
+
+## Hvad skal du være opmærksom på?
+
+- **Start med læsning.** Lad Claude læse og søge først, og giv skriveadgang, når du stoler på resultaterne.
+- **Indstil godkendelser.** På Team og Enterprise kan en administrator sætte hver handling til _Always allow_, _Needs approval_ eller _Blocked_. Sæt alt, der sender, betaler eller sletter, til _Needs approval_.
+- **Ikke for mange ad gangen.** Slå kun de connectors til, opgaven kræver. Det giver bedre svar og mindre risiko.
+
+Er dit system ikke i kataloget, kan du tilføje din egen MCP-server med en URL (en custom connector) eller få bygget en.
+
+## Hvad er nyt?
+
+I sommer kom den femte version af MCP-standarden, 2026-07-28. Den forenkler forbindelserne og forbedrer login, så det passer til de systemer, virksomheder allerede bruger, som Entra og Okta. En administrator kan også godkende en connector én gang for hele virksomheden. For brugeren betyder det flere systemer, der kan forbindes, og færre login-problemer.
+
+## Kilder
+
+- [What is the Model Context Protocol?](https://modelcontextprotocol.io/docs/getting-started/intro): definitionen og USB-C-sammenligningen
+- [Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities): opsætning af connectors og rettigheder
+- [Bringing MCP 2026-07-28 to Claude](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude): den nyeste version af standarden
+- [Connectors directory](https://claude.com/connectors): kataloget over færdige connectors

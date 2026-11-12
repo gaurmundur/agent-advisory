@@ -1,0 +1,36 @@
+---
+// A link styled as a button, with a trailing arrow.
+//   primary: green, used in the hero
+//   gold:    yellow, used once in the dark contact box
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  variant?: "primary" | "gold";
+}
+
+const { variant = "primary", class: className, ...attrs } = Astro.props;
+const external = typeof attrs.href === "string" && attrs.href.startsWith("http");
+---
+
+<a
+  {...attrs}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener" : undefined}
+  class:list={[
+    "group inline-flex items-center gap-2.5 rounded-lg text-base no-underline",
+    variant === "primary" && "bg-green px-[22px] py-3.5 font-bold text-white hover:bg-green-hover",
+    variant === "gold" &&
+      "self-start bg-gold px-5 py-3.5 font-extrabold text-navy hover:brightness-105",
+    className,
+  ]}
+>
+  <slot />
+  <span
+    aria-hidden="true"
+    class:list={[
+      variant === "primary" && "transition-transform duration-200 group-hover:translate-x-1",
+    ]}
+  >
+    →
+  </span>
+</a>

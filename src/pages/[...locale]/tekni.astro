@@ -1,0 +1,100 @@
+---
+// Tech page: "/tekni/" (Icelandic), "/en/tekni/" and so on. The home page talks about what AI
+// does for a business; this page explains how it is built, for technical visitors.
+// Only built for languages that have src/content/tech/<locale>.yaml.
+import { getCollection, getEntry } from "astro:content";
+
+import AgentTree from "@/components/home/AgentTree.astro";
+import ModelMatchTable from "@/components/home/ModelMatchTable.astro";
+import ServiceRow from "@/components/home/ServiceRow.astro";
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import { site } from "@/config/site";
+import { isLocale, type Locale, localeParam, localePath } from "@/i18n/locales";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("tech");
+  return entries
+    .map((entry) => entry.id)
+    .filter(isLocale)
+    .map((locale) => ({ params: { locale: localeParam(locale) }, props: { locale } }));
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const tech = (await getEntry("tech", locale))?.data;
+const home = (await getEntry("home", locale))?.data;
+if (!tech || !home) throw new Error(`Missing tech or home content for ${locale}`);
+
+const techLocales = (await getCollection("tech")).map((entry) => entry.id).filter(isLocale);
+const alternates = techLocales.map((other) => ({
+  locale: other,
+  href: localePath(other, "/tekni/"),
+}));
+const languageLinks = Object.fromEntries(alternates.map(({ locale, href }) => [locale, href]));
+---
+
+<BaseLayout
+  locale={locale}
+  title={tech.meta.title}
+  description={tech.meta.description}
+  alternates={alternates}
+>
+  <SiteHeader
+    locale={locale}
+    languageLabel={home.nav.languageLabel}
+    languageLinks={languageLinks}
+  />
+  <main class="contents">
+    <section>
+      <a
+        href={localePath(locale)}
+        class="mb-6 inline-block text-[15px] font-medium text-muted no-underline hover:text-heading"
+      >
+        ← {home.articleNav.home}
+      </a>
+      <SectionHeading eyebrow={tech.eyebrow} heading={tech.heading} intro={tech.intro} />
+      <div class="flex flex-col gap-22">
+        <ServiceRow {...tech.agents}>
+          <AgentTree {...tech.agents.tree} />
+        </ServiceRow>
+        <ServiceRow {...tech.models} reverse>
+          <ModelMatchTable matches={tech.models.matches} caption={tech.models.caption} />
+        </ServiceRow>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-14">
+      <SectionHeading
+        eyebrow={tech.glossary.eyebrow}
+        heading={tech.glossary.heading}
+        class="mb-0"
+      />
+      <dl>
+        {tech.glossary.items.map((item) => (
+          <div class="border-b border-line py-5 first-of-type:border-t">
+            <dt class="text-[18px] font-bold text-heading">{item.term}</dt>
+            <dd class="mt-2 max-w-[36em]">{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="flex flex-col items-start gap-5 border-t border-line pt-8">
+      <p class="max-w-[36em] text-[18px]">{tech.more.text}</p>
+      <div class="flex flex-wrap items-center gap-6">
+        <ButtonLink href={site.bookingUrl}>{tech.more.book}</ButtonLink>
+        <a href={localePath(locale, "/blog/")} class="font-bold text-heading">
+          {tech.more.articles} →
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

@@ -1,0 +1,147 @@
+# Home page content, locale: pl. Keep keys identical across locales.
+meta:
+  title: "Hjalti Unnar Ágústsson · AI w firmie: szkolenia i wdrożenia"
+  description: "Uczę firmy korzystać z AI i wdrażam ją w codziennej działalności: księgowość, płace, zarządzanie projektami, rekrutacja i integracje systemów. Pierwsza rozmowa jest bezpłatna."
+  ogLocale: "pl_PL"
+  offerName: "Bezpłatna rozmowa wstępna, 30 min."
+nav:
+  services: "Usługi"
+  about: "O mnie"
+  contact: "Kontakt"
+  blog: "Artykuły"
+  tech: "Technologia"
+  languageLabel: "Tungumál / Language"
+articleNav:
+  label: "Nawigacja po artykułach"
+  home: "Strona główna"
+  allArticles: "Wszystkie artykuły"
+  previous: "Poprzedni artykuł"
+  next: "Następny artykuł"
+hero:
+  # *word* gets the highlight, a line break becomes <br>
+  title: "AI,\n*dobrze* wdrożone."
+  lead: "Uczę Ciebie i Twój zespół korzystać z AI i wdrażam ją w księgowości, płacach, zarządzaniu projektami i rekrutacji, niezależnie od tego, jakiego narzędzia używacie."
+  cta: "Umów bezpłatną rozmowę"
+diagram:
+  ariaLabel: "Automatyczny asystent dzieli zamknięcie miesiąca na trzy części, które zwracają jeden wynik"
+  task: "zadanie: „zamknij miesiąc”"
+  main: "Asystent"
+  sub1: "Faktury"
+  sub2: "Płace"
+  sub3: "Kontrola"
+  result: "Gotowe"
+services:
+  eyebrow: "Usługi"
+  heading: "Trzy sposoby, żeby AI oszczędzała Twój czas"
+  agents:
+    kicker: "// automatyzacja"
+    heading: "Zadania, które wykonują się same"
+    body: "W firmie wiele zadań powtarza się w kółko: sortowanie faktur, sprawdzanie ewidencji czasu pracy, podsumowanie stanu projektów czy przeglądanie aplikacji o pracę. Wdrażam automatycznych asystentów (agentów AI), którzy wykonują te zadania w Waszych systemach. Duże zadanie jest dzielone na części, a każda trafia do asystenta, który zna się właśnie na tym."
+    points:
+      - "Ty decydujesz, co asystent może widzieć i robić, a on pyta, zanim cokolwiek wyśle lub zaksięguje"
+      - "Dostajesz jedno podsumowanie, a nie dziesięć okien"
+      - "Widzisz, co zrobiła każda część, i możesz ją poprawić osobno"
+    tree:
+      comment: "# koniec miesiąca"
+      root: "asystent"
+      steps:
+        - { name: "faktury", note: "pobiera z poczty, sortuje" }
+        - { name: "bank", note: "uzgadnia transakcje" }
+        - { name: "płace", note: "sprawdza czas pracy" }
+        - { name: "kontrola", note: "oznacza, co się nie zgadza" }
+      result: "→ księgi i płace gotowe do akceptacji"
+  setup:
+    kicker: "// wdrożenie"
+    heading: "Połączone z systemami, których używacie"
+    body: "AI daje najwięcej, gdy pracuje na Waszych danych, a nie tylko w pustym oknie czatu. Wdrażam rozwiązanie, które pasuje, niezależnie od tego, czy używacie ChatGPT, Copilota, Gemini czy Claude’a, i łączę je z księgowością, systemem płacowym, zarządzaniem projektami i pocztą. Dobieram też wersję do każdego zadania, żebyście nie przepłacali za proste prace."
+    matches:
+      - {
+          task: "Księgowość",
+          kind: "Integracja",
+          fit: "Czyta faktury, sortuje je i uzgadnia z bankiem",
+        }
+      - {
+          task: "Płace",
+          kind: "Kontrola",
+          fit: "Sprawdza czas pracy i odstępstwa przed naliczeniem płac",
+        }
+      - {
+          task: "Zarządzanie projektami",
+          kind: "Podsumowanie",
+          fit: "Co tydzień wysyła stan projektów i kolejne kroki",
+        }
+      - {
+          task: "Rekrutacja",
+          kind: "Wasze zasady",
+          fit: "Czyta aplikacje i porównuje je z Waszymi wymaganiami",
+        }
+    caption: "Przykłady zadań, które AI może przejąć, gdy jest dobrze połączona."
+  training:
+    kicker: "// szkolenia"
+    heading: "Szkolenia dla Ciebie i zespołu"
+    body: "Większość osób korzysta tylko z ułamka możliwości AI. Uczę Was obsługi narzędzia, które już macie, na komputerze lub telefonie, i tego, jak prosić, żeby odpowiedź była przydatna. Ćwiczymy na Waszych własnych zadaniach."
+    points:
+      - "Warsztaty dla zespołów od 2 godzin, dla osób spoza branży IT"
+      - "Gotowe prompty do zadań, które wykonujecie najczęściej"
+    prompt:
+      beforeLabel: "Przed"
+      before: "Napisz e-mail do klienta."
+      afterLabel: "Po"
+      # **text** is highlighted
+      after: "Klient poskarżył się, że dostawa spóźniła się o tydzień. **Napisz krótką odpowiedź** po polsku. **Przeproś jeden raz**, zaproponuj nowy termin dostawy i zachowaj ciepły, ale profesjonalny ton. **Maksymalnie 120 słów.**"
+  also:
+    label: "Również:"
+    text: "Tworzę i ulepszam systemy webowe, analizuję dane tak, by wspierały decyzje, i szukam sposobów na uproszczenie i usprawnienie działalności firmy."
+process:
+  eyebrow: "Proces"
+  heading: "Jak pracujemy razem"
+  intro: "Czas i zakres zależą od pierwszej rozmowy i od projektu. Możliwy jest też stały pakiet."
+  steps:
+    - {
+        title: "Bezpłatna rozmowa",
+        text: "Sprawdzamy, co dziś zabiera najwięcej czasu, na przykład księgowość, płace czy rekrutacja, i gdzie AI może pomóc.",
+      }
+    - {
+        title: "Wybór zadań",
+        text: "Wybieramy jedno lub dwa zadania, które dadzą najwięcej, i od nich zaczynamy.",
+      }
+    - {
+        title: "Konfiguracja",
+        text: "Wdrażam AI, łączę ją z Waszymi systemami i testuję na prawdziwych danych.",
+      }
+    - {
+        title: "Przekazanie i szkolenie",
+        text: "Twój zespół przechodzi szkolenie i przejmuje system, który rozumie.",
+      }
+about:
+  eyebrow: "O mnie"
+  portraitAlt: "Czarno-białe zdjęcie Hjaltiego, uśmiechniętego, z założonymi rękami"
+  quote: "Jestem inżynierem oprogramowania i lubię tłumaczyć ludziom technologię."
+  bio: "Nazywam się Hjalti. Od ponad dziesięciu lat tworzę rozwiązania webowe i oprogramowanie, kierowałem zespołami programistów i uczyłem programowania osoby, które niekoniecznie wywodzą się z branży IT. Dziś pomagam firmom i osobom prywatnym wykorzystywać AI w codziennej działalności, dzięki rozwiązaniom, które ludzie rozumieją i którym ufają."
+  facts:
+    - { value: "10+", label: "lat w tworzeniu oprogramowania" }
+    - { value: "Zespoły", label: "kierowałem zespołami programistów" }
+    - { value: "2022", label: "uczę programowania od" }
+faq:
+  eyebrow: "Pytania"
+  heading: "Najczęstsze pytania"
+  items:
+    - question: "Czy trzeba znać się na technologii?"
+      answer: "Nie. Uczyłem osoby, które nigdy nie programowały, i dbam o to, żeby było jasne, co robi system i dlaczego."
+    - question: "Mamy już ChatGPT albo Copilota. Czy możesz pomóc?"
+      answer: "Tak. Pracuję z narzędziami, które już macie, i uczę, jak wyciągnąć z nich więcej. Jeśli inne narzędzie pasuje lepiej, powiem o tym, ale to nigdy nie jest warunek."
+    - question: "Ile kosztuje sama AI?"
+      answer: "Zwykle około 80–120 zł miesięcznie na użytkownika. Pomagam wybrać abonament, który pasuje, żebyście nie płacili za więcej, niż używacie."
+    - question: "A co z naszymi danymi?"
+      answer: "Zanim cokolwiek skonfigurujemy, ustalamy, które dane AI może widzieć, a ja ustawiam dostęp tak, żeby sięgała tylko po to, czego potrzebuje."
+    - question: "Czy to się sprawdzi w małej firmie?"
+      answer: "Tak. Największe korzyści często widać w małych zespołach, w których kilka osób zajmuje się wieloma zadaniami."
+contact:
+  heading: "Opowiedz mi o swoim projekcie"
+  body: "Napisz, co zabiera Ci najwięcej czasu, na przykład księgowość, płace czy raporty. Odpowiem i znajdziemy termin na rozmowę."
+  book: "Umów rozmowę"
+  bookNote: "Pierwsza rozmowa jest bezpłatna, 30 min."
+  or: "albo wyślij e-mail"
+  copy: "Kopiuj e-mail"
+  copied: "Skopiowano"
+  selected: "Zaznaczono, naciśnij Ctrl+C"

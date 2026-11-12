@@ -1,0 +1,69 @@
+# Tech page content (/tekni/), locale: is. The home page stays in plain language;
+# this page explains the technical side for visitors who want the details.
+meta:
+  title: "Tækni · Hjalti Unnar Ágústsson"
+  description: "Hvernig ég set upp gervigreind: erindrekar og undirerindrekar, val á líkani, færni, tengingar (MCP) og fyrirmæli."
+eyebrow: "Fyrir tæknifólk"
+heading: "Það sem er undir húddinu"
+intro: "Forsíðan segir hvað gervigreindin gerir fyrir reksturinn. Hér er hvernig hún er sett upp, fyrir þá sem vilja vita meira."
+agents:
+  kicker: "// erindrekar"
+  heading: "Erindrekar og undirerindrekar"
+  body: "Eitt spjall við gervigreind dugar skammt þegar verkið er stórt. Ég smíða gervigreindarerindreka (e. AI agents) sem vinna sjálfir með verkfærin og kerfin ykkar. Þeir taka við verkefni, skipta því niður og senda hvern hluta á undirerindreka (e. subagent) sem er sérhæfður í akkúrat því."
+  points:
+    - "Hver undirerindreki fær bara það samhengi og þau verkfæri sem hann þarf"
+    - "Aðalerindrekinn safnar saman og skilar einni niðurstöðu"
+    - "Þú sérð hvað hver hluti gerði og getur lagað hann sérstaklega"
+  tree:
+    comment: "# skýrsla vikunnar"
+    root: "aðalerindreki"
+    steps:
+      - { name: "sækja-gögn", note: "les kerfin" }
+      - { name: "greina", note: "finnur breytingar" }
+      - { name: "skrifa", note: "fyrstu drög" }
+      - { name: "yfirfara", note: "athugar tölur og tón" }
+    result: "→ ein skýrsla, tilbúin á mánudegi"
+models:
+  kicker: "// líkön og færni"
+  heading: "Rétt líkan og rétt færni"
+  body: "Líkönin eru ólík að getu, hraða og verði. Stærri líkön eru best í flókinni greiningu en eru hægari og dýrari. Minni líkön eru hraðvirk og ódýr og duga vel í endurtekin verk. Ég vel líkan fyrir hvern hluta verksins og set upp færni (e. skills) og tengingar svo gervigreindin vinni eftir ykkar verklagi."
+  matches:
+    - {
+        task: "Flókin greining og ákvarðanir",
+        kind: "Líkan",
+        fit: "Stærra líkan sem fær tíma til að hugsa",
+      }
+    - { task: "Mörg smá og endurtekin verk", kind: "Líkan", fit: "Hraðvirkt og ódýrt líkan" }
+    - {
+        task: "Vinna eftir ykkar verklagi",
+        kind: "Færni",
+        fit: "Leiðbeiningar, sniðmát og skriftur sem gervigreindin sækir þegar verkið kallar á þær",
+      }
+    - {
+        task: "Aðgangur að ykkar kerfum",
+        kind: "Tengingar (MCP)",
+        fit: "Beinar tengingar við gögnin ykkar, með aðgangi sem þið stjórnið",
+      }
+  caption: "Dæmi um hvernig verkefni og uppsetning eru pöruð saman."
+glossary:
+  eyebrow: "Orðasafn"
+  heading: "Hugtökin á mannamáli"
+  items:
+    - term: "Erindreki (e. agent)"
+      text: "Gervigreind sem fær markmið og verkfæri og vinnur sjálf í mörgum skrefum, í stað þess að svara einni spurningu."
+    - term: "Undirerindreki (e. subagent)"
+      text: "Erindreki sem fær afmarkaðan hluta af stærra verki. Hann fær bara það samhengi sem hann þarf og skilar niðurstöðu til aðalerindrekans."
+    - term: "Líkan (e. model)"
+      text: "Gervigreindin sjálf, til dæmis GPT, Gemini eða Claude. Hvert þeirra kemur í stærri og minni útgáfum sem kosta mismikið."
+    - term: "Færni (e. skills)"
+      text: "Leiðbeiningar, sniðmát og skriftur um ykkar verklag, sem gervigreindin sækir þegar verkið kallar á þær."
+    - term: "Tengingar (MCP)"
+      text: "Model Context Protocol er opinn staðall sem leyfir gervigreind að tala við önnur kerfi, til dæmis bókhald, tölvupóst eða verkefnakerfi."
+    - term: "Fyrirmæli (e. prompt)"
+      text: "Textinn sem gervigreindin fær. Hlutverk, samhengi og skýr rammi skila miklu betri svörum en ein stutt setning."
+    - term: "Tímasett verk (e. scheduled tasks)"
+      text: "Verk sem erindreki keyrir sjálfur á föstum tíma, til dæmis samantekt á hverjum mánudagsmorgni."
+more:
+  text: "Ég skrifa reglulega um þetta í greinunum, til dæmis um kostnað, val á líkani og tengingar."
+  articles: "Lesa greinarnar"
+  book: "Bókaðu frítt spjall"

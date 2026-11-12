@@ -1,0 +1,47 @@
+---
+// The HTML shell every page shares: <head>, fonts, global CSS and the page frame.
+import "@/styles/global.css";
+
+import { Font } from "astro:assets";
+
+import SeoHead, { type Alternate } from "@/components/layout/SeoHead.astro";
+import type { Locale } from "@/i18n/locales";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  /** The same page in other languages, for hreflang links. */
+  alternates?: Alternate[];
+  noindex?: boolean;
+  /** Article dates, for Open Graph. */
+  article?: { publishedAt: Date; updatedAt?: Date | undefined };
+}
+
+const { locale, title, description, alternates = [], noindex = false, article } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <Font cssVariable="--font-jakarta" preload />
+    <Font cssVariable="--font-jetbrains" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <SeoHead
+      locale={locale}
+      title={title}
+      description={description}
+      alternates={alternates}
+      noindex={noindex}
+      article={article}
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="mx-auto flex max-w-[1040px] flex-col gap-20 pt-8 pb-14 md:gap-28">
+      <slot />
+    </div>
+  </body>
+</html>

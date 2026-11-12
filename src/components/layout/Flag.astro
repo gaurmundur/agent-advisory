@@ -1,0 +1,49 @@
+---
+// Small inline SVG flag for the language switch. SVG rather than emoji, because Windows
+// shows flag emoji as two letters.
+import type { Locale } from "@/i18n/locales";
+
+interface Props {
+  locale: Locale;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+---
+
+<svg
+  class:list={["h-3.5 w-5 shrink-0 rounded-[2px] ring-1 ring-line", className]}
+  viewBox={{ is: "0 0 25 18", en: "0 0 60 30", da: "0 0 37 28", pl: "0 0 8 5" }[locale]}
+  preserveAspectRatio="xMidYMid slice"
+  aria-hidden="true"
+  focusable="false"
+>
+  {locale === "is" && (
+    <>
+      <rect width="25" height="18" fill="#02529c" />
+      <path d="M0 9h25M9 0v18" stroke="#fff" stroke-width="4" />
+      <path d="M0 9h25M9 0v18" stroke="#dc1e35" stroke-width="2" />
+    </>
+  )}
+  {locale === "en" && (
+    <>
+      <rect width="60" height="30" fill="#012169" />
+      <path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6" />
+      <path d="M0 0l60 30M60 0L0 30" stroke="#c8102e" stroke-width="2" />
+      <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10" />
+      <path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6" />
+    </>
+  )}
+  {locale === "da" && (
+    <>
+      <rect width="37" height="28" fill="#c8102e" />
+      <path d="M0 14h37M14 0v28" stroke="#fff" stroke-width="4" />
+    </>
+  )}
+  {locale === "pl" && (
+    <>
+      <rect width="8" height="5" fill="#fff" />
+      <rect y="2.5" width="8" height="2.5" fill="#dc143c" />
+    </>
+  )}
+</svg>

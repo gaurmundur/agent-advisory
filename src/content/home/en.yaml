@@ -1,0 +1,147 @@
+# Home page content, locale: en. Keep keys identical across locales.
+meta:
+  title: "Hjalti Unnar Ágústsson · AI for your business: training and setup"
+  description: "I teach businesses to use AI and set it up in day-to-day operations: accounting, payroll, project management, hiring and connecting systems. The first chat is free."
+  ogLocale: "en_GB"
+  offerName: "Free 30-minute intro call"
+nav:
+  services: "Services"
+  about: "About"
+  contact: "Contact"
+  blog: "Articles"
+  tech: "Tech"
+  languageLabel: "Tungumál / Language"
+articleNav:
+  label: "Article navigation"
+  home: "Home"
+  allArticles: "All articles"
+  previous: "Previous article"
+  next: "Next article"
+hero:
+  # *word* gets the highlight, a line break becomes <br>
+  title: "AI,\nset up *right*."
+  lead: "I teach you and your team to use AI and set it up for accounting, payroll, project management and hiring, whatever tool you use."
+  cta: "Book a free chat"
+diagram:
+  ariaLabel: "An automated assistant splits month-end work into three parts that return one result"
+  task: "task: “get month-end done”"
+  main: "Assistant"
+  sub1: "Invoices"
+  sub2: "Payroll"
+  sub3: "Review"
+  result: "Ready"
+services:
+  eyebrow: "Services"
+  heading: "Three ways to let AI save you time"
+  agents:
+    kicker: "// automation"
+    heading: "Work that runs itself"
+    body: "A lot of business admin is the same work over and over: sorting invoices, checking timesheets, summarising project status or reading job applications. I set up automated assistants (AI agents) that do this work inside your systems. A big job is split into parts, and each part goes to an assistant that knows exactly that."
+    points:
+      - "You decide what it can see and do, and it asks before anything is sent or booked"
+      - "You get one summary, not ten windows"
+      - "You can see what each part did and fix it on its own"
+    tree:
+      comment: "# month-end"
+      root: "assistant"
+      steps:
+        - { name: "invoices", note: "fetches from email, sorts" }
+        - { name: "bank", note: "matches transactions" }
+        - { name: "payroll", note: "checks timesheets" }
+        - { name: "review", note: "flags what doesn't add up" }
+      result: "→ books and payroll ready to approve"
+  setup:
+    kicker: "// setup"
+    heading: "Connected to the systems you use"
+    body: "AI is most useful when it works with your data, not just in an empty chat window. I set up the solution that fits, whether you use ChatGPT, Copilot, Gemini or Claude, and connect it to your accounting, payroll, project management and email. I also pick the right version for each task, so you don't overpay for simple work."
+    matches:
+      - {
+          task: "Accounting",
+          kind: "Connection",
+          fit: "Reads invoices, sorts them and matches them to the bank",
+        }
+      - {
+          task: "Payroll",
+          kind: "Review",
+          fit: "Checks timesheets and exceptions before the pay run",
+        }
+      - {
+          task: "Project management",
+          kind: "Summary",
+          fit: "Sends project status and next steps every week",
+        }
+      - {
+          task: "Hiring",
+          kind: "Your process",
+          fit: "Reads applications and compares them with your requirements",
+        }
+    caption: "Examples of work AI can take on once it is connected properly."
+  training:
+    kicker: "// teaching"
+    heading: "Training for you and your team"
+    body: "Most people use only a fraction of what AI can do. I teach you the tool you already have, on your computer or your phone, and how to ask so the answer is actually useful. We practise on your own work."
+    points:
+      - "Team workshops from 2 hours, for people who are not technical"
+      - "Ready-made prompts for the tasks you do most often"
+    prompt:
+      beforeLabel: "Before"
+      before: "Write an email to a customer."
+      afterLabel: "After"
+      # **text** is highlighted
+      after: "A customer complained that their delivery was a week late. **Write a short reply** in English. **Apologise once**, offer a new delivery date and keep the tone warm but professional. **120 words maximum.**"
+  also:
+    label: "Also:"
+    text: "I build and improve web systems, analyse data so it supports decisions, and find ways to simplify and streamline operations."
+process:
+  eyebrow: "Process"
+  heading: "How we work together"
+  intro: "Time and scope depend on our first conversation and the project. A fixed package is also an option."
+  steps:
+    - {
+        title: "Free chat",
+        text: "We look at what takes up your time today, such as accounting, payroll or hiring, and where AI can help.",
+      }
+    - {
+        title: "Choosing tasks",
+        text: "We pick one or two tasks with the biggest payoff and start there.",
+      }
+    - {
+        title: "Setup",
+        text: "I set up the AI, connect it to your systems and test it on real data.",
+      }
+    - {
+        title: "Handover and training",
+        text: "You and your team get trained and take over a system you understand.",
+      }
+about:
+  eyebrow: "About"
+  portraitAlt: "Black-and-white portrait of Hjalti smiling with his arms crossed"
+  quote: "I’m a software engineer who enjoys explaining technology to people."
+  bio: "I’m Hjalti. I have built web and software products for more than ten years, led development teams and taught programming to people who don’t necessarily come from tech. Today I help companies and individuals put AI to work in day-to-day operations, with solutions people understand and trust."
+  facts:
+    - { value: "10+", label: "years in software development" }
+    - { value: "Teams", label: "development teams led" }
+    - { value: "2022", label: "teaching programming since" }
+faq:
+  eyebrow: "Questions"
+  heading: "Common questions"
+  items:
+    - question: "Do I need to know anything technical?"
+      answer: "No. I have taught people who have never written code, and I make sure you understand what the system does and why."
+    - question: "We already have ChatGPT or Copilot. Can you help?"
+      answer: "Yes. I work with the tools you already have and teach you to get more out of them. If another tool would suit you better I’ll tell you, but it’s never a requirement."
+    - question: "What does the AI itself cost?"
+      answer: "Usually 20 to 30 US dollars per user per month. I help you pick a plan that fits, so you don’t pay for more than you use."
+    - question: "What about our data?"
+      answer: "We go through which data the AI is allowed to see before anything is set up, and I configure access so it only reaches what it needs."
+    - question: "Is this a fit for small businesses?"
+      answer: "Yes. The biggest gains are often in small teams where a few people handle many tasks."
+contact:
+  heading: "Tell me about your project"
+  body: "Tell me what takes up most of your time, such as accounting, payroll or reports. I’ll reply and we’ll find a time to talk."
+  book: "Book a chat"
+  bookNote: "The first chat is free, 30 min."
+  or: "or send an email"
+  copy: "Copy email"
+  copied: "Copied"
+  selected: "Selected, press Ctrl+C"

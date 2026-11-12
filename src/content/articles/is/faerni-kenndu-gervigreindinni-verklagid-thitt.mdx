@@ -1,0 +1,52 @@
+---
+title: "Færni: kenndu gervigreindinni verklagið þitt"
+description: "Hættu að útskýra sama hlutinn aftur og aftur. Með færni (e. skills) lærir Claude verklag fyrirtækisins einu sinni og notar það í hvert skipti."
+publishedAt: 2026-10-23
+translationKey: "agent-skills"
+draft: false
+---
+
+Ef þú útskýrir sama hlutinn fyrir gervigreindinni aftur og aftur, til dæmis hvernig tilboð eiga að líta út eða hvernig á að flokka kostnað, þá er kominn tími á _færni_ (e. skills).
+
+## Hvað er færni?
+
+Færni er mappa með leiðbeiningum, og stundum sniðmátum og skriftum, sem Claude sækir þegar hún á við verkið. Claude les fyrst aðeins stutta lýsingu af hverri færni og hleður restinni inn bara þegar þarf. Þú getur því átt margar færnir án þess að þær flækist fyrir.
+
+Claude kemur með innbyggða færni fyrir Word, Excel, PowerPoint og PDF. Svo geturðu búið til þína eigin, og í Team og Enterprise getur stjórnandi dreift færni til allra starfsmanna.
+
+## Dæmi úr rekstri
+
+- **Tilboð:** sniðmát, verðskrá og tónn fyrirtækisins, svo hvert tilboð lítur eins út.
+- **Kostnaðarflokkun:** hvaða lyklar eiga við hvaða birgja, og hvað á að senda bókaranum.
+- **Ráðningar:** uppsetning auglýsinga og spurningar sem lagðar eru fyrir í viðtali.
+- **Mánaðarskýrsla:** hvaða tölur, í hvaða röð og á hvaða sniði.
+
+## Hvernig býrðu hana til?
+
+Einfaldasta færnin er ein Markdown-skrá, `SKILL.md`, með nafni og lýsingu efst:
+
+```markdown
+---
+name: tilbod
+description: Býr til tilboð á sniði fyrirtækisins. Notaðu þegar beðið er um tilboð eða verðáætlun.
+---
+
+1. Byrjaðu á stuttri samantekt á verkinu.
+2. Notaðu verðskrána í verdskra.md.
+3. Hafðu tóninn vinalegan og skýran, án tæknimáls.
+```
+
+Lýsingin skiptir mestu máli, því það er hún sem segir Claude hvenær færnin á við. Þú setur skrána í möppu, þjappar möppunni í ZIP og hleður henni upp undir **Customize > Skills**. Kveikja þarf á keyrslu kóða (e. code execution) í stillingum.
+
+Enn einfaldara: biddu Claude um að búa færnina til fyrir þig. Lýstu verklaginu og Claude skrifar skrána og gengur frá möppunni.
+
+## Fréttir vikunnar: opinn staðall
+
+Í gær, 22. október, afhenti Anthropic Agent Skills staðalinn til Agentic AI Foundation, sem heyrir undir Linux Foundation og hýsir líka MCP. Yfir 70 kerfi styðja staðalinn nú þegar, þar á meðal ChatGPT, Cursor, GitHub Copilot og VS Code. Færni sem þú skrifar einu sinni er því ekki bundin við eitt fyrirtæki.
+
+## Heimildir
+
+- [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills): hvað færni er og í hvaða áskriftum
+- [How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills): skráarsniðið og hvernig færni er hlaðið upp
+- [Donating Agent Skills to the Agentic AI Foundation](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation): fréttin um opna staðalinn
+- [Agent Skills](https://agentskills.io): staðallinn sjálfur

@@ -1,0 +1,53 @@
+---
+// Dark box at the bottom: booking link (the main action) and the email address with a copy button.
+import type { CollectionEntry } from "astro:content";
+
+import CopyEmailButton from "@/components/home/CopyEmailButton.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import { site } from "@/config/site";
+
+interface Props {
+  id: string;
+  contact: CollectionEntry<"home">["data"]["contact"];
+}
+
+const { id, contact } = Astro.props;
+---
+
+<section
+  id={id}
+  class="relative grid grid-cols-1 items-end gap-x-12 gap-y-8 overflow-hidden rounded-3xl bg-navy px-6 py-9 text-on-dark md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:p-14"
+>
+  <!-- Decorative squares in the top-right corner -->
+  <div
+    aria-hidden="true"
+    class="absolute top-[30px] right-14 z-1 size-[26px] rotate-[14deg] rounded-md bg-gold md:top-12 md:right-24 md:size-9"
+  ></div>
+  <div
+    aria-hidden="true"
+    class="absolute -top-10 -right-10 size-[110px] rotate-[14deg] rounded-2xl bg-green md:size-40"
+  ></div>
+
+  <div class="relative z-2">
+    <h2 class="text-[clamp(32px,5vw,52px)] leading-[1.15] font-extrabold tracking-[-0.02em] text-balance text-white">
+      {contact.heading}
+    </h2>
+    <p class="mt-4 max-w-[28em] text-[18px] text-on-dark-muted">{contact.body}</p>
+  </div>
+
+  <div class="relative z-2 flex min-w-0 flex-col gap-3">
+    <ButtonLink href={site.bookingUrl} variant="gold">
+      {contact.book}
+    </ButtonLink>
+    <p class="mt-4 text-[18px] text-on-dark-muted">{contact.bookNote}</p>
+    <span class="mt-2 text-[20px] font-bold tracking-[0.08em] text-on-dark-muted uppercase">
+      {contact.or}
+    </span>
+    <CopyEmailButton
+      email={site.email}
+      label={contact.copy}
+      copiedLabel={contact.copied}
+      selectedLabel={contact.selected}
+    />
+  </div>
+</section>
