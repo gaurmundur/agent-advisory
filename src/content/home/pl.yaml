@@ -1,8 +1,8 @@
 # Home page content, locale: pl. Keep keys identical across locales.
 meta:
   title: "Hjalti Unnar Ágústsson · AI w firmie: szkolenia i wdrożenia"
-  description: "Uczę firmy korzystać z AI i wdrażam ją w codziennej działalności: księgowość, płace, zarządzanie projektami, rekrutacja i integracje systemów. Pierwsza rozmowa jest bezpłatna."
-  blogDescription: "Artykuły o AI w firmie prostym językiem: ile kosztuje, od czego zacząć i jak pomaga w księgowości, płacach i rekrutacji."
+  description: "Uczę firmy korzystać z AI i wdrażam ją w codziennej działalności: finanse, dane, integracje systemów, zarządzanie projektami i rekrutacja. Pierwsza rozmowa jest bezpłatna."
+  blogDescription: "Artykuły o AI w firmie prostym językiem: ile kosztuje, od czego zacząć i jak pomaga w codziennej pracy."
   ogLocale: "pl_PL"
   offerName: "Bezpłatna rozmowa wstępna, 30 min."
 nav:
@@ -21,23 +21,23 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "AI,\n*dobrze* wdrożone."
-  lead: "Uczę Ciebie i Twój zespół korzystać z AI i wdrażam ją w księgowości, płacach, zarządzaniu projektami i rekrutacji, niezależnie od tego, jakiego narzędzia używacie."
+  lead: "Uczę Ciebie i Twój zespół korzystać z AI i wdrażam ją tam, gdzie ucieka czas: w finansach, danych i integracji systemów, niezależnie od tego, jakiego narzędzia używacie."
   cta: "Umów bezpłatną rozmowę"
 diagram:
-  ariaLabel: "Automatyczny asystent dzieli zamknięcie miesiąca na trzy części, które zwracają jeden wynik"
-  task: "zadanie: „zamknij miesiąc”"
+  ariaLabel: "Automatyczny asystent dzieli podsumowanie miesiąca na trzy części, które zwracają jeden przegląd"
+  task: "zadanie: „podsumuj miesiąc”"
   main: "Asystent"
-  sub1: "Faktury"
-  sub2: "Płace"
+  sub1: "Finanse"
+  sub2: "Dane"
   sub3: "Kontrola"
-  result: "Gotowe"
+  result: "Przegląd"
 services:
   eyebrow: "Usługi"
   heading: "Trzy sposoby, żeby AI oszczędzała Twój czas"
   agents:
     kicker: "// automatyzacja"
     heading: "Zadania, które wykonują się same"
-    body: "W firmie wiele zadań powtarza się w kółko: sortowanie faktur, sprawdzanie ewidencji czasu pracy, podsumowanie stanu projektów czy przeglądanie aplikacji o pracę. Wdrażam automatycznych asystentów (agentów AI), którzy wykonują te zadania w Waszych systemach. Duże zadanie jest dzielone na części, a każda trafia do asystenta, który zna się właśnie na tym."
+    body: "W firmie wiele zadań powtarza się w kółko: pilnowanie finansów, zbieranie danych z wielu systemów, kontrola postępu projektów czy przeglądanie aplikacji o pracę. Wdrażam automatycznych asystentów (agentów AI), którzy wykonują te zadania w Waszych systemach. Duże zadanie jest dzielone na części, a każda trafia do asystenta, który zna się właśnie na tym."
     points:
       - "Ty decydujesz, co asystent może widzieć i robić, a on pyta, zanim cokolwiek wyśle lub zaksięguje"
       - "Dostajesz jedno podsumowanie, a nie dziesięć okien"
@@ -50,14 +50,14 @@ services:
         - { name: "bank", note: "uzgadnia transakcje" }
         - { name: "płace", note: "sprawdza czas pracy" }
         - { name: "kontrola", note: "oznacza, co się nie zgadza" }
-      result: "→ księgi i płace gotowe do akceptacji"
+      result: "→ miesiąc gotowy do akceptacji"
   setup:
     kicker: "// wdrożenie"
     heading: "Połączone z systemami, których używacie"
-    body: "AI daje najwięcej, gdy pracuje na Waszych danych, a nie tylko w pustym oknie czatu. Wdrażam rozwiązanie, które pasuje, niezależnie od tego, czy używacie ChatGPT, Copilota, Gemini czy Claude’a, i łączę je z księgowością, systemem płacowym, zarządzaniem projektami i pocztą. Dobieram też wersję do każdego zadania, żebyście nie przepłacali za proste prace."
+    body: "AI daje najwięcej, gdy pracuje na Waszych danych, a nie tylko w pustym oknie czatu. Wdrażam rozwiązanie, które pasuje, niezależnie od tego, czy używacie ChatGPT, Copilota, Gemini czy Claude’a, i łączę je z systemami, których już używacie, na przykład z finansami, zarządzaniem projektami i pocztą. Dobieram też wersję do każdego zadania, żebyście nie przepłacali za proste prace."
     matches:
       - {
-          task: "Księgowość",
+          task: "Finanse",
           kind: "Integracja",
           fit: "Czyta faktury, sortuje je i uzgadnia z bankiem",
         }
@@ -100,7 +100,7 @@ process:
   steps:
     - {
         title: "Bezpłatna rozmowa",
-        text: "Sprawdzamy, co dziś zabiera najwięcej czasu, na przykład księgowość, płace czy rekrutacja, i gdzie AI może pomóc.",
+        text: "Sprawdzamy, co dziś zabiera najwięcej czasu, na przykład finanse, dane czy rekrutacja, i gdzie AI może pomóc.",
       }
     - {
         title: "Wybór zadań",
@@ -139,7 +139,7 @@ faq:
       answer: "Tak. Największe korzyści często widać w małych zespołach, w których kilka osób zajmuje się wieloma zadaniami."
 contact:
   heading: "Opowiedz mi o swoim projekcie"
-  body: "Napisz, co zabiera Ci najwięcej czasu, na przykład księgowość, płace czy raporty. Odpowiem i znajdziemy termin na rozmowę."
+  body: "Napisz, co zabiera Ci najwięcej czasu, na przykład finanse, dane czy raporty. Odpowiem i znajdziemy termin na rozmowę."
   book: "Umów rozmowę"
   bookNote: "Pierwsza rozmowa jest bezpłatna, 30 min."
   or: "albo wyślij e-mail"
