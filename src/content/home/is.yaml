@@ -2,6 +2,7 @@
 meta:
   title: "Hjalti Unnar Ágústsson · Gervigreind í rekstri: kennsla og uppsetning"
   description: "Ég kenni fyrirtækjum að nota gervigreind og set hana upp í daglegum rekstri: fjármál, gögn, samtengingar kerfa, verkefnastjórnun og ráðningar. Fyrsta spjall er ókeypis."
+  blogDescription: "Greinar um gervigreind í rekstri á mannamáli: hvað hún kostar, hvar á að byrja og hvernig hún nýtist í daglegum störfum."
   ogLocale: "is_IS"
   offerName: "Frítt 30 mín. kynningarspjall"
 nav:
@@ -112,7 +113,7 @@ about:
   bio: "Ég heiti Hjalti. Ég hef smíðað vef- og hugbúnaðarlausnir í meira en tíu ár, leitt þróunarteymi og kennt forritun fólki sem kemur ekki endilega úr tæknigeiranum. Í dag hjálpa ég fyrirtækjum og einstaklingum að koma gervigreind í gagnið í daglegum rekstri, með lausnum sem fólk skilur og treystir."
   facts:
     - { value: "10+", label: "ár í hugbúnaðarþróun" }
-    - { value: "Teymi", label: "leitt þróunarteymi" }
+    - { value: "3", label: "tungumál sem ég vinn á" }
     - { value: "2022", label: "kenni forritun síðan" }
 faq:
   eyebrow: "Spurningar"

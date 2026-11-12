@@ -5,13 +5,15 @@ interface Props {
   heading: string;
   intro?: string | undefined;
   class?: string;
+  /** "h1" when the heading is the page title (tech page), otherwise "h2". */
+  as?: "h1" | "h2";
 }
 
-const { eyebrow, heading, intro, class: className } = Astro.props;
+const { eyebrow, heading, intro, class: className, as: Heading = "h2" } = Astro.props;
 ---
 
 <div class:list={["mb-12 flex max-w-[40em] flex-col gap-3", className]}>
   <p class="eyebrow">{eyebrow}</p>
-  <h2 class="heading-2">{heading}</h2>
+  <Heading class="heading-2">{heading}</Heading>
   {intro && <p class="text-[18px] text-muted">{intro}</p>}
 </div>

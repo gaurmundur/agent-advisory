@@ -1,0 +1,6 @@
+# Permanent redirects for Cloudflare static assets.
+# Docs: https://developers.cloudflare.com/workers/static-assets/redirects/
+
+# The article was renamed when "fulltrúi" became "erindreki" (November 2026).
+/blog/fulltruar-undirfulltruar-og-timasett-verk/ /blog/erindrekar-undirerindrekar-og-timasett-verk/ 301
+/blog/fulltruar-undirfulltruar-og-timasett-verk /blog/erindrekar-undirerindrekar-og-timasett-verk/ 301

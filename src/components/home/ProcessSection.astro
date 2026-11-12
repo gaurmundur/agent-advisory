@@ -16,7 +16,12 @@ const { process } = Astro.props;
   <ol class="relative grid grid-cols-1 gap-x-6 gap-y-12 pt-7 before:hidden sm:grid-cols-2 md:grid-cols-4 md:gap-y-6 md:before:absolute md:before:inset-x-0 md:before:top-[7px] md:before:block md:before:h-0.5 md:before:bg-line">
     {process.steps.map((step, index) => (
       <li class="relative flex min-w-0 flex-col gap-2 before:absolute before:-top-7 before:left-0 before:box-content before:size-4 before:rounded-full before:border-3 before:border-green before:bg-bg last:before:border-gold last:before:bg-gold">
-        <span class="font-mono text-[13px] text-muted">{String(index + 1).padStart(2, "0")}</span>
+        {/* The number is CSS-generated so it is not read twice next to the list's own numbering. */}
+        <span
+          class="font-mono text-[13px] text-muted before:content-[attr(data-step)]"
+          data-step={String(index + 1).padStart(2, "0")}
+          aria-hidden="true"
+        ></span>
         <h4 class="text-[18px] font-bold text-heading">{step.title}</h4>
         <p class="text-[15px] text-muted">{step.text}</p>
       </li>

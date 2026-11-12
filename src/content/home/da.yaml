@@ -2,6 +2,7 @@
 meta:
   title: "Hjalti Unnar Ágústsson · AI i virksomheden: undervisning og opsætning"
   description: "Jeg lærer virksomheder at bruge AI og sætter det op i den daglige drift: økonomi, data, integrationer mellem systemer, projektstyring og rekruttering. Første snak er gratis."
+  blogDescription: "Artikler om AI i virksomheden i et klart sprog: hvad det koster, hvor man starter, og hvordan det hjælper i det daglige arbejde."
   ogLocale: "da_DK"
   offerName: "Gratis introsnak, 30 min."
 nav:
@@ -116,7 +117,7 @@ about:
   bio: "Jeg hedder Hjalti. Jeg har bygget web- og softwareløsninger i mere end ti år, ledet udviklingsteams og undervist i programmering for folk, der ikke nødvendigvis kommer fra tech. I dag hjælper jeg virksomheder og enkeltpersoner med at tage AI i brug i den daglige drift, med løsninger folk forstår og stoler på."
   facts:
     - { value: "10+", label: "år med softwareudvikling" }
-    - { value: "Teams", label: "har ledet udviklingsteams" }
+    - { value: "3", label: "sprog jeg arbejder på" }
     - { value: "2022", label: "underviser i programmering siden" }
 faq:
   eyebrow: "Spørgsmål"

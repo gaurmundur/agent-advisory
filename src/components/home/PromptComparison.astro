@@ -33,11 +33,7 @@ const label =
       {afterLabel}
     </div>
     {splitMarked(after, "**").map((part) =>
-      part.marked ? (
-        <mark class="bg-transparent font-medium text-accent">{part.text}</mark>
-      ) : (
-        part.text
-      ),
+      part.marked ? <span class="font-medium text-accent">{part.text}</span> : part.text,
     )}
   </div>
 </div>

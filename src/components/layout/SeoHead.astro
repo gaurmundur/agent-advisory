@@ -26,7 +26,7 @@ const xDefault = alternates.find((alternate) => alternate.locale === defaultLoca
 <meta name="description" content={description} />
 <meta name="keywords" content={site.keywords.join(", ")} />
 {noindex && <meta name="robots" content="noindex" />}
-<link rel="canonical" href={canonical} />
+{!noindex && <link rel="canonical" href={canonical} />}
 {alternates.map((alternate) => (
   <link rel="alternate" hreflang={alternate.locale} href={absolute(alternate.href)} />
 ))}
@@ -38,7 +38,7 @@ const xDefault = alternates.find((alternate) => alternate.locale === defaultLoca
 )}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={canonical} />
+{!noindex && <meta property="og:url" content={canonical} />}
 <meta property="og:locale" content={localeInfo[locale].ogLocale} />
 {alternates
   .filter((alternate) => alternate.locale !== locale)

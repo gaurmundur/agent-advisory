@@ -59,7 +59,7 @@ const languageLinks = Object.fromEntries(alternates.map(({ locale, href }) => [l
       >
         ← {home.articleNav.home}
       </a>
-      <SectionHeading eyebrow={tech.eyebrow} heading={tech.heading} intro={tech.intro} />
+      <SectionHeading as="h1" eyebrow={tech.eyebrow} heading={tech.heading} intro={tech.intro} />
       <div class="flex flex-col gap-22">
         <ServiceRow {...tech.agents}>
           <AgentTree {...tech.agents.tree} />

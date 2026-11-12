@@ -2,6 +2,7 @@
 meta:
   title: "Hjalti Unnar Ágústsson · AI for your business: training and setup"
   description: "I teach businesses to use AI and set it up in day-to-day operations: finance, data, connecting systems, project management and hiring. The first chat is free."
+  blogDescription: "Plain-language articles on AI in business: what it costs, where to start and how it helps with day-to-day work."
   ogLocale: "en_GB"
   offerName: "Free 30-minute intro call"
 nav:
@@ -120,7 +121,7 @@ about:
   bio: "I’m Hjalti. I have built web and software products for more than ten years, led development teams and taught programming to people who don’t necessarily come from tech. Today I help companies and individuals put AI to work in day-to-day operations, with solutions people understand and trust."
   facts:
     - { value: "10+", label: "years in software development" }
-    - { value: "Teams", label: "development teams led" }
+    - { value: "3", label: "languages I work in" }
     - { value: "2022", label: "teaching programming since" }
 faq:
   eyebrow: "Questions"
