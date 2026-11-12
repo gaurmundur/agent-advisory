@@ -1,0 +1,69 @@
+# Tech page content (/en/tekni/), locale: en. The home page stays in plain language;
+# this page explains the technical side for visitors who want the details.
+meta:
+  title: "Tech · Hjalti Unnar Ágústsson"
+  description: "How I set up AI: agents and subagents, choosing a model, skills, connections (MCP) and prompts."
+eyebrow: "For technical readers"
+heading: "What’s under the hood"
+intro: "The home page is about what AI does for your business. This page is about how it is built, for those who want to know more."
+agents:
+  kicker: "// agents"
+  heading: "Agents and subagents"
+  body: "A single chat with an AI only goes so far when the job is big. I build AI agents that work directly with your tools and systems. They take a task, break it down and hand each part to a subagent that specialises in exactly that."
+  points:
+    - "Each subagent gets only the context and tools it needs"
+    - "The main agent pulls it together and returns one result"
+    - "You can see what each part did and fix it on its own"
+  tree:
+    comment: "# weekly report"
+    root: "main agent"
+    steps:
+      - { name: "fetch-data", note: "reads the systems" }
+      - { name: "analyse", note: "finds what changed" }
+      - { name: "draft", note: "first draft" }
+      - { name: "review", note: "checks numbers and tone" }
+    result: "→ one report, ready on Monday"
+models:
+  kicker: "// models and skills"
+  heading: "The right model and the right skills"
+  body: "Models differ in capability, speed and price. Larger models are best at complex analysis but are slower and cost more. Smaller models are fast and cheap and handle repetitive work well. I pick a model for each part of the job and set up skills and connections so the AI follows your way of working."
+  matches:
+    - {
+        task: "Complex analysis and decisions",
+        kind: "Model",
+        fit: "A larger model given time to think",
+      }
+    - { task: "Many small, repetitive tasks", kind: "Model", fit: "A fast, low-cost model" }
+    - {
+        task: "Following your way of working",
+        kind: "Skills",
+        fit: "Instructions, templates and scripts the AI loads when a task calls for them",
+      }
+    - {
+        task: "Access to your systems",
+        kind: "Connections (MCP)",
+        fit: "Direct connections to your data, with access you control",
+      }
+  caption: "Examples of how tasks are matched with a setup."
+glossary:
+  eyebrow: "Glossary"
+  heading: "The terms in plain English"
+  items:
+    - term: "Agent"
+      text: "An AI that is given a goal and tools and works through many steps on its own, instead of answering a single question."
+    - term: "Subagent"
+      text: "An agent that gets one well-defined part of a bigger job. It gets only the context it needs and reports back to the main agent."
+    - term: "Model"
+      text: "The AI itself, for example GPT, Gemini or Claude. Each comes in larger and smaller versions at different prices."
+    - term: "Skills"
+      text: "Instructions, templates and scripts about how you work, which the AI loads when a task calls for them."
+    - term: "Connections (MCP)"
+      text: "The Model Context Protocol is an open standard that lets AI talk to other systems, such as accounting, email or project tools."
+    - term: "Prompt"
+      text: "The text the AI is given. A role, context and clear limits give far better answers than one short sentence."
+    - term: "Scheduled tasks"
+      text: "Work an agent runs on its own at a fixed time, for example a summary every Monday morning."
+more:
+  text: "I write about this regularly in the articles, for example about cost, choosing a model and connections."
+  articles: "Read the articles"
+  book: "Book a free chat"

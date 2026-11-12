@@ -24,6 +24,8 @@ hjalti-vefur/
     │   │   ├── en.yaml
     │   │   ├── da.yaml
     │   │   └── pl.yaml
+    │   ├── tech/
+    │   │   └── is.yaml      Tech page text (/tekni/), one file per language
     │   └── articles/
     │       └── is/
     │           └── daemi-um-grein.mdx
@@ -122,12 +124,13 @@ If a component file grows past ~150 lines or does two jobs, split it, like `Serv
   - `*word*` highlights a word in the hero title (the yellow underline).
   - `**text**` highlights text in the prompt example.
   - A line break (`\n`) becomes a `<br>`.
-- Terms: fulltrúi (agent), undirfulltrúi (subagent), færni (skills), fyrirmæli (prompt).
+- Terms: erindreki (agent), undirerindreki (subagent), færni (skills), fyrirmæli (prompt), líkan (model).
+- The home page avoids these terms and talks about what AI does for a business (aðstoðarmaður for an agent). The technical terms live on the tech page.
 
 ### Add a language
 
 1. Add the code to `locales` and `localeInfo` in `src/i18n/locales.ts`.
-2. Copy `src/content/home/en.yaml` to `<code>.yaml` and translate it.
+2. Copy `src/content/home/en.yaml` and `src/content/tech/en.yaml` to `<code>.yaml` and translate them.
 3. Build. The page, the switch button, hreflang links and the sitemap update by themselves.
 
 ### Write an article

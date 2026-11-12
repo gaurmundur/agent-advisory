@@ -1,7 +1,7 @@
 # Home page content, locale: is. Keep keys identical across locales.
 meta:
-  title: "Hjalti Unnar Ágústsson · Gervigreindarráðgjöf í Reykjavík"
-  description: "Ráðgjöf um gervigreind fyrir fyrirtæki: smíði gervigreindarfulltrúa, val á líkani, uppsetning, gagnagreining og þjálfun teyma. Fyrsta spjall er ókeypis."
+  title: "Hjalti Unnar Ágústsson · Gervigreind í rekstri: kennsla og uppsetning"
+  description: "Ég kenni fyrirtækjum að nota gervigreind og set hana upp í daglegum rekstri: bókhald, laun, verkefnastjórnun, ráðningar og tengingar milli kerfa. Fyrsta spjall er ókeypis."
   ogLocale: "is_IS"
   offerName: "Frítt 30 mín. kynningarspjall"
 nav:
@@ -9,6 +9,7 @@ nav:
   about: "Um mig"
   contact: "Hafa samband"
   blog: "Greinar"
+  tech: "Tækni"
   languageLabel: "Tungumál / Language"
 articleNav:
   label: "Leiðsögn um greinar"
@@ -19,65 +20,61 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "Gervigreind,\n*rétt* uppsett."
-  lead: "Fulltrúar, færni og skýr fyrirmæli. Ég set þetta upp og kenni þér að nota það."
+  lead: "Ég kenni þér og teyminu að nota gervigreind og set hana upp í bókhaldi, launum, verkefnastjórnun og ráðningum, sama hvaða lausn þið notið."
   cta: "Bókaðu frítt spjall"
 diagram:
-  ariaLabel: "Aðalfulltrúi sem skiptir verki á milli þriggja undirfulltrúa sem skila einni niðurstöðu"
-  task: "verkefni: „taktu saman stöðuna“"
-  main: "Aðalfulltrúi"
-  sub1: "Rannsókn"
-  sub2: "Greining"
+  ariaLabel: "Sjálfvirkur aðstoðarmaður skiptir mánaðamótaverkum í þrjá hluta sem skila einni niðurstöðu"
+  task: "verkefni: „gerðu mánaðamótin klár“"
+  main: "Aðstoðarmaður"
+  sub1: "Reikningar"
+  sub2: "Laun"
   sub3: "Yfirferð"
-  result: "Niðurstaða"
+  result: "Tilbúið"
 services:
   eyebrow: "Þjónusta"
-  heading: "Þrír hlutir sem ráða því hvort gervigreindin skilar einhverju"
+  heading: "Þrjár leiðir til að láta gervigreind spara þér tíma"
   agents:
-    kicker: "// smíði"
-    heading: "Fulltrúar og undirfulltrúar"
-    body: "Eitt spjall við gervigreind dugar skammt þegar verkið er stórt. Ég smíða gervigreindarfulltrúa (e. AI agents) sem vinna sjálfir með verkfærin og kerfin ykkar. Þeir taka við verkefni, skipta því niður og senda hvern hluta á undirfulltrúa sem er sérhæfður í akkúrat því."
+    kicker: "// sjálfvirkni"
+    heading: "Verk sem vinna sig sjálf"
+    body: "Í rekstri eru mörg verk unnin aftur og aftur: að flokka reikninga, fara yfir tímaskráningu, taka saman stöðu verkefna eða lesa yfir umsóknir. Ég set upp sjálfvirka aðstoðarmenn (e. AI agents) sem vinna þessi verk í ykkar kerfum. Stóru verki er skipt í hluta og hver hluti fær aðstoðarmann sem kann akkúrat það."
     points:
-      - "Hver undirfulltrúi fær bara það samhengi og þau verkfæri sem hann þarf"
-      - "Aðalfulltrúinn safnar saman og skilar einni niðurstöðu"
-      - "Þú sérð hvað hver hluti gerði og getur lagað hann sérstaklega"
+      - "Þú ræður hvað hann má sjá og gera, og hann spyr áður en eitthvað er sent eða bókað"
+      - "Þú færð eina samantekt, ekki tíu glugga"
+      - "Þú sérð hvað hver hluti gerði og getur lagað hann sér"
     tree:
-      comment: "# skýrsla vikunnar"
-      root: "aðalfulltrúi"
+      comment: "# mánaðamót"
+      root: "aðstoðarmaður"
       steps:
-        - { name: "sækja-gögn", note: "les kerfin" }
-        - { name: "greina", note: "finnur breytingar" }
-        - { name: "skrifa", note: "fyrstu drög" }
-        - { name: "yfirfara", note: "athugar tölur og tón" }
-      result: "→ ein skýrsla, tilbúin á mánudegi"
+        - { name: "reikningar", note: "sækir úr pósti og flokkar" }
+        - { name: "banki", note: "ber saman við færslur" }
+        - { name: "laun", note: "yfirfer tímaskráningu" }
+        - { name: "yfirferð", note: "merkir það sem stemmir ekki" }
+      result: "→ bókhald og laun klár til samþykktar"
   setup:
     kicker: "// uppsetning"
-    heading: "Rétt gervigreind og rétt færni"
-    body: "Líkönin eru ólík að getu, hraða og verði. Ég vel það sem passar verkefninu og set upp færni (e. skills) og tengingar svo gervigreindin vinni í þínum gögnum og þínum kerfum, en ekki bara í tómum spjallglugga."
+    heading: "Tengt við kerfin sem þið notið"
+    body: "Gervigreind gerir mest gagn þegar hún vinnur í ykkar gögnum, en ekki bara í tómum spjallglugga. Ég set upp lausnina sem hentar, hvort sem þið notið ChatGPT, Copilot, Gemini eða Claude, og tengi hana við bókhaldið, launakerfið, verkefnastjórnunina og tölvupóstinn. Ég vel líka hvaða útgáfa hentar hverju verki, svo þið borgið ekki of mikið fyrir einföld verk."
     matches:
       - {
-          task: "Flókin greining og ákvarðanir",
-          kind: "Líkan",
-          fit: "Stærra líkan sem fær tíma til að hugsa",
+          task: "Bókhald",
+          kind: "Tenging",
+          fit: "Les reikninga, flokkar þá og ber saman við bankann",
         }
-      - { task: "Mörg smá og endurtekin verk", kind: "Líkan", fit: "Hraðvirkt og ódýrt líkan" }
+      - { task: "Laun", kind: "Yfirferð", fit: "Skoðar tímaskráningu og frávik fyrir launakeyrslu" }
       - {
-          task: "Vinna eftir ykkar verklagi",
-          kind: "Færni",
-          fit: "Leiðbeiningar, sniðmát og skriftur sem gervigreindin sækir þegar verkið kallar á þær",
+          task: "Verkefnastjórnun",
+          kind: "Samantekt",
+          fit: "Sendir stöðu verkefna og næstu skref vikulega",
         }
-      - {
-          task: "Aðgangur að ykkar kerfum",
-          kind: "Tengingar",
-          fit: "Beinar tengingar við gögnin ykkar",
-        }
-    caption: "Dæmi um hvernig verkefni og uppsetning eru pöruð saman."
+      - { task: "Ráðningar", kind: "Verklag", fit: "Les umsóknir og ber saman við ykkar kröfur" }
+    caption: "Dæmi um verk sem gervigreindin getur tekið að sér þegar hún er tengd rétt."
   training:
-    kicker: "// þjálfun"
-    heading: "Að tala við gervigreindina"
-    body: "Munurinn á lélegu og góðu svari liggur oftast í fyrirmælunum. Ég þjálfa þig og teymið þitt í að gefa hlutverk, samhengi og skýran ramma, með ykkar eigin verkefnum sem æfingu."
+    kicker: "// kennsla"
+    heading: "Kennsla fyrir þig og teymið"
+    body: "Flestir nota bara brot af því sem gervigreindin getur. Ég kenni ykkur á lausnina sem þið eruð með, í tölvunni eða símanum, og hvernig á að biðja um hlutina svo svarið verði nothæft. Við æfum okkur á ykkar eigin verkefnum."
     points:
-      - "Vinnustofur fyrir teymi frá 2 klst, líka fyrir fólk sem er ekki í tækni"
-      - "Fyrirmælasafn fyrir verkefnin sem þið vinnið oftast"
+      - "Vinnustofur fyrir teymi frá 2 klst, fyrir fólk sem er ekki í tækni"
+      - "Tilbúin fyrirmæli fyrir verkin sem þið vinnið oftast"
     prompt:
       beforeLabel: "Áður"
       before: "Skrifaðu tölvupóst til viðskiptavinar."
@@ -94,7 +91,7 @@ process:
   steps:
     - {
         title: "Frítt spjall",
-        text: "Við förum yfir hvað tekur tíma hjá þér í dag og hvar gervigreind getur hjálpað.",
+        text: "Við förum yfir hvað tekur tíma hjá þér í dag, til dæmis bókhald, laun eða ráðningar, og hvar gervigreind getur hjálpað.",
       }
     - {
         title: "Val á verkefnum",
@@ -102,7 +99,7 @@ process:
       }
     - {
         title: "Uppsetning",
-        text: "Ég set upp fulltrúa, færni og tengingar og prófa á raunverulegum gögnum.",
+        text: "Ég set gervigreindina upp, tengi hana við kerfin ykkar og prófa á raunverulegum gögnum.",
       }
     - {
         title: "Afhending og þjálfun",
@@ -112,7 +109,7 @@ about:
   eyebrow: "Um mig"
   portraitAlt: "Svarthvít mynd af Hjalta brosandi með krosslagðar hendur"
   quote: "Ég er hugbúnaðarverkfræðingur sem hefur gaman af því að útskýra tækni fyrir fólki."
-  bio: "Ég heiti Hjalti. Ég hef smíðað vef- og hugbúnaðarlausnir í meira en tíu ár, leitt þróunarteymi og kennt forritun fólki sem kemur ekki endilega úr tæknigeiranum. Í dag hjálpa ég fyrirtækjum og einstaklingum að koma gervigreind í gagnið í daglegu starfi, með lausnum sem fólk skilur og treystir."
+  bio: "Ég heiti Hjalti. Ég hef smíðað vef- og hugbúnaðarlausnir í meira en tíu ár, leitt þróunarteymi og kennt forritun fólki sem kemur ekki endilega úr tæknigeiranum. Í dag hjálpa ég fyrirtækjum og einstaklingum að koma gervigreind í gagnið í daglegum rekstri, með lausnum sem fólk skilur og treystir."
   facts:
     - { value: "10+", label: "ár í hugbúnaðarþróun" }
     - { value: "Teymi", label: "leitt þróunarteymi" }
@@ -123,15 +120,17 @@ faq:
   items:
     - question: "Þarf ég að kunna eitthvað í tækni?"
       answer: "Nei. Ég hef kennt fólki sem hefur aldrei forritað og legg áherslu á að þú skiljir hvað kerfið gerir og af hverju."
-    - question: "Hvaða gervigreind notar þú?"
-      answer: "Þá sem hentar verkefninu best. Ég vinn með helstu líkönunum á markaðnum og vel á milli þeirra eftir getu, hraða og kostnaði."
+    - question: "Við erum nú þegar með ChatGPT eða Copilot. Getur þú hjálpað?"
+      answer: "Já. Ég vinn með þeim lausnum sem þið eruð með og kenni ykkur að nýta þær betur. Ef önnur lausn hentar betur segi ég þér það, en það er aldrei skilyrði."
+    - question: "Hvað kostar gervigreindin sjálf?"
+      answer: "Oftast nokkur þúsund krónur á mánuði á hvern notanda. Ég hjálpa ykkur að velja áskrift sem passar, svo þið borgið ekki fyrir meira en þið notið."
     - question: "Hvað með gögnin okkar?"
       answer: "Við förum yfir hvaða gögn gervigreindin fær að sjá áður en nokkuð er sett upp, og ég stilli aðgang þannig að hún nái bara í það sem hún þarf."
     - question: "Hentar þetta litlum fyrirtækjum?"
       answer: "Já. Oft er mesti ávinningurinn hjá litlum teymum þar sem fáir sinna mörgum verkum."
 contact:
   heading: "Segðu mér frá verkefninu"
-  body: "Sendu mér línu um hvað þú vilt að gervigreindin geri fyrir þig. Ég svara og við finnum tíma fyrir spjall."
+  body: "Segðu mér hvað tekur mestan tíma hjá þér, til dæmis bókhald, laun eða skýrslur. Ég svara og við finnum tíma fyrir spjall."
   book: "Bóka spjall"
   bookNote: "Fyrsta spjallið er ókeypis, 30 mín."
   or: "eða sendu póst"

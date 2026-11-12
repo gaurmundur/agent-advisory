@@ -29,6 +29,7 @@ npm run dev        # http://localhost:4321, reloads on save
 | I want to change...                   | Edit                                         |
 | ------------------------------------- | -------------------------------------------- |
 | Any text on the home page             | `src/content/home/<language>.yaml`           |
+| Text on the tech page (`/tekni/`)     | `src/content/tech/<language>.yaml`           |
 | Email, booking link, domain, keywords | `src/config/site.ts`                         |
 | Colours                               | `src/styles/global.css`                      |
 | Fonts                                 | `fonts` in `astro.config.ts`                 |
@@ -51,10 +52,13 @@ How the project is organised, and the naming rules, are in
 
 The build output in `dist/` is plain HTML, CSS, JS and fonts. No server code.
 
-**Cloudflare (recommended, free):** `npx wrangler login` once, then `npm run deploy`.
-Or connect the Git repo in the Cloudflare dashboard (Workers → Create → Import a repository)
-with build command `npm run build`; it then deploys on every push. Settings are in `wrangler.jsonc`;
-response headers are in `public/_headers`.
+**Cloudflare Workers (recommended, free):** once the GitHub repo is connected to Cloudflare, every
+push to `main` builds and deploys the site, and every other branch gets its own preview URL.
+Set it up once in the Cloudflare dashboard: Workers & Pages → Create → Import a repository →
+pick `agent-advisory`, keep the project name `hjalti-vefur` (it must match `name` in
+`wrangler.jsonc`), build command `npm run build`, deploy command `npx wrangler deploy`.
+Settings are in `wrangler.jsonc`; response headers are in `public/_headers`.
+To deploy by hand from your own computer instead: `npx wrangler login` once, then `npm run deploy`.
 
 **Any other web host (cPanel, Scaleway web hosting, etc.):** run `npm run build` and upload the
 _contents_ of `dist/` into `public_html/`. `public/.htaccess` sets the 404 page and caching on Apache.

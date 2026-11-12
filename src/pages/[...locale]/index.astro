@@ -42,6 +42,10 @@ const navLinks = [
 if ((await getArticlesFor(locale)).length > 0) {
   navLinks.push({ href: localePath(locale, "/blog/"), label: content.nav.blog });
 }
+// The tech page link only shows in languages that have a tech page.
+if (content.nav.tech && (await getEntry("tech", locale))) {
+  navLinks.push({ href: localePath(locale, "/tekni/"), label: content.nav.tech });
+}
 const alternates = locales.map((alternate) => ({
   locale: alternate,
   href: localePath(alternate),

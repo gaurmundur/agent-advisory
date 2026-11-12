@@ -1,0 +1,69 @@
+# Tech page content (/da/tekni/), locale: da. The home page stays in plain language;
+# this page explains the technical side for visitors who want the details.
+meta:
+  title: "Teknik · Hjalti Unnar Ágústsson"
+  description: "Sådan sætter jeg AI op: agenter og subagenter, valg af model, skills, forbindelser (MCP) og prompts."
+eyebrow: "For teknikfolk"
+heading: "Det, der er under motorhjelmen"
+intro: "Forsiden handler om, hvad AI gør for virksomheden. Her kan du se, hvordan det er bygget, hvis du vil vide mere."
+agents:
+  kicker: "// agenter"
+  heading: "Agenter og subagenter"
+  body: "En enkelt chat med en AI rækker ikke langt, når opgaven er stor. Jeg bygger AI-agenter, der arbejder direkte med jeres værktøjer og systemer. De tager en opgave, deler den op og giver hver del til en subagent, der er specialiseret i netop det."
+  points:
+    - "Hver subagent får kun den kontekst og de værktøjer, den har brug for"
+    - "Hovedagenten samler det hele og returnerer ét resultat"
+    - "Du kan se, hvad hver del gjorde, og rette den for sig"
+  tree:
+    comment: "# ugens rapport"
+    root: "hovedagent"
+    steps:
+      - { name: "hent-data", note: "læser systemerne" }
+      - { name: "analysér", note: "finder ændringer" }
+      - { name: "skriv", note: "første udkast" }
+      - { name: "gennemgå", note: "tjekker tal og tone" }
+    result: "→ én rapport, klar mandag"
+models:
+  kicker: "// modeller og skills"
+  heading: "Den rigtige model og de rigtige skills"
+  body: "Modellerne er forskellige i evne, hastighed og pris. Større modeller er bedst til kompleks analyse, men er langsommere og dyrere. Mindre modeller er hurtige og billige og klarer gentagne opgaver fint. Jeg vælger en model til hver del af opgaven og sætter skills og forbindelser op, så AI’en arbejder efter jeres metoder."
+  matches:
+    - {
+        task: "Kompleks analyse og beslutninger",
+        kind: "Model",
+        fit: "En større model, der får tid til at tænke",
+      }
+    - { task: "Mange små, gentagne opgaver", kind: "Model", fit: "En hurtig og billig model" }
+    - {
+        task: "Arbejde efter jeres metoder",
+        kind: "Skills",
+        fit: "Instruktioner, skabeloner og scripts, som AI’en henter, når opgaven kræver det",
+      }
+    - {
+        task: "Adgang til jeres systemer",
+        kind: "Forbindelser (MCP)",
+        fit: "Direkte forbindelser til jeres data, med adgang I selv styrer",
+      }
+  caption: "Eksempler på, hvordan opgaver matches med en opsætning."
+glossary:
+  eyebrow: "Ordliste"
+  heading: "Begreberne på almindeligt dansk"
+  items:
+    - term: "Agent"
+      text: "En AI, der får et mål og værktøjer og selv arbejder sig igennem mange trin i stedet for at besvare ét spørgsmål."
+    - term: "Subagent"
+      text: "En agent, der får en afgrænset del af en større opgave. Den får kun den kontekst, den har brug for, og melder tilbage til hovedagenten."
+    - term: "Model"
+      text: "Selve AI’en, for eksempel GPT, Gemini eller Claude. Hver findes i større og mindre udgaver, der koster forskelligt."
+    - term: "Skills"
+      text: "Instruktioner, skabeloner og scripts om jeres metoder, som AI’en henter, når opgaven kræver det."
+    - term: "Forbindelser (MCP)"
+      text: "Model Context Protocol er en åben standard, der lader AI tale med andre systemer, for eksempel bogføring, mail eller projektværktøjer."
+    - term: "Prompt"
+      text: "Den tekst, AI’en får. En rolle, kontekst og klare rammer giver langt bedre svar end én kort sætning."
+    - term: "Planlagte opgaver"
+      text: "Opgaver, som en agent selv kører på et fast tidspunkt, for eksempel et overblik hver mandag morgen."
+more:
+  text: "Jeg skriver jævnligt om det i artiklerne, for eksempel om pris, valg af model og forbindelser."
+  articles: "Læs artiklerne"
+  book: "Book en gratis snak"

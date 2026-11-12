@@ -12,7 +12,15 @@ const home = defineCollection({
   loader: glob({ pattern: "*.yaml", base: "./src/content/home" }),
   schema: z.object({
     meta: z.object({ title: text, description: text, ogLocale: text, offerName: text }),
-    nav: z.object({ services: text, about: text, contact: text, blog: text, languageLabel: text }),
+    nav: z.object({
+      services: text,
+      about: text,
+      contact: text,
+      blog: text,
+      /** Link to the tech page. Only languages with src/content/tech/<locale>.yaml need it. */
+      tech: text.optional(),
+      languageLabel: text,
+    }),
     /** Links on article pages: breadcrumb, previous/next article, back to the list and home. */
     articleNav: z.object({
       label: text,
@@ -93,6 +101,43 @@ const home = defineCollection({
   }),
 });
 
+/** Tech page text, one YAML file per language: src/content/tech/<locale>.yaml.
+ *  The page is only built for languages that have a file. */
+const tech = defineCollection({
+  loader: glob({ pattern: "*.yaml", base: "./src/content/tech" }),
+  schema: z.object({
+    meta: z.object({ title: text, description: text }),
+    eyebrow: text,
+    heading: text,
+    intro: text,
+    agents: z.object({
+      kicker: text,
+      heading: text,
+      body: text,
+      points: z.array(text),
+      tree: z.object({
+        comment: text,
+        root: text,
+        steps: z.array(z.object({ name: text, note: text })),
+        result: text,
+      }),
+    }),
+    models: z.object({
+      kicker: text,
+      heading: text,
+      body: text,
+      matches: z.array(z.object({ task: text, kind: text, fit: text })),
+      caption: text,
+    }),
+    glossary: z.object({
+      eyebrow: text,
+      heading: text,
+      items: z.array(z.object({ term: text, text })),
+    }),
+    more: z.object({ text, articles: text, book: text }),
+  }),
+});
+
 /** Articles in MDX: src/content/articles/<locale>/<slug>.mdx */
 const articles = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/articles" }),
@@ -108,4 +153,4 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { home, articles };
+export const collections = { home, tech, articles };

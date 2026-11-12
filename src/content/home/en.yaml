@@ -1,7 +1,7 @@
 # Home page content, locale: en. Keep keys identical across locales.
 meta:
-  title: "Hjalti Unnar Ágústsson · AI consulting in Reykjavík, Iceland"
-  description: "AI consulting for businesses in Iceland: building AI agents, choosing the right model, setup, data analysis and team training. The first chat is free."
+  title: "Hjalti Unnar Ágústsson · AI for your business: training and setup"
+  description: "I teach businesses to use AI and set it up in day-to-day operations: accounting, payroll, project management, hiring and connecting systems. The first chat is free."
   ogLocale: "en_GB"
   offerName: "Free 30-minute intro call"
 nav:
@@ -9,6 +9,7 @@ nav:
   about: "About"
   contact: "Contact"
   blog: "Articles"
+  tech: "Tech"
   languageLabel: "Tungumál / Language"
 articleNav:
   label: "Article navigation"
@@ -19,65 +20,69 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "AI,\nset up *right*."
-  lead: "Agents, skills and clear instructions. I set it up and teach you how to use it."
+  lead: "I teach you and your team to use AI and set it up for accounting, payroll, project management and hiring, whatever tool you use."
   cta: "Book a free chat"
 diagram:
-  ariaLabel: "A main agent splits a task between three subagents, which return one result"
-  task: "task: “summarise where we stand”"
-  main: "Main agent"
-  sub1: "Research"
-  sub2: "Analysis"
+  ariaLabel: "An automated assistant splits month-end work into three parts that return one result"
+  task: "task: “get month-end done”"
+  main: "Assistant"
+  sub1: "Invoices"
+  sub2: "Payroll"
   sub3: "Review"
-  result: "Result"
+  result: "Ready"
 services:
   eyebrow: "Services"
-  heading: "Three things that decide whether AI actually delivers"
+  heading: "Three ways to let AI save you time"
   agents:
-    kicker: "// build"
-    heading: "Agents and subagents"
-    body: "A single chat with an AI only goes so far when the job is big. I build agents that work directly with your tools and systems. They take a task, break it down and hand each part to a subagent that specialises in exactly that."
+    kicker: "// automation"
+    heading: "Work that runs itself"
+    body: "A lot of business admin is the same work over and over: sorting invoices, checking timesheets, summarising project status or reading job applications. I set up automated assistants (AI agents) that do this work inside your systems. A big job is split into parts, and each part goes to an assistant that knows exactly that."
     points:
-      - "Each subagent gets only the context and tools it needs"
-      - "The main agent pulls it together and returns one result"
+      - "You decide what it can see and do, and it asks before anything is sent or booked"
+      - "You get one summary, not ten windows"
       - "You can see what each part did and fix it on its own"
     tree:
-      comment: "# weekly report"
-      root: "main agent"
+      comment: "# month-end"
+      root: "assistant"
       steps:
-        - { name: "fetch-data", note: "reads the systems" }
-        - { name: "analyse", note: "finds what changed" }
-        - { name: "draft", note: "first draft" }
-        - { name: "review", note: "checks numbers and tone" }
-      result: "→ one report, ready on Monday"
+        - { name: "invoices", note: "fetches from email, sorts" }
+        - { name: "bank", note: "matches transactions" }
+        - { name: "payroll", note: "checks timesheets" }
+        - { name: "review", note: "flags what doesn't add up" }
+      result: "→ books and payroll ready to approve"
   setup:
     kicker: "// setup"
-    heading: "The right AI and the right skills"
-    body: "Models differ in capability, speed and price. I pick the one that fits the task and set up skills and connections so the AI works with your data and your systems, not just in an empty chat window."
+    heading: "Connected to the systems you use"
+    body: "AI is most useful when it works with your data, not just in an empty chat window. I set up the solution that fits, whether you use ChatGPT, Copilot, Gemini or Claude, and connect it to your accounting, payroll, project management and email. I also pick the right version for each task, so you don't overpay for simple work."
     matches:
       - {
-          task: "Complex analysis and decisions",
-          kind: "Model",
-          fit: "A larger model given time to think",
-        }
-      - { task: "Many small, repetitive tasks", kind: "Model", fit: "A fast, low-cost model" }
-      - {
-          task: "Following your way of working",
-          kind: "Skills",
-          fit: "Instructions, templates and scripts the AI loads when a task calls for them",
+          task: "Accounting",
+          kind: "Connection",
+          fit: "Reads invoices, sorts them and matches them to the bank",
         }
       - {
-          task: "Access to your systems",
-          kind: "Connections",
-          fit: "Direct connections to your data (MCP)",
+          task: "Payroll",
+          kind: "Review",
+          fit: "Checks timesheets and exceptions before the pay run",
         }
-    caption: "Examples of how tasks are matched with a setup."
+      - {
+          task: "Project management",
+          kind: "Summary",
+          fit: "Sends project status and next steps every week",
+        }
+      - {
+          task: "Hiring",
+          kind: "Your process",
+          fit: "Reads applications and compares them with your requirements",
+        }
+    caption: "Examples of work AI can take on once it is connected properly."
   training:
-    kicker: "// training"
-    heading: "Talking to the AI"
-    body: "The difference between a poor answer and a good one usually comes down to the instructions. I train you and your team to give the AI a role, context and clear limits, using your own work as practice."
+    kicker: "// teaching"
+    heading: "Training for you and your team"
+    body: "Most people use only a fraction of what AI can do. I teach you the tool you already have, on your computer or your phone, and how to ask so the answer is actually useful. We practise on your own work."
     points:
-      - "Team workshops from 2 hours, including for people who are not technical"
-      - "A prompt library for the tasks you do most often"
+      - "Team workshops from 2 hours, for people who are not technical"
+      - "Ready-made prompts for the tasks you do most often"
     prompt:
       beforeLabel: "Before"
       before: "Write an email to a customer."
@@ -94,7 +99,7 @@ process:
   steps:
     - {
         title: "Free chat",
-        text: "We look at what takes up your time today and where AI can help.",
+        text: "We look at what takes up your time today, such as accounting, payroll or hiring, and where AI can help.",
       }
     - {
         title: "Choosing tasks",
@@ -102,7 +107,7 @@ process:
       }
     - {
         title: "Setup",
-        text: "I set up agents, skills and connections and test them on real data.",
+        text: "I set up the AI, connect it to your systems and test it on real data.",
       }
     - {
         title: "Handover and training",
@@ -112,7 +117,7 @@ about:
   eyebrow: "About"
   portraitAlt: "Black-and-white portrait of Hjalti smiling with his arms crossed"
   quote: "I’m a software engineer who enjoys explaining technology to people."
-  bio: "I’m Hjalti. I have built web and software products for more than ten years, led development teams and taught programming to people who don’t necessarily come from tech. Today I help companies and individuals put AI to work in their daily jobs, with solutions people understand and trust."
+  bio: "I’m Hjalti. I have built web and software products for more than ten years, led development teams and taught programming to people who don’t necessarily come from tech. Today I help companies and individuals put AI to work in day-to-day operations, with solutions people understand and trust."
   facts:
     - { value: "10+", label: "years in software development" }
     - { value: "Teams", label: "development teams led" }
@@ -123,15 +128,17 @@ faq:
   items:
     - question: "Do I need to know anything technical?"
       answer: "No. I have taught people who have never written code, and I make sure you understand what the system does and why."
-    - question: "Which AI do you use?"
-      answer: "Whichever suits the task best. I work with the leading models on the market and choose between them on capability, speed and cost."
+    - question: "We already have ChatGPT or Copilot. Can you help?"
+      answer: "Yes. I work with the tools you already have and teach you to get more out of them. If another tool would suit you better I’ll tell you, but it’s never a requirement."
+    - question: "What does the AI itself cost?"
+      answer: "Usually 20 to 30 US dollars per user per month. I help you pick a plan that fits, so you don’t pay for more than you use."
     - question: "What about our data?"
       answer: "We go through which data the AI is allowed to see before anything is set up, and I configure access so it only reaches what it needs."
     - question: "Is this a fit for small businesses?"
       answer: "Yes. The biggest gains are often in small teams where a few people handle many tasks."
 contact:
   heading: "Tell me about your project"
-  body: "Send me a line about what you want AI to do for you. I’ll reply and we’ll find a time to talk."
+  body: "Tell me what takes up most of your time, such as accounting, payroll or reports. I’ll reply and we’ll find a time to talk."
   book: "Book a chat"
   bookNote: "The first chat is free, 30 min."
   or: "or send an email"
