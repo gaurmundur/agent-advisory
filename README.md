@@ -55,7 +55,7 @@ The build output in `dist/` is plain HTML, CSS, JS and fonts. No server code.
 **Cloudflare Workers (recommended, free):** once the GitHub repo is connected to Cloudflare, every
 push to `main` builds and deploys the site, and every other branch gets its own preview URL.
 Set it up once in the Cloudflare dashboard: Workers & Pages → Create → Import a repository →
-pick `agent-advisory`, keep the project name `hjalti-vefur` (it must match `name` in
+pick `agent-advisory`, keep the Worker name `agent-advisory` (it must match `name` in
 `wrangler.jsonc`), build command `npm run build`, deploy command `npx wrangler deploy`.
 Settings are in `wrangler.jsonc`; response headers are in `public/_headers`.
 To deploy by hand from your own computer instead: `npx wrangler login` once, then `npm run deploy`.
