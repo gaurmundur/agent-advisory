@@ -1,24 +1,24 @@
 ---
-title: "Fulltrúar, undirfulltrúar og tímasett verk í Claude"
-description: "Hvernig Claude vinnur sem fulltrúi, hvenær borgar sig að deila verki á undirfulltrúa og hvernig þú lætur Claude vinna sjálfkrafa á tilsettum tíma."
+title: "Erindrekar, undirerindrekar og tímasett verk í Claude"
+description: "Hvernig Claude vinnur sem erindreki, hvenær borgar sig að deila verki á undirerindreka og hvernig þú lætur Claude vinna sjálfkrafa á tilsettum tíma."
 publishedAt: 2026-10-12
 translationKey: "claude-agents-subagents-scheduled-tasks"
 draft: false
 ---
 
-Flestir byrja á að nota Claude eins og spjallforrit: spurning inn, svar út. Í Claude Code verður Claude hins vegar að _fulltrúa_ (e. agent) sem vinnur verkið sjálfur. Hér eru þrjú hugtök sem gott er að kunna.
+Flestir byrja á að nota Claude eins og spjallforrit: spurning inn, svar út. Í Claude Code verður Claude hins vegar að _erindreka_ (e. agent) sem vinnur verkið sjálfur. Hér eru þrjú hugtök sem gott er að kunna.
 
-## 1. Fulltrúinn: lykkja sem klárar verkið
+## 1. Erindrekinn: lykkja sem klárar verkið
 
-Fulltrúi fær verkefni og vinnur það í lykkju: hann aflar sér upplýsinga, framkvæmir og sannreynir niðurstöðuna, og endurtekur þar til verkinu er lokið. Það eru verkfærin sem gera hann að fulltrúa. Hann getur lesið skrár, breytt kóða, keyrt skipanir og leitað á vefnum, og þú getur alltaf gripið inn í og breytt stefnunni.
+Erindreki fær verkefni og vinnur það í lykkju: hann aflar sér upplýsinga, framkvæmir og sannreynir niðurstöðuna, og endurtekur þar til verkinu er lokið. Það eru verkfærin sem gera hann að erindreka. Hann getur lesið skrár, breytt kóða, keyrt skipanir og leitað á vefnum, og þú getur alltaf gripið inn í og breytt stefnunni.
 
 Ráð: lýstu markmiðinu og samhenginu eins og þú værir að fela samstarfsmanni verk, frekar en að telja upp hvert skref.
 
-## 2. Undirfulltrúar: verkaskipting með hreint borð
+## 2. Undirerindrekar: verkaskipting með hreint borð
 
-Undirfulltrúi (e. subagent) er sérhæfður aðstoðarmaður sem aðalfulltrúinn sendir afmarkað verk. Hver undirfulltrúi vinnur í eigin samhengi (e. context window), með eigin fyrirmæli, verkfæri og heimildir, og skilar aðeins samantekt til baka. Aðalsamtalið fyllist því ekki af leitarniðurstöðum og millistigum.
+Undirerindreki (e. subagent) er sérhæfður aðstoðarmaður sem aðalerindrekinn sendir afmarkað verk. Hver undirerindreki vinnur í eigin samhengi (e. context window), með eigin fyrirmæli, verkfæri og heimildir, og skilar aðeins samantekt til baka. Aðalsamtalið fyllist því ekki af leitarniðurstöðum og millistigum.
 
-Claude Code kemur með innbyggða undirfulltrúa, til dæmis **Explore** sem leitar í kóða án þess að breyta neinu. Þú getur líka búið til þína eigin sem Markdown-skrá í `.claude/agents/` fyrir eitt verkefni eða `~/.claude/agents/` fyrir öll verkefnin þín:
+Claude Code kemur með innbyggða undirerindreka, til dæmis **Explore** sem leitar í kóða án þess að breyta neinu. Þú getur líka búið til þína eigin sem Markdown-skrá í `.claude/agents/` fyrir eitt verkefni eða `~/.claude/agents/` fyrir öll verkefnin þín:
 
 ```markdown
 ---
@@ -30,7 +30,7 @@ tools: Read, Glob, Grep
 Þú ert yfirlesari. Farðu yfir breytingarnar og gefðu skýrar, hagnýtar ábendingar.
 ```
 
-Undirfulltrúar henta vel í leit í stórum kóðagrunni, yfirlestur og verk sem mega keyra samhliða.
+Undirerindrekar henta vel í leit í stórum kóðagrunni, yfirlestur og verk sem mega keyra samhliða.
 
 ## 3. Tímasett verk: Claude vinnur á meðan þú gerir annað
 
@@ -44,8 +44,8 @@ Undirfulltrúar henta vel í leit í stórum kóðagrunni, yfirlestur og verk se
 
 ## Heimildir
 
-- [How Claude Code works](https://code.claude.com/docs/en/how-claude-code-works): lykkja fulltrúans og verkfærin
-- [Subagents](https://code.claude.com/docs/en/sub-agents): undirfulltrúar og skráarsniðið
+- [How Claude Code works](https://code.claude.com/docs/en/how-claude-code-works): lykkja erindrekans og verkfærin
+- [Subagents](https://code.claude.com/docs/en/sub-agents): undirerindrekar og skráarsniðið
 - [Run prompts on a schedule](https://code.claude.com/docs/en/scheduled-tasks): `/loop` og samanburður á tímasetningarleiðum
 - [Desktop scheduled tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks): tímasett verk á eigin tölvu
 - [Routines](https://code.claude.com/docs/en/routines): sjálfvirk verk í skýinu
