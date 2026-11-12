@@ -1,8 +1,8 @@
 // Site-wide facts that are the same in every language. Change them here, nowhere else.
 
 export const site = {
-  /** Production URL, no trailing slash. Change it when the real domain is ready. Used for canonical links, hreflang, sitemap and robots.txt. */
-  url: "https://hjaltiunnar.ams.scw.site",
+  /** Production URL, no trailing slash. Used for canonical links, hreflang, sitemap and robots.txt. */
+  url: "https://hjaltiunnar.com",
   name: "Hjalti Unnar Ágústsson",
   shortName: "Hjalti Unnar",
   initials: "HU",

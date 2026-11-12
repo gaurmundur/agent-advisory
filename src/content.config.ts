@@ -11,7 +11,14 @@ const text = z.string().min(1);
 const home = defineCollection({
   loader: glob({ pattern: "*.yaml", base: "./src/content/home" }),
   schema: z.object({
-    meta: z.object({ title: text, description: text, ogLocale: text, offerName: text }),
+    meta: z.object({
+      title: text,
+      description: text,
+      /** Meta description of the article list (/blog/). */
+      blogDescription: text,
+      ogLocale: text,
+      offerName: text,
+    }),
     nav: z.object({
       services: text,
       about: text,

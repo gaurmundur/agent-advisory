@@ -2,6 +2,7 @@
 meta:
   title: "Hjalti Unnar Ágústsson · AI w firmie: szkolenia i wdrożenia"
   description: "Uczę firmy korzystać z AI i wdrażam ją w codziennej działalności: księgowość, płace, zarządzanie projektami, rekrutacja i integracje systemów. Pierwsza rozmowa jest bezpłatna."
+  blogDescription: "Artykuły o AI w firmie prostym językiem: ile kosztuje, od czego zacząć i jak pomaga w księgowości, płacach i rekrutacji."
   ogLocale: "pl_PL"
   offerName: "Bezpłatna rozmowa wstępna, 30 min."
 nav:
@@ -120,7 +121,7 @@ about:
   bio: "Nazywam się Hjalti. Od ponad dziesięciu lat tworzę rozwiązania webowe i oprogramowanie, kierowałem zespołami programistów i uczyłem programowania osoby, które niekoniecznie wywodzą się z branży IT. Dziś pomagam firmom i osobom prywatnym wykorzystywać AI w codziennej działalności, dzięki rozwiązaniom, które ludzie rozumieją i którym ufają."
   facts:
     - { value: "10+", label: "lat w tworzeniu oprogramowania" }
-    - { value: "Zespoły", label: "kierowałem zespołami programistów" }
+    - { value: "3", label: "języki, w których pracuję" }
     - { value: "2022", label: "uczę programowania od" }
 faq:
   eyebrow: "Pytania"

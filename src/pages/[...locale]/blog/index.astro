@@ -5,6 +5,7 @@ import { getEntry } from "astro:content";
 
 import SiteFooter from "@/components/layout/SiteFooter.astro";
 import SiteHeader from "@/components/layout/SiteHeader.astro";
+import { site } from "@/config/site";
 import { type Locale, localeParam, localePath, locales } from "@/i18n/locales";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { articlePath, getArticlesFor, getBlogLocales } from "@/lib/articles";
@@ -42,8 +43,8 @@ const formatDate = new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format
 
 <BaseLayout
   locale={locale}
-  title={`${nav.blog} · ${meta.title}`}
-  description={meta.description}
+  title={`${nav.blog} · ${site.name}`}
+  description={meta.blogDescription}
   alternates={alternates}
 >
   <SiteHeader locale={locale} languageLabel={nav.languageLabel} languageLinks={languageLinks} />
