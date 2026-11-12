@@ -1,7 +1,7 @@
 # Home page content, locale: is. Keep keys identical across locales.
 meta:
   title: "Hjalti Unnar Ágústsson · Gervigreind í rekstri: kennsla og uppsetning"
-  description: "Ég kenni fyrirtækjum að nota gervigreind og set hana upp í daglegum rekstri: bókhald, laun, verkefnastjórnun, ráðningar og tengingar milli kerfa. Fyrsta spjall er ókeypis."
+  description: "Ég kenni fyrirtækjum að nota gervigreind og set hana upp í daglegum rekstri: fjármál, gögn, samtengingar kerfa, verkefnastjórnun og ráðningar. Fyrsta spjall er ókeypis."
   ogLocale: "is_IS"
   offerName: "Frítt 30 mín. kynningarspjall"
 nav:
@@ -20,23 +20,23 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "Gervigreind,\n*rétt* uppsett."
-  lead: "Ég kenni þér og teyminu að nota gervigreind og set hana upp í bókhaldi, launum, verkefnastjórnun og ráðningum, sama hvaða lausn þið notið."
+  lead: "Ég kenni þér og teyminu að nota gervigreind og set hana upp þar sem tíminn fer, í fjármálum, gögnum og samtengingum kerfa, sama hvaða lausn þið notið."
   cta: "Bókaðu frítt spjall"
 diagram:
-  ariaLabel: "Sjálfvirkur aðstoðarmaður skiptir mánaðamótaverkum í þrjá hluta sem skila einni niðurstöðu"
-  task: "verkefni: „gerðu mánaðamótin klár“"
+  ariaLabel: "Sjálfvirkur aðstoðarmaður skiptir samantekt mánaðarins í þrjá hluta sem skila einu yfirliti"
+  task: "verkefni: „taktu saman stöðu mánaðarins“"
   main: "Aðstoðarmaður"
-  sub1: "Reikningar"
-  sub2: "Laun"
+  sub1: "Fjármál"
+  sub2: "Gögn"
   sub3: "Yfirferð"
-  result: "Tilbúið"
+  result: "Yfirlit"
 services:
   eyebrow: "Þjónusta"
   heading: "Þrjár leiðir til að láta gervigreind spara þér tíma"
   agents:
     kicker: "// sjálfvirkni"
     heading: "Verk sem vinna sig sjálf"
-    body: "Í rekstri eru mörg verk unnin aftur og aftur: að flokka reikninga, fara yfir tímaskráningu, taka saman stöðu verkefna eða lesa yfir umsóknir. Ég set upp sjálfvirka aðstoðarmenn (e. AI agents) sem vinna þessi verk í ykkar kerfum. Stóru verki er skipt í hluta og hver hluti fær aðstoðarmann sem kann akkúrat það."
+    body: "Í rekstri eru mörg verk unnin aftur og aftur: að halda utan um fjármálin, taka saman gögn úr mörgum kerfum, fylgja eftir verkefnum eða fara yfir umsóknir. Ég set upp sjálfvirka aðstoðarmenn (e. AI agents) sem vinna þessi verk í ykkar kerfum. Stóru verki er skipt í hluta og hver hluti fær aðstoðarmann sem kann akkúrat það."
     points:
       - "Þú ræður hvað hann má sjá og gera, og hann spyr áður en eitthvað er sent eða bókað"
       - "Þú færð eina samantekt, ekki tíu glugga"
@@ -49,14 +49,14 @@ services:
         - { name: "banki", note: "ber saman við færslur" }
         - { name: "laun", note: "yfirfer tímaskráningu" }
         - { name: "yfirferð", note: "merkir það sem stemmir ekki" }
-      result: "→ bókhald og laun klár til samþykktar"
+      result: "→ mánuðurinn klár til samþykktar"
   setup:
     kicker: "// uppsetning"
     heading: "Tengt við kerfin sem þið notið"
-    body: "Gervigreind gerir mest gagn þegar hún vinnur í ykkar gögnum, en ekki bara í tómum spjallglugga. Ég set upp lausnina sem hentar, hvort sem þið notið ChatGPT, Copilot, Gemini eða Claude, og tengi hana við bókhaldið, launakerfið, verkefnastjórnunina og tölvupóstinn. Ég vel líka hvaða útgáfa hentar hverju verki, svo þið borgið ekki of mikið fyrir einföld verk."
+    body: "Gervigreind gerir mest gagn þegar hún vinnur í ykkar gögnum, en ekki bara í tómum spjallglugga. Ég set upp lausnina sem hentar, hvort sem þið notið ChatGPT, Copilot, Gemini eða Claude, og tengi hana við kerfin sem þið notið nú þegar, til dæmis fjármálakerfi, verkefnastjórnun og tölvupóst. Ég vel líka hvaða útgáfa hentar hverju verki, svo þið borgið ekki of mikið fyrir einföld verk."
     matches:
       - {
-          task: "Bókhald",
+          task: "Fjármál",
           kind: "Tenging",
           fit: "Les reikninga, flokkar þá og ber saman við bankann",
         }
@@ -91,7 +91,7 @@ process:
   steps:
     - {
         title: "Frítt spjall",
-        text: "Við förum yfir hvað tekur tíma hjá þér í dag, til dæmis bókhald, laun eða ráðningar, og hvar gervigreind getur hjálpað.",
+        text: "Við förum yfir hvað tekur tíma hjá þér í dag, til dæmis fjármál, gögn eða ráðningar, og hvar gervigreind getur hjálpað.",
       }
     - {
         title: "Val á verkefnum",
@@ -130,7 +130,7 @@ faq:
       answer: "Já. Oft er mesti ávinningurinn hjá litlum teymum þar sem fáir sinna mörgum verkum."
 contact:
   heading: "Segðu mér frá verkefninu"
-  body: "Segðu mér hvað tekur mestan tíma hjá þér, til dæmis bókhald, laun eða skýrslur. Ég svara og við finnum tíma fyrir spjall."
+  body: "Segðu mér hvað tekur mestan tíma hjá þér, til dæmis fjármál, gögn eða skýrslur. Ég svara og við finnum tíma fyrir spjall."
   book: "Bóka spjall"
   bookNote: "Fyrsta spjallið er ókeypis, 30 mín."
   or: "eða sendu póst"
