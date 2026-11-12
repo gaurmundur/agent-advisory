@@ -1,0 +1,33 @@
+---
+// One service: kicker, heading, text and bullet points, with an example in the default slot.
+interface Props {
+  kicker: string;
+  heading: string;
+  body: string;
+  points?: string[];
+  /** Put the text on the right instead of the left (desktop only). */
+  reverse?: boolean;
+}
+
+const { kicker, heading, body, points = [], reverse = false } = Astro.props;
+---
+
+<article class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14">
+  <div class:list={["flex min-w-0 flex-col gap-4", reverse && "md:order-2"]}>
+    <span class="font-mono text-[13px] text-accent">{kicker}</span>
+    <h3 class="heading-3">{heading}</h3>
+    <p class="max-w-[30em] text-[17px]">{body}</p>
+    {points.length > 0 && (
+      <ul class="mt-1 flex flex-col gap-2">
+        {points.map((point) => (
+          <li class="flex items-baseline gap-3 before:size-2 before:flex-none before:-translate-y-0.5 before:rounded-[2px] before:bg-green">
+            {point}
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+  <div class="min-w-0">
+    <slot />
+  </div>
+</article>

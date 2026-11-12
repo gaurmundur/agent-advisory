@@ -1,0 +1,201 @@
+---
+// Frame for MDX articles: header, title block, readable text column, footer.
+import { getEntry } from "astro:content";
+
+import ArticleStructuredData from "@/components/layout/ArticleStructuredData.astro";
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import { type Locale, localePath, locales } from "@/i18n/locales";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  type Article,
+  articlePath,
+  getBlogLocales,
+  getNeighbourArticles,
+  getTranslationPaths,
+} from "@/lib/articles";
+
+interface Props {
+  locale: Locale;
+  entry: Article;
+}
+
+const { locale, entry } = Astro.props;
+const article = entry.data;
+
+// Translations of this article become hreflang alternates. The language switch goes to the
+// translation when there is one, else to that language's article list, else its home page.
+const translations = await getTranslationPaths(entry);
+const blogLocales = await getBlogLocales();
+const alternates = locales.flatMap((other) => {
+  const href = translations[other];
+  return href ? [{ locale: other, href }] : [];
+});
+const languageLinks = Object.fromEntries(
+  locales.map((other) => [
+    other,
+    translations[other] ??
+      (blogLocales.includes(other) ? localePath(other, "/blog/") : localePath(other)),
+  ]),
+);
+
+const home = await getEntry("home", locale);
+if (!home) throw new Error(`Missing src/content/home/${locale}.yaml`);
+const { nav, articleNav } = home.data;
+const homeHref = localePath(locale);
+const blogHref = localePath(locale, "/blog/");
+// Previous = the next older article, next = the next newer one, both in this language.
+const { previous, next } = await getNeighbourArticles(entry);
+const date = new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(article.publishedAt);
+---
+
+<BaseLayout
+  locale={locale}
+  title={article.title}
+  description={article.description}
+  alternates={alternates}
+  noindex={article.draft}
+  article={{ publishedAt: article.publishedAt, updatedAt: article.updatedAt }}
+>
+  <ArticleStructuredData
+    slot="head"
+    locale={locale}
+    title={article.title}
+    description={article.description}
+    publishedAt={article.publishedAt}
+    updatedAt={article.updatedAt}
+  />
+  <SiteHeader
+    locale={locale}
+    links={[{ href: blogHref, label: nav.blog }]}
+    languageLabel={nav.languageLabel}
+    languageLinks={languageLinks}
+  />
+  <main class="mx-auto flex w-full max-w-[42em] flex-col gap-8">
+    <header class="flex flex-col gap-3">
+      <nav aria-label={articleNav.label} class="crumbs">
+        <a href={homeHref}>{articleNav.home}</a>
+        <span aria-hidden="true">/</span>
+        <a href={blogHref}>{nav.blog}</a>
+      </nav>
+      <p class="eyebrow">
+        <time datetime={article.publishedAt.toISOString()}>{date}</time>
+      </p>
+      <h1 class="heading-2">{article.title}</h1>
+      <p class="text-[18px] text-muted">{article.description}</p>
+    </header>
+    <div class="article-body">
+      <slot />
+    </div>
+    <nav aria-label={articleNav.label} class="flex flex-col gap-6 border-t border-line pt-8">
+      {(previous || next) && (
+        <div class="grid gap-4 sm:grid-cols-2">
+          {previous && (
+            <a href={articlePath(previous)} rel="prev" class="neighbour">
+              <span class="eyebrow">← {articleNav.previous}</span>
+              <span class="neighbour-title">{previous.data.title}</span>
+            </a>
+          )}
+          {next && (
+            <a href={articlePath(next)} rel="next" class="neighbour sm:col-start-2 sm:text-right">
+              <span class="eyebrow">{articleNav.next} →</span>
+              <span class="neighbour-title">{next.data.title}</span>
+            </a>
+          )}
+        </div>
+      )}
+      <div class="crumbs justify-between">
+        <a href={blogHref}>← {articleNav.allArticles}</a>
+        <a href={homeHref} class="flex items-center gap-2">
+          <i class="inline-block size-2.5 rounded-[2px] bg-gold" aria-hidden="true"></i>
+          {articleNav.home}
+        </a>
+      </div>
+    </nav>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  /* Small, quiet links: breadcrumb at the top, list/home links at the bottom. */
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .crumbs a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .crumbs a:hover {
+    color: var(--heading);
+  }
+
+  /* Previous/next article cards. */
+  .neighbour {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .neighbour:hover {
+    border-color: var(--green);
+  }
+  .neighbour-title {
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--heading);
+  }
+
+  /* Styles for the HTML that MDX produces (headings, lists, code). */
+  .article-body {
+    font-size: 18px;
+  }
+  .article-body :global(:where(p, ul, ol, pre, blockquote)) {
+    margin-block: 0 1.1em;
+  }
+  .article-body :global(h2) {
+    margin-block: 1.6em 0.5em;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--heading);
+  }
+  .article-body :global(h3) {
+    margin-block: 1.4em 0.4em;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .article-body :global(ul) {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+  .article-body :global(ol) {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+  .article-body :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+  }
+  .article-body :global(pre) {
+    overflow-x: auto;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 15px;
+  }
+  .article-body :global(blockquote) {
+    border-left: 3px solid var(--green);
+    padding-left: 1em;
+    color: var(--muted);
+  }
+</style>

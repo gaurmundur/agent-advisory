@@ -1,0 +1,26 @@
+---
+// Frequently asked questions as native <details> (open/close works without JavaScript).
+import type { CollectionEntry } from "astro:content";
+
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+
+interface Props {
+  faq: CollectionEntry<"home">["data"]["faq"];
+}
+
+const { faq } = Astro.props;
+---
+
+<section class="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-14">
+  <SectionHeading eyebrow={faq.eyebrow} heading={faq.heading} class="mb-0" />
+  <div>
+    {faq.items.map((item, index) => (
+      <details class="group border-b border-line py-5 first-of-type:border-t" open={index === 0}>
+        <summary class="flex cursor-pointer list-none justify-between gap-4 text-[18px] font-bold text-heading after:text-[22px] after:leading-none after:font-extrabold after:text-accent after:transition-transform after:duration-200 after:content-['+'] group-open:after:rotate-45 [&::-webkit-details-marker]:hidden">
+          {item.question}
+        </summary>
+        <p class="mt-3 max-w-[36em]">{item.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,140 @@
+# Home page content, locale: pl. Keep keys identical across locales.
+meta:
+  title: "Hjalti Unnar Ágústsson · Doradztwo AI w Reykjavíku, Islandia"
+  description: "Doradztwo AI dla firm: agenci AI, wybór właściwego modelu, konfiguracja, analiza danych i szkolenia zespołów. Pierwsza rozmowa jest bezpłatna."
+  ogLocale: "pl_PL"
+  offerName: "Bezpłatna rozmowa wstępna, 30 min."
+nav:
+  services: "Usługi"
+  about: "O mnie"
+  contact: "Kontakt"
+  blog: "Artykuły"
+  languageLabel: "Tungumál / Language"
+articleNav:
+  label: "Nawigacja po artykułach"
+  home: "Strona główna"
+  allArticles: "Wszystkie artykuły"
+  previous: "Poprzedni artykuł"
+  next: "Następny artykuł"
+hero:
+  # *word* gets the highlight, a line break becomes <br>
+  title: "AI,\n*dobrze* wdrożone."
+  lead: "Agenci, skills i jasne instrukcje. Konfiguruję to i uczę, jak z tego korzystać."
+  cta: "Umów bezpłatną rozmowę"
+diagram:
+  ariaLabel: "Główny agent dzieli zadanie między trzech subagentów, którzy zwracają jeden wynik"
+  task: "zadanie: „podsumuj sytuację”"
+  main: "Główny agent"
+  sub1: "Badanie"
+  sub2: "Analiza"
+  sub3: "Przegląd"
+  result: "Wynik"
+services:
+  eyebrow: "Usługi"
+  heading: "Trzy rzeczy, od których zależy, czy AI naprawdę coś daje"
+  agents:
+    kicker: "// budowa"
+    heading: "Agenci i subagenci"
+    body: "Jedna rozmowa z AI nie wystarczy, gdy zadanie jest duże. Buduję agentów, którzy pracują bezpośrednio z Waszymi narzędziami i systemami. Przyjmują zadanie, dzielą je na części i przekazują każdą z nich subagentowi wyspecjalizowanemu właśnie w tym."
+    points:
+      - "Każdy subagent dostaje tylko ten kontekst i te narzędzia, których potrzebuje"
+      - "Główny agent zbiera wszystko i zwraca jeden wynik"
+      - "Widać, co zrobiła każda część, i można ją poprawić osobno"
+    tree:
+      comment: "# raport tygodniowy"
+      root: "główny agent"
+      steps:
+        - { name: "pobierz-dane", note: "czyta systemy" }
+        - { name: "analizuj", note: "znajduje zmiany" }
+        - { name: "napisz", note: "pierwsza wersja" }
+        - { name: "sprawdź", note: "sprawdza liczby i ton" }
+      result: "→ jeden raport, gotowy w poniedziałek"
+  setup:
+    kicker: "// konfiguracja"
+    heading: "Właściwa AI i właściwe skills"
+    body: "Modele różnią się możliwościami, szybkością i ceną. Wybieram ten, który pasuje do zadania, i konfiguruję skills oraz połączenia, żeby AI pracowała na Waszych danych i w Waszych systemach, a nie tylko w pustym oknie czatu."
+    matches:
+      - {
+          task: "Złożona analiza i decyzje",
+          kind: "Model",
+          fit: "Większy model, który ma czas na przemyślenie",
+        }
+      - { task: "Wiele małych, powtarzalnych zadań", kind: "Model", fit: "Szybki i tani model" }
+      - {
+          task: "Praca według Waszych procedur",
+          kind: "Skills",
+          fit: "Instrukcje, szablony i skrypty, które AI wczytuje, gdy zadanie tego wymaga",
+        }
+      - {
+          task: "Dostęp do Waszych systemów",
+          kind: "Połączenia",
+          fit: "Bezpośrednie połączenia z Waszymi danymi (MCP)",
+        }
+    caption: "Przykłady dopasowania zadań do konfiguracji."
+  training:
+    kicker: "// szkolenia"
+    heading: "Jak rozmawiać z AI"
+    body: "Różnica między słabą a dobrą odpowiedzią zwykle tkwi w instrukcjach. Uczę Ciebie i Twój zespół, jak nadać AI rolę, kontekst i jasne ramy, ćwicząc na Waszych własnych zadaniach."
+    points:
+      - "Warsztaty dla zespołów od 2 godzin, także dla osób nietechnicznych"
+      - "Biblioteka promptów do zadań, które wykonujecie najczęściej"
+    prompt:
+      beforeLabel: "Przed"
+      before: "Napisz e-mail do klienta."
+      afterLabel: "Po"
+      # **text** is highlighted
+      after: "Klient poskarżył się, że dostawa spóźniła się o tydzień. **Napisz krótką odpowiedź** po polsku. **Przeproś jeden raz**, zaproponuj nowy termin dostawy i zachowaj ciepły, ale profesjonalny ton. **Maksymalnie 120 słów.**"
+  also:
+    label: "Również:"
+    text: "Tworzę i ulepszam systemy webowe, analizuję dane tak, by wspierały decyzje, i szukam sposobów na uproszczenie i usprawnienie działalności firmy."
+process:
+  eyebrow: "Proces"
+  heading: "Jak pracujemy razem"
+  intro: "Czas i zakres zależą od pierwszej rozmowy i od projektu. Możliwy jest też stały pakiet."
+  steps:
+    - {
+        title: "Bezpłatna rozmowa",
+        text: "Sprawdzamy, co dziś zabiera najwięcej czasu i gdzie AI może pomóc.",
+      }
+    - {
+        title: "Wybór zadań",
+        text: "Wybieramy jedno lub dwa zadania, które dadzą najwięcej, i od nich zaczynamy.",
+      }
+    - {
+        title: "Konfiguracja",
+        text: "Konfiguruję agentów, skills i połączenia i testuję je na prawdziwych danych.",
+      }
+    - {
+        title: "Przekazanie i szkolenie",
+        text: "Twój zespół przechodzi szkolenie i przejmuje system, który rozumie.",
+      }
+about:
+  eyebrow: "O mnie"
+  portraitAlt: "Czarno-białe zdjęcie Hjaltiego, uśmiechniętego, z założonymi rękami"
+  quote: "Jestem inżynierem oprogramowania i lubię tłumaczyć ludziom technologię."
+  bio: "Nazywam się Hjalti. Od ponad dziesięciu lat tworzę rozwiązania webowe i oprogramowanie, kierowałem zespołami programistów i uczyłem programowania osoby, które niekoniecznie wywodzą się z branży IT. Dziś pomagam firmom i osobom prywatnym wykorzystywać AI w codziennej pracy, dzięki rozwiązaniom, które ludzie rozumieją i którym ufają."
+  facts:
+    - { value: "10+", label: "lat w tworzeniu oprogramowania" }
+    - { value: "Zespoły", label: "kierowałem zespołami programistów" }
+    - { value: "2022", label: "uczę programowania od" }
+faq:
+  eyebrow: "Pytania"
+  heading: "Najczęstsze pytania"
+  items:
+    - question: "Czy trzeba znać się na technologii?"
+      answer: "Nie. Uczyłem osoby, które nigdy nie programowały, i dbam o to, żeby było jasne, co robi system i dlaczego."
+    - question: "Jakiej AI używasz?"
+      answer: "Takiej, która najlepiej pasuje do zadania. Pracuję z wiodącymi modelami na rynku i wybieram między nimi według możliwości, szybkości i kosztów."
+    - question: "A co z naszymi danymi?"
+      answer: "Zanim cokolwiek skonfigurujemy, ustalamy, które dane AI może widzieć, a ja ustawiam dostęp tak, żeby sięgała tylko po to, czego potrzebuje."
+    - question: "Czy to się sprawdzi w małej firmie?"
+      answer: "Tak. Największe korzyści często widać w małych zespołach, w których kilka osób zajmuje się wieloma zadaniami."
+contact:
+  heading: "Opowiedz mi o swoim projekcie"
+  body: "Napisz kilka słów o tym, co AI miałaby dla Ciebie robić. Odpowiem i znajdziemy termin na rozmowę."
+  book: "Umów rozmowę"
+  bookNote: "Pierwsza rozmowa jest bezpłatna, 30 min."
+  or: "albo wyślij e-mail"
+  copy: "Kopiuj e-mail"
+  copied: "Skopiowano"
+  selected: "Zaznaczono, naciśnij Ctrl+C"

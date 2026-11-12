@@ -1,0 +1,52 @@
+---
+title: "Skills: lær AI, hvordan jeres virksomhed arbejder"
+description: "Stop med at forklare det samme igen og igen. Med skills lærer Claude jeres arbejdsgange én gang og bruger dem hver gang."
+publishedAt: 2026-10-23
+translationKey: "agent-skills"
+draft: false
+---
+
+Hvis du bliver ved med at forklare AI det samme, for eksempel hvordan tilbud skal se ud, eller hvordan udgifter skal konteres, er det tid til _skills_.
+
+## Hvad er en skill?
+
+En skill er en mappe med instruktioner, og nogle gange skabeloner og scripts, som Claude henter, når den passer til opgaven. Claude læser først kun en kort beskrivelse af hver skill og indlæser resten, når der er brug for det. Du kan derfor have mange skills, uden at de står i vejen.
+
+Claude har indbyggede skills til Word, Excel, PowerPoint og PDF. Du kan også lave dine egne, og på Team og Enterprise kan en administrator rulle skills ud til alle.
+
+## Eksempler fra hverdagen
+
+- **Tilbud:** jeres skabelon, prisliste og tone, så hvert tilbud ser ens ud.
+- **Kontering:** hvilke konti der hører til hvilke leverandører, og hvad der skal sendes til revisoren.
+- **Rekruttering:** hvordan jobopslag sættes op, og hvilke spørgsmål der stilles til samtaler.
+- **Månedsrapport:** hvilke tal, i hvilken rækkefølge og i hvilket format.
+
+## Hvordan laver du en?
+
+Den enkleste skill er én Markdown-fil, `SKILL.md`, med navn og beskrivelse øverst:
+
+```markdown
+---
+name: tilbud
+description: Laver tilbud i virksomhedens format. Brug den, når nogen beder om et tilbud eller et prisoverslag.
+---
+
+1. Start med et kort resumé af opgaven.
+2. Brug prislisten i prisliste.md.
+3. Hold tonen venlig og klar, uden fagsprog.
+```
+
+Beskrivelsen er det vigtigste, for det er den, der fortæller Claude, hvornår skillen skal bruges. Læg filen i en mappe, pak mappen som ZIP og upload den under **Customize > Skills**. Kodekørsel (code execution) skal være slået til i indstillingerne.
+
+Endnu enklere: bed Claude om at lave skillen for dig. Beskriv arbejdsgangen, så skriver Claude filen og pakker mappen.
+
+## Ugens nyhed: en åben standard
+
+I går, 22. oktober, overdrog Anthropic Agent Skills-standarden til Agentic AI Foundation, som hører under Linux Foundation og også huser MCP. Over 70 platforme understøtter allerede standarden, blandt andre ChatGPT, Cursor, GitHub Copilot og VS Code. En skill, du skriver én gang, er altså ikke låst til én leverandør.
+
+## Kilder
+
+- [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills): hvad skills er, og hvilke abonnementer der har dem
+- [How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills): filformatet og hvordan du uploader
+- [Donating Agent Skills to the Agentic AI Foundation](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation): nyheden om den åbne standard
+- [Agent Skills](https://agentskills.io): selve standarden

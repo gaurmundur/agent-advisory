@@ -1,0 +1,74 @@
+---
+// Language dropdown: the current language's flag opens a list of all four.
+// Built on <details>, so it opens and closes without JavaScript; the links are plain links,
+// so search engines follow them. The small script only adds Escape and click-outside to close.
+import Flag from "@/components/layout/Flag.astro";
+import { type Locale, localeInfo, localePath, locales } from "@/i18n/locales";
+
+interface Props {
+  current: Locale;
+  label: string;
+  links?: Partial<Record<Locale, string>> | undefined;
+}
+
+const { current, label, links = {} } = Astro.props;
+---
+
+<details class="language-switch group relative">
+  <summary
+    class="flex cursor-pointer list-none items-center gap-2 rounded-lg border-[1.5px] border-line px-2.5 py-1.5 text-[13px] font-bold tracking-[0.06em] text-muted select-none hover:text-heading [&::-webkit-details-marker]:hidden"
+    aria-label={`${label}: ${localeInfo[current].name}`}
+  >
+    <Flag locale={current} />
+    <span aria-hidden="true">{localeInfo[current].label}</span>
+    <svg
+      class="size-3 transition-transform group-open:rotate-180"
+      viewBox="0 0 12 12"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+    </svg>
+  </summary>
+  <nav
+    class="absolute top-full right-0 z-20 mt-2 min-w-40 overflow-hidden rounded-lg border-[1.5px] border-line bg-bg py-1 shadow-lg"
+    aria-label={label}
+  >
+    <ul>
+      {locales.map((locale) => (
+        <li>
+          <a
+            href={links[locale] ?? localePath(locale)}
+            hreflang={locale}
+            lang={locale}
+            aria-current={locale === current ? "page" : undefined}
+            class="flex items-center gap-3 px-3 py-2 text-[15px] font-medium text-ink no-underline hover:bg-surface aria-[current=page]:bg-switch-active-bg aria-[current=page]:text-switch-active-text"
+          >
+            <Flag locale={locale} />
+            {localeInfo[locale].name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</details>
+
+<script>
+  // Progressive enhancement: close open switches on Escape or a click elsewhere.
+  const switches = document.querySelectorAll<HTMLDetailsElement>("details.language-switch");
+
+  document.addEventListener("click", (event) => {
+    for (const details of switches) {
+      if (details.open && !details.contains(event.target as Node)) details.open = false;
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    for (const details of switches) {
+      if (!details.open) continue;
+      details.open = false;
+      details.querySelector("summary")?.focus();
+    }
+  });
+</script>

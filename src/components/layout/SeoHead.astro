@@ -1,0 +1,47 @@
+---
+// <head> tags for search engines and link previews: title, description,
+// canonical URL, language alternates (hreflang) and Open Graph.
+import { site } from "@/config/site";
+import { defaultLocale, type Locale, localeInfo } from "@/i18n/locales";
+
+export type Alternate = { locale: Locale; href: string };
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  alternates: Alternate[];
+  noindex: boolean;
+  /** Set on article pages: Open Graph type "article" with its dates. */
+  article?: { publishedAt: Date; updatedAt?: Date | undefined } | undefined;
+}
+
+const { locale, title, description, alternates, noindex, article } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const absolute = (href: string) => new URL(href, Astro.site).href;
+const xDefault = alternates.find((alternate) => alternate.locale === defaultLocale);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={site.keywords.join(", ")} />
+{noindex && <meta name="robots" content="noindex" />}
+<link rel="canonical" href={canonical} />
+{alternates.map((alternate) => (
+  <link rel="alternate" hreflang={alternate.locale} href={absolute(alternate.href)} />
+))}
+{xDefault && <link rel="alternate" hreflang="x-default" href={absolute(xDefault.href)} />}
+<meta property="og:type" content={article ? "article" : "website"} />
+{article && <meta property="article:published_time" content={article.publishedAt.toISOString()} />}
+{article?.updatedAt && (
+  <meta property="article:modified_time" content={article.updatedAt.toISOString()} />
+)}
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={localeInfo[locale].ogLocale} />
+{alternates
+  .filter((alternate) => alternate.locale !== locale)
+  .map((alternate) => (
+    <meta property="og:locale:alternate" content={localeInfo[alternate.locale].ogLocale} />
+  ))}

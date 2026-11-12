@@ -1,0 +1,34 @@
+---
+// JSON-LD that tells search engines this page is a blog post and who wrote it.
+// Docs: https://schema.org/BlogPosting
+import { site } from "@/config/site";
+import type { Locale } from "@/i18n/locales";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  publishedAt: Date;
+  updatedAt?: Date | undefined;
+}
+
+const { locale, title, description, publishedAt, updatedAt } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const author = { "@type": "Person", name: site.name, url: site.url, jobTitle: site.jobTitle };
+
+const data = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  inLanguage: locale,
+  datePublished: publishedAt.toISOString(),
+  dateModified: (updatedAt ?? publishedAt).toISOString(),
+  url,
+  mainEntityOfPage: url,
+  author,
+  publisher: author,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} is:inline />

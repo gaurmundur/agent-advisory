@@ -1,0 +1,140 @@
+# Home page content, locale: da. Keep keys identical across locales.
+meta:
+  title: "Hjalti Unnar Ágústsson · AI-rådgivning i Reykjavík, Island"
+  description: "AI-rådgivning til virksomheder: AI-agenter, valg af den rigtige model, opsætning, dataanalyse og træning af teams. Første snak er gratis."
+  ogLocale: "da_DK"
+  offerName: "Gratis introsnak, 30 min."
+nav:
+  services: "Ydelser"
+  about: "Om mig"
+  contact: "Kontakt"
+  blog: "Artikler"
+  languageLabel: "Tungumál / Language"
+articleNav:
+  label: "Artikelnavigation"
+  home: "Forside"
+  allArticles: "Alle artikler"
+  previous: "Forrige artikel"
+  next: "Næste artikel"
+hero:
+  # *word* gets the highlight, a line break becomes <br>
+  title: "AI,\nsat *rigtigt* op."
+  lead: "Agenter, skills og klare instruktioner. Jeg sætter det op og lærer dig at bruge det."
+  cta: "Book en gratis snak"
+diagram:
+  ariaLabel: "En hovedagent fordeler en opgave mellem tre subagenter, som returnerer ét resultat"
+  task: "opgave: „opsummér status“"
+  main: "Hovedagent"
+  sub1: "Research"
+  sub2: "Analyse"
+  sub3: "Gennemgang"
+  result: "Resultat"
+services:
+  eyebrow: "Ydelser"
+  heading: "Tre ting der afgør, om AI faktisk leverer"
+  agents:
+    kicker: "// udvikling"
+    heading: "Agenter og subagenter"
+    body: "En enkelt chat med en AI rækker ikke langt, når opgaven er stor. Jeg bygger agenter, der arbejder direkte med jeres værktøjer og systemer. De tager en opgave, deler den op og giver hver del til en subagent, der er specialiseret i netop det."
+    points:
+      - "Hver subagent får kun den kontekst og de værktøjer, den har brug for"
+      - "Hovedagenten samler det hele og returnerer ét resultat"
+      - "Du kan se, hvad hver del gjorde, og rette den for sig"
+    tree:
+      comment: "# ugens rapport"
+      root: "hovedagent"
+      steps:
+        - { name: "hent-data", note: "læser systemerne" }
+        - { name: "analysér", note: "finder ændringer" }
+        - { name: "skriv", note: "første udkast" }
+        - { name: "gennemgå", note: "tjekker tal og tone" }
+      result: "→ én rapport, klar mandag"
+  setup:
+    kicker: "// opsætning"
+    heading: "Den rigtige AI og de rigtige skills"
+    body: "Modellerne er forskellige i evne, hastighed og pris. Jeg vælger den, der passer til opgaven, og sætter skills og forbindelser op, så AI’en arbejder med jeres data og jeres systemer og ikke kun i et tomt chatvindue."
+    matches:
+      - {
+          task: "Kompleks analyse og beslutninger",
+          kind: "Model",
+          fit: "En større model, der får tid til at tænke",
+        }
+      - { task: "Mange små, gentagne opgaver", kind: "Model", fit: "En hurtig og billig model" }
+      - {
+          task: "Arbejde efter jeres metoder",
+          kind: "Skills",
+          fit: "Instruktioner, skabeloner og scripts, som AI’en henter, når opgaven kræver det",
+        }
+      - {
+          task: "Adgang til jeres systemer",
+          kind: "Forbindelser",
+          fit: "Direkte forbindelser til jeres data (MCP)",
+        }
+    caption: "Eksempler på, hvordan opgaver matches med en opsætning."
+  training:
+    kicker: "// træning"
+    heading: "At tale med AI’en"
+    body: "Forskellen på et dårligt og et godt svar ligger oftest i instruktionerne. Jeg træner dig og dit team i at give AI’en en rolle, kontekst og klare rammer, med jeres egne opgaver som øvelse."
+    points:
+      - "Workshops for teams fra 2 timer, også for folk uden teknisk baggrund"
+      - "Et bibliotek af prompts til de opgaver, I laver oftest"
+    prompt:
+      beforeLabel: "Før"
+      before: "Skriv en e-mail til en kunde."
+      afterLabel: "Efter"
+      # **text** is highlighted
+      after: "En kunde har klaget over, at leveringen var en uge forsinket. **Skriv et kort svar** på dansk. **Undskyld én gang**, tilbyd en ny leveringsdato, og hold tonen varm men professionel. **Højst 120 ord.**"
+  also:
+    label: "Også:"
+    text: "Jeg bygger og forbedrer websystemer, analyserer data, så de kan bruges til beslutninger, og finder måder at forenkle og effektivisere driften på."
+process:
+  eyebrow: "Forløbet"
+  heading: "Sådan arbejder vi sammen"
+  intro: "Tid og omfang afhænger af vores første snak og af opgaven. En fast pakke er også en mulighed."
+  steps:
+    - {
+        title: "Gratis snak",
+        text: "Vi ser på, hvad der tager din tid i dag, og hvor AI kan hjælpe.",
+      }
+    - {
+        title: "Valg af opgaver",
+        text: "Vi vælger en eller to opgaver med størst gevinst og starter der.",
+      }
+    - {
+        title: "Opsætning",
+        text: "Jeg sætter agenter, skills og forbindelser op og tester dem på rigtige data.",
+      }
+    - {
+        title: "Overdragelse og træning",
+        text: "Du og dit team bliver trænet og overtager et system, I forstår.",
+      }
+about:
+  eyebrow: "Om mig"
+  portraitAlt: "Sort-hvidt portræt af Hjalti, der smiler med armene over kors"
+  quote: "Jeg er softwareingeniør og kan godt lide at forklare teknologi for folk."
+  bio: "Jeg hedder Hjalti. Jeg har bygget web- og softwareløsninger i mere end ti år, ledet udviklingsteams og undervist i programmering for folk, der ikke nødvendigvis kommer fra tech. I dag hjælper jeg virksomheder og enkeltpersoner med at tage AI i brug i deres daglige arbejde, med løsninger folk forstår og stoler på."
+  facts:
+    - { value: "10+", label: "år med softwareudvikling" }
+    - { value: "Teams", label: "har ledet udviklingsteams" }
+    - { value: "2022", label: "underviser i programmering siden" }
+faq:
+  eyebrow: "Spørgsmål"
+  heading: "Ofte stillede spørgsmål"
+  items:
+    - question: "Skal jeg kunne noget teknisk?"
+      answer: "Nej. Jeg har undervist folk, der aldrig har programmeret, og sørger for, at du forstår, hvad systemet gør og hvorfor."
+    - question: "Hvilken AI bruger du?"
+      answer: "Den, der passer bedst til opgaven. Jeg arbejder med de førende modeller på markedet og vælger mellem dem ud fra evne, hastighed og pris."
+    - question: "Hvad med vores data?"
+      answer: "Vi gennemgår, hvilke data AI’en må se, før noget bliver sat op, og jeg indstiller adgangen, så den kun når det, den har brug for."
+    - question: "Passer det til små virksomheder?"
+      answer: "Ja. Den største gevinst er ofte i små teams, hvor få personer klarer mange opgaver."
+contact:
+  heading: "Fortæl mig om dit projekt"
+  body: "Skriv et par linjer om, hvad du gerne vil have AI til at gøre for dig. Jeg svarer, og så finder vi en tid til en snak."
+  book: "Book en snak"
+  bookNote: "Første snak er gratis, 30 min."
+  or: "eller send en e-mail"
+  copy: "Kopiér e-mail"
+  copied: "Kopieret"
+  selected: "Markeret, tryk Ctrl+C"

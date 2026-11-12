@@ -1,0 +1,98 @@
+---
+// Table for articles. Markdown tables in MDX use it automatically (see blog/[slug].astro),
+// and it can also be imported in an .mdx file and written by hand.
+// Wide screens: a plain, quiet table. Phones: each row becomes a small card, with the column
+// name shown before each value (data-label comes from src/lib/rehype-table-labels.ts).
+type Props = astroHTML.JSX.TableHTMLAttributes;
+
+const { class: className, ...attributes } = Astro.props;
+---
+
+<div class="article-table">
+  <table class={className} {...attributes}><slot /></table>
+</div>
+
+<style>
+  .article-table {
+    margin-block: 0.4em 1.6em;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .article-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid var(--heading);
+  }
+  .article-table :global(th) {
+    padding: 12px 14px 10px 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: bottom;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .article-table :global(td) {
+    padding: 14px 14px 14px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .article-table :global(:is(th, td):last-child) {
+    padding-right: 0;
+  }
+  /* First column names the row: bold and never wrapped ("Sonnet 5.5" stays on one line). */
+  .article-table :global(td:first-child) {
+    font-weight: 700;
+    color: var(--heading);
+    white-space: nowrap;
+  }
+  /* Last column is usually numbers or short values: keep them lined up and unwrapped. */
+  .article-table :global(td:last-child:not(:first-child)) {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Phones: header row hidden, each row a stacked block with the column name as a label. */
+  @media (max-width: 480px) {
+    .article-table :global(thead) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .article-table :global(:is(tbody, tr, td)) {
+      display: block;
+    }
+    .article-table :global(tr) {
+      padding-block: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .article-table :global(td) {
+      padding: 0;
+      border: 0;
+    }
+    .article-table :global(td + td) {
+      margin-top: 6px;
+    }
+    .article-table :global(td:first-child) {
+      font-size: 17px;
+      white-space: normal;
+    }
+    .article-table :global(td:last-child:not(:first-child)) {
+      white-space: normal;
+    }
+    .article-table :global(td[data-label]:not(:first-child)::before) {
+      content: attr(data-label);
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  }
+</style>

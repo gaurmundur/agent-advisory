@@ -1,0 +1,41 @@
+---
+// First screen: big title, one line of lead text, booking button and the agent diagram.
+import type { CollectionEntry } from "astro:content";
+
+import AgentDiagram from "@/components/home/AgentDiagram.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import { site } from "@/config/site";
+import { splitLines, splitMarked } from "@/lib/inline-markup";
+
+interface Props {
+  hero: CollectionEntry<"home">["data"]["hero"];
+  diagram: CollectionEntry<"home">["data"]["diagram"];
+}
+
+const { hero, diagram } = Astro.props;
+const lines = splitLines(hero.title);
+---
+
+<section class="grid grid-cols-1 items-center gap-12 pt-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+  <div>
+    <h1 class="mb-7 text-[clamp(44px,8vw,88px)] leading-[0.98] font-extrabold tracking-[-0.035em] text-heading">
+      {lines.map((line, index) => (
+        <>
+          {index > 0 && <br />}
+          {splitMarked(line, "*").map((part) =>
+            part.marked ? (
+              <span class="relative z-0 inline-block after:absolute after:-inset-x-[0.06em] after:bottom-[0.08em] after:-z-1 after:h-[0.36em] after:rounded-sm after:bg-gold">
+                {part.text}
+              </span>
+            ) : (
+              part.text
+            ),
+          )}
+        </>
+      ))}
+    </h1>
+    <p class="mb-8 max-w-[24em] text-[20px]/normal text-muted">{hero.lead}</p>
+    <ButtonLink href={site.bookingUrl}>{hero.cta}</ButtonLink>
+  </div>
+  <AgentDiagram {...diagram} />
+</section>

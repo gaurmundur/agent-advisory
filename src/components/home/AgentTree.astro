@@ -1,0 +1,34 @@
+---
+// A file-tree style panel showing how a main agent splits a job between subagents.
+import { escapeHtml } from "@/lib/escape-html";
+
+interface Props {
+  comment: string;
+  root: string;
+  steps: { name: string; note: string }[];
+  result: string;
+}
+
+const { comment, root, steps, result } = Astro.props;
+/** Width of the name column, so the notes line up. */
+const nameWidth = 15;
+const lastIndex = steps.length - 1;
+
+// Astro treats everything inside <pre> as literal text, so the panel is built as an
+// HTML string here. Every value goes through escapeHtml, so content can't inject markup.
+const span = (className: string, value: string) =>
+  `<span class="${className}">${escapeHtml(value)}</span>`;
+const lines = [
+  span("text-code-comment", comment),
+  span("text-gold", root),
+  ...steps.map(
+    (step, index) =>
+      `${index === lastIndex ? "└── " : "├── "}${span("text-code-name", step.name.padEnd(nameWidth))}${span("text-code-comment", step.note)}`,
+  ),
+  span("text-code-comment", result),
+];
+---
+
+<div class="-rotate-[1.2deg] overflow-x-auto rounded-2xl bg-navy px-7 pt-7 pb-6 font-mono text-sm/[1.9] text-mint shadow-[14px_14px_0_var(--panel)]">
+  <pre class="m-0 [font:inherit]" set:html={lines.join("\n")} />
+</div>

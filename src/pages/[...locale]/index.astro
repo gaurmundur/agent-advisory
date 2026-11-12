@@ -1,0 +1,73 @@
+---
+// Home page, one per language: "/" (Icelandic), "/en/", "/da/", "/pl/".
+// This file is the controller: it picks the language, loads that language's content
+// and hands each section the data it needs. The sections themselves only render.
+import { getEntry } from "astro:content";
+
+import AboutSection from "@/components/home/AboutSection.astro";
+import ContactSection from "@/components/home/ContactSection.astro";
+import FaqSection from "@/components/home/FaqSection.astro";
+import HeroSection from "@/components/home/HeroSection.astro";
+import ProcessSection from "@/components/home/ProcessSection.astro";
+import ServicesSection from "@/components/home/ServicesSection.astro";
+import StructuredData from "@/components/home/StructuredData.astro";
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import { type Locale, localeParam, localePath, locales } from "@/i18n/locales";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getArticlesFor } from "@/lib/articles";
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale: localeParam(locale) }, props: { locale } }));
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const entry = await getEntry("home", locale);
+if (!entry) throw new Error(`Missing src/content/home/${locale}.yaml`);
+const content = entry.data;
+
+// Section anchors stay the same in every language, so shared links keep working.
+const sectionIds = { services: "thjonusta", about: "um", contact: "samband" };
+
+const navLinks = [
+  { href: `#${sectionIds.services}`, label: content.nav.services },
+  { href: `#${sectionIds.about}`, label: content.nav.about },
+  { href: `#${sectionIds.contact}`, label: content.nav.contact },
+];
+// The articles link only shows in languages that have published articles.
+if ((await getArticlesFor(locale)).length > 0) {
+  navLinks.push({ href: localePath(locale, "/blog/"), label: content.nav.blog });
+}
+const alternates = locales.map((alternate) => ({
+  locale: alternate,
+  href: localePath(alternate),
+}));
+---
+
+<BaseLayout
+  locale={locale}
+  title={content.meta.title}
+  description={content.meta.description}
+  alternates={alternates}
+>
+  <StructuredData
+    slot="head"
+    description={content.meta.description}
+    offerName={content.meta.offerName}
+  />
+
+  <SiteHeader locale={locale} links={navLinks} languageLabel={content.nav.languageLabel} />
+  <main class="contents">
+    <HeroSection hero={content.hero} diagram={content.diagram} />
+    <ServicesSection id={sectionIds.services} services={content.services} />
+    <ProcessSection process={content.process} />
+    <AboutSection id={sectionIds.about} about={content.about} />
+    <FaqSection faq={content.faq} />
+    <ContactSection id={sectionIds.contact} contact={content.contact} />
+  </main>
+  <SiteFooter />
+</BaseLayout>

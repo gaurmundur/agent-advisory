@@ -1,0 +1,40 @@
+---
+// The three services as alternating rows (text on one side, an example on the other),
+// followed by one line about other work.
+import type { CollectionEntry } from "astro:content";
+
+import AgentTree from "@/components/home/AgentTree.astro";
+import ModelMatchTable from "@/components/home/ModelMatchTable.astro";
+import PromptComparison from "@/components/home/PromptComparison.astro";
+import ServiceRow from "@/components/home/ServiceRow.astro";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+
+interface Props {
+  id: string;
+  services: CollectionEntry<"home">["data"]["services"];
+}
+
+const { id, services } = Astro.props;
+const { agents, setup, training, also } = services;
+---
+
+<section id={id}>
+  <SectionHeading eyebrow={services.eyebrow} heading={services.heading} />
+
+  <div class="flex flex-col gap-22">
+    <ServiceRow {...agents}>
+      <AgentTree {...agents.tree} />
+    </ServiceRow>
+    <ServiceRow {...setup} reverse>
+      <ModelMatchTable matches={setup.matches} caption={setup.caption} />
+    </ServiceRow>
+    <ServiceRow {...training}>
+      <PromptComparison {...training.prompt} />
+    </ServiceRow>
+  </div>
+
+  <p class="mt-18 max-w-[46em] border-t border-line pt-6 text-[18px]">
+    <b class="text-heading">{also.label}</b>
+    {also.text}
+  </p>
+</section>

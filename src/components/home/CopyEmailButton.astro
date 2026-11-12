@@ -1,0 +1,54 @@
+---
+// Shows the email address and a button that copies it. If the clipboard is blocked,
+// the address is selected instead so the visitor can press Ctrl+C.
+interface Props {
+  email: string;
+  label: string;
+  copiedLabel: string;
+  selectedLabel: string;
+}
+
+const { email, label, copiedLabel, selectedLabel } = Astro.props;
+---
+
+<copy-email data-copied={copiedLabel} data-selected={selectedLabel} class="contents">
+  <span data-email class="text-[20px] font-bold wrap-anywhere select-all">
+    {email}
+  </span>
+  <button
+    type="button"
+    data-copy
+    class="cursor-pointer self-start rounded-lg border-[1.5px] border-white/33 bg-transparent px-[18px] py-3 text-[15px] font-bold text-white"
+  >
+    {label}
+  </button>
+</copy-email>
+
+<script>
+  // A small custom element: the script runs once and works for every <copy-email> on the page.
+  class CopyEmail extends HTMLElement {
+    connectedCallback() {
+      const button = this.querySelector<HTMLButtonElement>("[data-copy]");
+      const email = this.querySelector<HTMLElement>("[data-email]");
+      if (!button || !email) return;
+      const label = button.textContent?.trim() ?? "";
+
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(email.textContent?.trim() ?? "");
+          button.textContent = this.dataset.copied ?? label;
+        } catch {
+          const range = document.createRange();
+          range.selectNodeContents(email);
+          const selection = getSelection();
+          selection?.removeAllRanges();
+          selection?.addRange(range);
+          button.textContent = this.dataset.selected ?? label;
+        }
+        setTimeout(() => (button.textContent = label), 2500);
+      });
+    }
+  }
+
+  customElements.define("copy-email", CopyEmail);
+</script>

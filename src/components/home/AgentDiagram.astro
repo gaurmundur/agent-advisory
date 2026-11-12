@@ -1,0 +1,79 @@
+---
+// Animated SVG: a main agent hands work to three subagents, which return one result.
+// The moving dots are hidden for visitors who prefer reduced motion.
+interface Props {
+  ariaLabel: string;
+  task: string;
+  main: string;
+  sub1: string;
+  sub2: string;
+  sub3: string;
+  result: string;
+}
+
+const { ariaLabel, task, main, sub1, sub2, sub3, result } = Astro.props;
+
+const outWires = [
+  { id: "agent-out-1", d: "M220 92 C220 150, 80 150, 80 196" },
+  { id: "agent-out-2", d: "M220 92 L220 196" },
+  { id: "agent-out-3", d: "M220 92 C220 150, 360 150, 360 196" },
+];
+const backWires = [
+  { id: "agent-back-1", d: "M80 244 C80 290, 220 280, 220 316" },
+  { id: "agent-back-2", d: "M220 244 L220 316" },
+  { id: "agent-back-3", d: "M360 244 C360 290, 220 280, 220 316" },
+];
+const subagents = [
+  { x: 24, label: sub1 },
+  { x: 164, label: sub2 },
+  { x: 304, label: sub3 },
+];
+---
+
+<svg
+  class="block h-auto w-full max-w-full font-sans text-[15px] font-bold"
+  viewBox="0 0 440 380"
+  role="img"
+  aria-label={ariaLabel}
+>
+  {[...outWires, ...backWires].map((wire) => (
+    <path id={wire.id} d={wire.d} class="fill-none stroke-line stroke-2" />
+  ))}
+
+  <rect class="fill-node" x="140" y="40" width="160" height="52" rx="12"></rect>
+  <text class="fill-node-text" x="220" y="72" text-anchor="middle">
+    {main}
+  </text>
+  <text class="fill-muted font-mono text-[11px] font-normal" x="220" y="26" text-anchor="middle">
+    {task}
+  </text>
+
+  {subagents.map((agent) => (
+    <>
+      <rect class="fill-panel" x={agent.x} y="196" width="112" height="48" rx="24" />
+      <text class="fill-heading" x={agent.x + 56} y="225" text-anchor="middle">
+        {agent.label}
+      </text>
+    </>
+  ))}
+
+  <rect class="fill-green" x="150" y="316" width="140" height="48" rx="12"></rect>
+  <text class="fill-white" x="220" y="345" text-anchor="middle">
+    {result}
+  </text>
+
+  {outWires.map((wire, index) => (
+    <circle class="fill-gold motion-reduce:hidden" r="6">
+      <animateMotion dur="2.6s" begin={`${index * 0.4}s`} repeatCount="indefinite">
+        <mpath href={`#${wire.id}`} />
+      </animateMotion>
+    </circle>
+  ))}
+  {backWires.map((wire, index) => (
+    <circle class="fill-green motion-reduce:hidden" r="5">
+      <animateMotion dur="2.6s" begin={`${1.3 + index * 0.4}s`} repeatCount="indefinite">
+        <mpath href={`#${wire.id}`} />
+      </animateMotion>
+    </circle>
+  ))}
+</svg>

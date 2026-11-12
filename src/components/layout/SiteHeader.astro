@@ -1,0 +1,42 @@
+---
+// Top bar: name mark, section links and the language switch.
+import LanguageSwitch from "@/components/layout/LanguageSwitch.astro";
+import { site } from "@/config/site";
+import { type Locale, localePath } from "@/i18n/locales";
+
+interface Props {
+  locale: Locale;
+  /** In-page links. Leave empty on pages without sections (articles, 404). */
+  links?: { href: string; label: string }[];
+  languageLabel: string;
+  /** Where each language switch link goes. Defaults to each language's home page. */
+  languageLinks?: Partial<Record<Locale, string>>;
+}
+
+const { locale, links = [], languageLabel, languageLinks } = Astro.props;
+---
+
+<header class="flex flex-wrap items-center justify-between gap-4">
+  <a
+    href={localePath(locale)}
+    class="flex items-center gap-2.5 text-[18px] font-extrabold tracking-[-0.01em] text-heading no-underline"
+  >
+    <i class="inline-block size-3.5 rounded-[3px] bg-gold" aria-hidden="true"></i>
+    {site.shortName}
+  </a>
+  <div class="flex flex-wrap items-center gap-6">
+    {links.length > 0 && (
+      <nav class="hidden flex-wrap gap-6 sm:flex">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="text-[15px] font-medium text-muted no-underline hover:text-heading"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    )}
+    <LanguageSwitch current={locale} label={languageLabel} links={languageLinks} />
+  </div>
+</header>

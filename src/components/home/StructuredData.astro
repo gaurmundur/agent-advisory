@@ -1,0 +1,38 @@
+---
+// JSON-LD that tells search engines this is a consulting business in Reykjavík.
+// Docs: https://schema.org/ProfessionalService
+import { site } from "@/config/site";
+
+interface Props {
+  description: string;
+  offerName: string;
+}
+
+const { description, offerName } = Astro.props;
+
+const data = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  description,
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  email: site.email,
+  areaServed: { "@type": "Country", name: site.country },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.city,
+    addressCountry: site.countryCode,
+  },
+  availableLanguage: site.workingLanguages,
+  founder: {
+    "@type": "Person",
+    name: site.name,
+    jobTitle: site.jobTitle,
+    knowsAbout: site.personKnowsAbout,
+  },
+  knowsAbout: site.serviceKnowsAbout,
+  makesOffer: [{ "@type": "Offer", name: offerName, price: "0", priceCurrency: "ISK" }],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} is:inline />

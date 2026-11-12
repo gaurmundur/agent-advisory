@@ -1,0 +1,49 @@
+---
+// Portrait, short quote, bio and three facts.
+import { Picture } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+import portrait from "@/assets/portrait.jpg";
+
+interface Props {
+  id: string;
+  about: CollectionEntry<"home">["data"]["about"];
+}
+
+const { id, about } = Astro.props;
+---
+
+<section id={id} class="grid grid-cols-1 items-start gap-14 md:grid-cols-[260px_minmax(0,1fr)]">
+  <figure class="w-[200px] max-w-full md:w-auto">
+    <Picture
+      src={portrait}
+      alt={about.portraitAlt}
+      widths={[200, 260, 400, 520]}
+      sizes="(min-width: 768px) 260px, 200px"
+      formats={["avif", "webp"]}
+      loading="lazy"
+      class="aspect-[4/5] w-full rounded-2xl object-cover"
+    />
+    <div class="mt-3 grid h-1.5 grid-cols-[2fr_1fr_1fr] overflow-hidden rounded-full" aria-hidden="true">
+      <div class="bg-green"></div>
+      <div class="bg-gold"></div>
+      <div class="bg-mint"></div>
+    </div>
+  </figure>
+
+  <div class="flex min-w-0 flex-col gap-5">
+    <p class="eyebrow">{about.eyebrow}</p>
+    <p class="max-w-[26em] text-2xl/[1.4] font-bold text-balance text-heading">{about.quote}</p>
+    <p class="max-w-[34em] text-[18px]">{about.bio}</p>
+    <dl class="mt-3 grid grid-cols-1 gap-4 border-t border-line pt-6 sm:grid-cols-3 sm:gap-6">
+      {about.facts.map((fact) => (
+        <div class="flex flex-col-reverse">
+          <dt class="text-sm text-muted">{fact.label}</dt>
+          <dd class="text-[36px] leading-[1.1] font-extrabold tracking-[-0.02em] text-heading tabular-nums">
+            {fact.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+// A vague prompt next to a clear one, with the key instructions highlighted.
+import { splitMarked } from "@/lib/inline-markup";
+
+interface Props {
+  beforeLabel: string;
+  before: string;
+  afterLabel: string;
+  /** Text wrapped in **double stars** is highlighted. */
+  after: string;
+}
+
+const { beforeLabel, before, afterLabel, after } = Astro.props;
+const card = "rounded-2xl px-6 py-[22px] font-mono text-sm/[1.7]";
+const label =
+  "mb-2 flex items-center gap-2 font-sans text-xs font-bold tracking-[0.08em] uppercase";
+---
+
+<div class="grid">
+  <div
+    class:list={[card, "w-full border border-dashed border-line bg-surface text-muted md:w-[82%]"]}
+  >
+    <div class={label}>{beforeLabel}</div>
+    {before}
+  </div>
+  <div
+    class:list={[
+      card,
+      "relative mt-3 w-full justify-self-end bg-panel text-heading shadow-[0_1px_0_var(--line)] md:-mt-3.5 md:w-[92%]",
+    ]}
+  >
+    <div class:list={[label, "text-accent before:size-2.5 before:rounded-full before:bg-green"]}>
+      {afterLabel}
+    </div>
+    {splitMarked(after, "**").map((part) =>
+      part.marked ? (
+        <mark class="bg-transparent font-medium text-accent">{part.text}</mark>
+      ) : (
+        part.text
+      ),
+    )}
+  </div>
+</div>

@@ -1,0 +1,140 @@
+# Home page content, locale: en. Keep keys identical across locales.
+meta:
+  title: "Hjalti Unnar Ágústsson · AI consulting in Reykjavík, Iceland"
+  description: "AI consulting for businesses in Iceland: building AI agents, choosing the right model, setup, data analysis and team training. The first chat is free."
+  ogLocale: "en_GB"
+  offerName: "Free 30-minute intro call"
+nav:
+  services: "Services"
+  about: "About"
+  contact: "Contact"
+  blog: "Articles"
+  languageLabel: "Tungumál / Language"
+articleNav:
+  label: "Article navigation"
+  home: "Home"
+  allArticles: "All articles"
+  previous: "Previous article"
+  next: "Next article"
+hero:
+  # *word* gets the highlight, a line break becomes <br>
+  title: "AI,\nset up *right*."
+  lead: "Agents, skills and clear instructions. I set it up and teach you how to use it."
+  cta: "Book a free chat"
+diagram:
+  ariaLabel: "A main agent splits a task between three subagents, which return one result"
+  task: "task: “summarise where we stand”"
+  main: "Main agent"
+  sub1: "Research"
+  sub2: "Analysis"
+  sub3: "Review"
+  result: "Result"
+services:
+  eyebrow: "Services"
+  heading: "Three things that decide whether AI actually delivers"
+  agents:
+    kicker: "// build"
+    heading: "Agents and subagents"
+    body: "A single chat with an AI only goes so far when the job is big. I build agents that work directly with your tools and systems. They take a task, break it down and hand each part to a subagent that specialises in exactly that."
+    points:
+      - "Each subagent gets only the context and tools it needs"
+      - "The main agent pulls it together and returns one result"
+      - "You can see what each part did and fix it on its own"
+    tree:
+      comment: "# weekly report"
+      root: "main agent"
+      steps:
+        - { name: "fetch-data", note: "reads the systems" }
+        - { name: "analyse", note: "finds what changed" }
+        - { name: "draft", note: "first draft" }
+        - { name: "review", note: "checks numbers and tone" }
+      result: "→ one report, ready on Monday"
+  setup:
+    kicker: "// setup"
+    heading: "The right AI and the right skills"
+    body: "Models differ in capability, speed and price. I pick the one that fits the task and set up skills and connections so the AI works with your data and your systems, not just in an empty chat window."
+    matches:
+      - {
+          task: "Complex analysis and decisions",
+          kind: "Model",
+          fit: "A larger model given time to think",
+        }
+      - { task: "Many small, repetitive tasks", kind: "Model", fit: "A fast, low-cost model" }
+      - {
+          task: "Following your way of working",
+          kind: "Skills",
+          fit: "Instructions, templates and scripts the AI loads when a task calls for them",
+        }
+      - {
+          task: "Access to your systems",
+          kind: "Connections",
+          fit: "Direct connections to your data (MCP)",
+        }
+    caption: "Examples of how tasks are matched with a setup."
+  training:
+    kicker: "// training"
+    heading: "Talking to the AI"
+    body: "The difference between a poor answer and a good one usually comes down to the instructions. I train you and your team to give the AI a role, context and clear limits, using your own work as practice."
+    points:
+      - "Team workshops from 2 hours, including for people who are not technical"
+      - "A prompt library for the tasks you do most often"
+    prompt:
+      beforeLabel: "Before"
+      before: "Write an email to a customer."
+      afterLabel: "After"
+      # **text** is highlighted
+      after: "A customer complained that their delivery was a week late. **Write a short reply** in English. **Apologise once**, offer a new delivery date and keep the tone warm but professional. **120 words maximum.**"
+  also:
+    label: "Also:"
+    text: "I build and improve web systems, analyse data so it supports decisions, and find ways to simplify and streamline operations."
+process:
+  eyebrow: "Process"
+  heading: "How we work together"
+  intro: "Time and scope depend on our first conversation and the project. A fixed package is also an option."
+  steps:
+    - {
+        title: "Free chat",
+        text: "We look at what takes up your time today and where AI can help.",
+      }
+    - {
+        title: "Choosing tasks",
+        text: "We pick one or two tasks with the biggest payoff and start there.",
+      }
+    - {
+        title: "Setup",
+        text: "I set up agents, skills and connections and test them on real data.",
+      }
+    - {
+        title: "Handover and training",
+        text: "You and your team get trained and take over a system you understand.",
+      }
+about:
+  eyebrow: "About"
+  portraitAlt: "Black-and-white portrait of Hjalti smiling with his arms crossed"
+  quote: "I’m a software engineer who enjoys explaining technology to people."
+  bio: "I’m Hjalti. I have built web and software products for more than ten years, led development teams and taught programming to people who don’t necessarily come from tech. Today I help companies and individuals put AI to work in their daily jobs, with solutions people understand and trust."
+  facts:
+    - { value: "10+", label: "years in software development" }
+    - { value: "Teams", label: "development teams led" }
+    - { value: "2022", label: "teaching programming since" }
+faq:
+  eyebrow: "Questions"
+  heading: "Common questions"
+  items:
+    - question: "Do I need to know anything technical?"
+      answer: "No. I have taught people who have never written code, and I make sure you understand what the system does and why."
+    - question: "Which AI do you use?"
+      answer: "Whichever suits the task best. I work with the leading models on the market and choose between them on capability, speed and cost."
+    - question: "What about our data?"
+      answer: "We go through which data the AI is allowed to see before anything is set up, and I configure access so it only reaches what it needs."
+    - question: "Is this a fit for small businesses?"
+      answer: "Yes. The biggest gains are often in small teams where a few people handle many tasks."
+contact:
+  heading: "Tell me about your project"
+  body: "Send me a line about what you want AI to do for you. I’ll reply and we’ll find a time to talk."
+  book: "Book a chat"
+  bookNote: "The first chat is free, 30 min."
+  or: "or send an email"
+  copy: "Copy email"
+  copied: "Copied"
+  selected: "Selected, press Ctrl+C"
