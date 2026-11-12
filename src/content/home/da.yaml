@@ -1,8 +1,7 @@
 # Home page content, locale: da. Keep keys identical across locales.
 meta:
   title: "Hjalti Unnar Ágústsson · AI i virksomheden: undervisning og opsætning"
-  description: "Jeg lærer virksomheder at bruge AI og sætter det op i den daglige drift: bogføring, løn, projektstyring, rekruttering og integrationer mellem systemer. Første snak er gratis."
-  blogDescription: "Artikler om AI i virksomheden i et klart sprog: hvad det koster, hvor man starter, og hvordan det hjælper med bogføring, løn og rekruttering."
+  description: "Jeg lærer virksomheder at bruge AI og sætter det op i den daglige drift: økonomi, data, integrationer mellem systemer, projektstyring og rekruttering. Første snak er gratis."
   ogLocale: "da_DK"
   offerName: "Gratis introsnak, 30 min."
 nav:
@@ -21,23 +20,23 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "AI,\nsat *rigtigt* op."
-  lead: "Jeg lærer dig og dit team at bruge AI og sætter det op til bogføring, løn, projektstyring og rekruttering, uanset hvilket værktøj I bruger."
+  lead: "Jeg lærer dig og dit team at bruge AI og sætter det op dér, hvor tiden går: økonomi, data og integrationer mellem systemer, uanset hvilket værktøj I bruger."
   cta: "Book en gratis snak"
 diagram:
-  ariaLabel: "En automatisk assistent deler månedsafslutningen op i tre dele, som returnerer ét resultat"
-  task: "opgave: „gør månedsafslutningen klar“"
+  ariaLabel: "En automatisk assistent deler en månedsopsummering op i tre dele, som returnerer ét overblik"
+  task: "opgave: „opsummér måneden“"
   main: "Assistent"
-  sub1: "Fakturaer"
-  sub2: "Løn"
+  sub1: "Økonomi"
+  sub2: "Data"
   sub3: "Kontrol"
-  result: "Klar"
+  result: "Overblik"
 services:
   eyebrow: "Ydelser"
   heading: "Tre måder at lade AI spare dig tid"
   agents:
     kicker: "// automatisering"
     heading: "Opgaver der klarer sig selv"
-    body: "I driften bliver mange opgaver gjort igen og igen: at sortere fakturaer, tjekke timeregistrering, opsummere status på projekter eller læse ansøgninger igennem. Jeg sætter automatiske assistenter (AI-agenter) op, der klarer opgaverne i jeres systemer. En stor opgave bliver delt op, og hver del går til en assistent, der kan netop det."
+    body: "I driften bliver mange opgaver gjort igen og igen: at holde styr på økonomien, samle data fra flere systemer, følge op på projekter eller læse ansøgninger igennem. Jeg sætter automatiske assistenter (AI-agenter) op, der klarer opgaverne i jeres systemer. En stor opgave bliver delt op, og hver del går til en assistent, der kan netop det."
     points:
       - "Du bestemmer, hvad den må se og gøre, og den spørger, før noget bliver sendt eller bogført"
       - "Du får ét overblik, ikke ti vinduer"
@@ -50,14 +49,14 @@ services:
         - { name: "bank", note: "afstemmer posteringer" }
         - { name: "løn", note: "tjekker timer" }
         - { name: "kontrol", note: "markerer det, der ikke stemmer" }
-      result: "→ bogføring og løn klar til godkendelse"
+      result: "→ måneden klar til godkendelse"
   setup:
     kicker: "// opsætning"
     heading: "Koblet på de systemer, I bruger"
-    body: "AI gør mest gavn, når den arbejder med jeres data og ikke kun i et tomt chatvindue. Jeg sætter den løsning op, der passer, uanset om I bruger ChatGPT, Copilot, Gemini eller Claude, og kobler den på bogføringen, lønsystemet, projektstyringen og mailen. Jeg vælger også den version, der passer til hver opgave, så I ikke betaler for meget for simple opgaver."
+    body: "AI gør mest gavn, når den arbejder med jeres data og ikke kun i et tomt chatvindue. Jeg sætter den løsning op, der passer, uanset om I bruger ChatGPT, Copilot, Gemini eller Claude, og kobler den på de systemer, I allerede bruger, for eksempel økonomi, projektstyring og mail. Jeg vælger også den version, der passer til hver opgave, så I ikke betaler for meget for simple opgaver."
     matches:
       - {
-          task: "Bogføring",
+          task: "Økonomi",
           kind: "Integration",
           fit: "Læser fakturaer, sorterer dem og afstemmer med banken",
         }
@@ -96,7 +95,7 @@ process:
   steps:
     - {
         title: "Gratis snak",
-        text: "Vi ser på, hvad der tager din tid i dag, for eksempel bogføring, løn eller rekruttering, og hvor AI kan hjælpe.",
+        text: "Vi ser på, hvad der tager din tid i dag, for eksempel økonomi, data eller rekruttering, og hvor AI kan hjælpe.",
       }
     - {
         title: "Valg af opgaver",
@@ -135,7 +134,7 @@ faq:
       answer: "Ja. Den største gevinst er ofte i små teams, hvor få personer klarer mange opgaver."
 contact:
   heading: "Fortæl mig om dit projekt"
-  body: "Fortæl mig, hvad der tager mest af din tid, for eksempel bogføring, løn eller rapporter. Jeg svarer, og så finder vi en tid til en snak."
+  body: "Fortæl mig, hvad der tager mest af din tid, for eksempel økonomi, data eller rapporter. Jeg svarer, og så finder vi en tid til en snak."
   book: "Book en snak"
   bookNote: "Første snak er gratis, 30 min."
   or: "eller send en e-mail"
