@@ -21,7 +21,7 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "AI,\n*dobrze* wdrożone."
-  lead: "Uczę Ciebie i Twój zespół korzystać z AI i wdrażam ją tam, gdzie ucieka czas: w finansach, danych i integracji systemów, niezależnie od tego, jakiego narzędzia używacie."
+  lead: "Uczę Wasz zespół korzystać z AI i wdrażam ją tam, gdzie ucieka czas: w finansach, danych i integracji systemów."
   cta: "Umów bezpłatną rozmowę"
 diagram:
   ariaLabel: "Automatyczny asystent dzieli podsumowanie miesiąca na trzy części, które zwracają jeden przegląd"
@@ -37,7 +37,7 @@ services:
   agents:
     kicker: "// automatyzacja"
     heading: "Zadania, które wykonują się same"
-    body: "W firmie wiele zadań powtarza się w kółko: pilnowanie finansów, zbieranie danych z wielu systemów, kontrola postępu projektów czy przeglądanie aplikacji o pracę. Wdrażam automatycznych asystentów (agentów AI), którzy wykonują te zadania w Waszych systemach. Duże zadanie jest dzielone na części, a każda trafia do asystenta, który zna się właśnie na tym."
+    body: "W firmie wiele zadań powtarza się w kółko, na przykład pilnowanie finansów czy zbieranie danych z wielu systemów. Wdrażam automatycznych asystentów (agentów AI), którzy wykonują te zadania w Waszych systemach."
     points:
       - "Ty decydujesz, co asystent może widzieć i robić, a on pyta, zanim cokolwiek wyśle lub zaksięguje"
       - "Dostajesz jedno podsumowanie, a nie dziesięć okien"
@@ -54,7 +54,7 @@ services:
   setup:
     kicker: "// wdrożenie"
     heading: "Połączone z systemami, których używacie"
-    body: "AI daje najwięcej, gdy pracuje na Waszych danych, a nie tylko w pustym oknie czatu. Wdrażam rozwiązanie, które pasuje, niezależnie od tego, czy używacie ChatGPT, Copilota, Gemini czy Claude’a, i łączę je z systemami, których już używacie, na przykład z finansami, zarządzaniem projektami i pocztą. Dobieram też wersję do każdego zadania, żebyście nie przepłacali za proste prace."
+    body: "AI daje najwięcej, gdy pracuje na Waszych danych. Wdrażam rozwiązanie, które pasuje, czy to ChatGPT, Copilot, Gemini czy Claude, i łączę je z systemami, których już używacie."
     matches:
       - {
           task: "Finanse",
