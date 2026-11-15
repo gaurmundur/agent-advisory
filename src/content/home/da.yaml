@@ -21,7 +21,7 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "AI,\nsat *rigtigt* op."
-  lead: "Jeg lærer dig og dit team at bruge AI og sætter det op dér, hvor tiden går: økonomi, data og integrationer mellem systemer, uanset hvilket værktøj I bruger."
+  lead: "Jeg lærer jer at bruge AI og sætter det op dér, hvor tiden går: økonomi, data og integrationer mellem systemer."
   cta: "Book en gratis snak"
 diagram:
   ariaLabel: "En automatisk assistent deler en månedsopsummering op i tre dele, som returnerer ét overblik"
@@ -37,7 +37,7 @@ services:
   agents:
     kicker: "// automatisering"
     heading: "Opgaver der klarer sig selv"
-    body: "I driften bliver mange opgaver gjort igen og igen: at holde styr på økonomien, samle data fra flere systemer, følge op på projekter eller læse ansøgninger igennem. Jeg sætter automatiske assistenter (AI-agenter) op, der klarer opgaverne i jeres systemer. En stor opgave bliver delt op, og hver del går til en assistent, der kan netop det."
+    body: "Mange opgaver i driften bliver gjort igen og igen, som at holde styr på økonomien eller samle data fra flere systemer. Jeg sætter automatiske assistenter (AI-agenter) op, der klarer opgaverne i jeres systemer."
     points:
       - "Du bestemmer, hvad den må se og gøre, og den spørger, før noget bliver sendt eller bogført"
       - "Du får ét overblik, ikke ti vinduer"
@@ -54,7 +54,7 @@ services:
   setup:
     kicker: "// opsætning"
     heading: "Koblet på de systemer, I bruger"
-    body: "AI gør mest gavn, når den arbejder med jeres data og ikke kun i et tomt chatvindue. Jeg sætter den løsning op, der passer, uanset om I bruger ChatGPT, Copilot, Gemini eller Claude, og kobler den på de systemer, I allerede bruger, for eksempel økonomi, projektstyring og mail. Jeg vælger også den version, der passer til hver opgave, så I ikke betaler for meget for simple opgaver."
+    body: "AI gør mest gavn, når den arbejder med jeres data. Jeg sætter den løsning op, der passer, uanset om det er ChatGPT, Copilot, Gemini eller Claude, og kobler den på de systemer, I allerede bruger."
     matches:
       - {
           task: "Økonomi",

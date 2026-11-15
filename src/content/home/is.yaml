@@ -21,7 +21,7 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "Gervigreind,\n*rétt* uppsett."
-  lead: "Ég kenni þér og teyminu að nota gervigreind og set hana upp þar sem tíminn fer, í fjármálum, gögnum og samtengingum kerfa, sama hvaða lausn þið notið."
+  lead: "Ég kenni ykkur að nota gervigreind og set hana upp þar sem tíminn fer: í fjármálum, gögnum og samtengingum kerfa."
   cta: "Bókaðu frítt spjall"
 diagram:
   ariaLabel: "Sjálfvirkur aðstoðarmaður skiptir samantekt mánaðarins í þrjá hluta sem skila einu yfirliti"
@@ -37,7 +37,7 @@ services:
   agents:
     kicker: "// sjálfvirkni"
     heading: "Verk sem vinna sig sjálf"
-    body: "Í rekstri eru mörg verk unnin aftur og aftur: að halda utan um fjármálin, taka saman gögn úr mörgum kerfum, fylgja eftir verkefnum eða fara yfir umsóknir. Ég set upp sjálfvirka aðstoðarmenn (e. AI agents) sem vinna þessi verk í ykkar kerfum. Stóru verki er skipt í hluta og hver hluti fær aðstoðarmann sem kann akkúrat það."
+    body: "Mörg verk í rekstri eru unnin aftur og aftur, eins og að halda utan um fjármálin eða taka saman gögn úr mörgum kerfum. Ég set upp sjálfvirka aðstoðarmenn (e. AI agents) sem vinna þessi verk í ykkar kerfum."
     points:
       - "Þú ræður hvað hann má sjá og gera, og hann spyr áður en eitthvað er sent eða bókað"
       - "Þú færð eina samantekt, ekki tíu glugga"
@@ -54,7 +54,7 @@ services:
   setup:
     kicker: "// uppsetning"
     heading: "Tengt við kerfin sem þið notið"
-    body: "Gervigreind gerir mest gagn þegar hún vinnur í ykkar gögnum, en ekki bara í tómum spjallglugga. Ég set upp lausnina sem hentar, hvort sem þið notið ChatGPT, Copilot, Gemini eða Claude, og tengi hana við kerfin sem þið notið nú þegar, til dæmis fjármálakerfi, verkefnastjórnun og tölvupóst. Ég vel líka hvaða útgáfa hentar hverju verki, svo þið borgið ekki of mikið fyrir einföld verk."
+    body: "Gervigreind gerir mest gagn þegar hún vinnur í ykkar gögnum. Ég set upp lausnina sem hentar, hvort sem það er ChatGPT, Copilot, Gemini eða Claude, og tengi hana við kerfin sem þið notið nú þegar."
     matches:
       - {
           task: "Fjármál",

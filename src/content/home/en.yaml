@@ -21,7 +21,7 @@ articleNav:
 hero:
   # *word* gets the highlight, a line break becomes <br>
   title: "AI,\nset up *right*."
-  lead: "I teach you and your team to use AI and set it up where your time goes: finance, data and connecting your systems, whatever tool you use."
+  lead: "I teach your team to use AI and set it up where your time goes: finance, data and connecting your systems."
   cta: "Book a free chat"
 diagram:
   ariaLabel: "An automated assistant splits a monthly summary into three parts that return one overview"
@@ -37,7 +37,7 @@ services:
   agents:
     kicker: "// automation"
     heading: "Work that runs itself"
-    body: "A lot of business admin is the same work over and over: keeping track of finances, pulling data together from several systems, following up on projects or reading job applications. I set up automated assistants (AI agents) that do this work inside your systems. A big job is split into parts, and each part goes to an assistant that knows exactly that."
+    body: "A lot of business admin is the same work over and over, like keeping track of finances or pulling data together from several systems. I set up automated assistants (AI agents) that do this work inside your systems."
     points:
       - "You decide what it can see and do, and it asks before anything is sent or booked"
       - "You get one summary, not ten windows"
@@ -54,7 +54,7 @@ services:
   setup:
     kicker: "// setup"
     heading: "Connected to the systems you use"
-    body: "AI is most useful when it works with your data, not just in an empty chat window. I set up the solution that fits, whether you use ChatGPT, Copilot, Gemini or Claude, and connect it to the systems you already use, such as finance, project management and email. I also pick the right version for each task, so you don't overpay for simple work."
+    body: "AI is most useful when it works with your data. I set up the solution that fits, whether that's ChatGPT, Copilot, Gemini or Claude, and connect it to the systems you already use."
     matches:
       - {
           task: "Finance",
